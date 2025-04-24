@@ -124,7 +124,7 @@ public class CreatureCore : MonoBehaviour,
     }
 
     
-    private void OnMouseDown() => Debug.Log("OnMouseDown-Physics-Hit");
+    //private void OnMouseDown() => Debug.Log("OnMouseDown-Physics-Hit");
 
 
 
