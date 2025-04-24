@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a35377500c05342b385b59ed85ad95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: 0
+  stage: 1
   nextPrefab: {fileID: 0}
   zuzPerSecond: 1
   idleRadius: 0.4
