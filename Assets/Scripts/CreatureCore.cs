@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 [RequireComponent(typeof(Collider2D))]
 public class CreatureCore : MonoBehaviour,
     IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     /* ---------- Inspector ---------- */
     [Header("Stage")]
-    [Range(0, 12)] public int stageIndex;
+    public CreatureStage stage;                    
     [SerializeField] private CreatureCore nextPrefab;
 
     [Header("Economy")]
@@ -42,9 +43,7 @@ public class CreatureCore : MonoBehaviour,
 
     private void Update()
     {
-        if (!isDragging)
-            HandleIdle();      // Do not move randomly while being dragged
-
+        if (!isDragging) HandleIdle();
         ProduceMoney();
     }
 
@@ -81,22 +80,12 @@ public class CreatureCore : MonoBehaviour,
         }
     }
 
-/* =====================================================================
-   Drag-and-Drop – works with new/old Input System, desktop & mobile
-   ===================================================================== */
+    /* =====================================================================
+       Drag-and-Drop – works with new/old Input System, desktop & mobile
+       ===================================================================== */
     public void OnPointerDown(PointerEventData data)
     {
-        //  ✕  this check blocks all physics hits
-        //  if (EventSystem.current.IsPointerOverGameObject()) return;
-
-        // optional: block only *graphics* (real UI), not physics objects
-        // if (data.pointerEnter != null && data.pointerEnter.GetComponent<UnityEngine.UI.Graphic>())
-        //     return;
-
-        Debug.Log("PointerDown");                    // keep for testing
-
         isDragging = true;
-
         Vector3 world = cam.ScreenToWorldPoint(data.position);
         world.z = 0;
         dragOffset = transform.position - world;
@@ -105,8 +94,6 @@ public class CreatureCore : MonoBehaviour,
     public void OnDrag(PointerEventData data)
     {
         if (!isDragging) return;
-
-        Debug.Log("Dragging");                       // test
 
         Vector3 world = cam.ScreenToWorldPoint(data.position);
         world.z = 0;
@@ -117,44 +104,70 @@ public class CreatureCore : MonoBehaviour,
     {
         if (!isDragging) return;
 
-        Debug.Log("PointerUp");                      // test
-
         isDragging = false;
         StartCoroutine(TryMerge());
     }
 
-    
-    //private void OnMouseDown() => Debug.Log("OnMouseDown-Physics-Hit");
-
-
-
-
     /* ---------- Merge-Evolution ---------- */
+
+    [Header("Layers")]
+    [SerializeField] private LayerMask creatureMask;   // set to "Creature" in the Inspector
+
     private IEnumerator TryMerge()
     {
         if (nextPrefab == null) yield break;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, mergeRadius);
-        var group = new List<CreatureCore>();
+        // Scan only colliders on the Creature layer
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position,
+            mergeRadius,
+            creatureMask);
+
+        var others = new List<CreatureCore>();
 
         foreach (var h in hits)
             if (h.TryGetComponent(out CreatureCore c) &&
-                c.stageIndex == stageIndex && !c.isDragging)
-                group.Add(c);
+                c != this &&                 // ← skip self
+                !c.isDragging &&             // not being dragged
+                c.stage == stage)            // same enum stage
+                others.Add(c);
 
-        if (group.Count < mergeNeeded) yield break;
+        int participants = others.Count + 1; // +1 because 'this' is part of the merge
 
-        foreach (var c in group)
+        if (participants < mergeNeeded) yield break;
+
+        /* --- play evolve animation on ALL participants (self + others) --- */
+        if (anim) anim.CrossFade("Evolve", 0f, 0);
+        foreach (var c in others)
             if (c.anim) c.anim.CrossFade("Evolve", 0f, 0);
 
         yield return new WaitForSeconds(evolveAnimTime);
 
-        Vector3 avg = Vector3.zero;
-        foreach (var c in group) avg += c.transform.position;
-        avg /= group.Count;
+        /* --- spawn the next stage at the average position --- */
+        Vector3 avg = transform.position;
+        foreach (var c in others) avg += c.transform.position;
+        avg /= participants;
 
         Instantiate(nextPrefab, avg, Quaternion.identity);
-        foreach (var c in group) Destroy(c.gameObject);
+
+        /* --- destroy the old creatures --- */
+        foreach (var c in others) Destroy(c.gameObject);
+        Destroy(gameObject);
+    }
+
+    private bool _isDead;
+
+    public void Death()
+    {
+        if (_isDead) return;              // avoid double-kill
+        _isDead = true;
+
+        // 1) optional: play death animation / SFX here
+        // if (anim) anim.CrossFade("Death", 0f, 0);
+
+        // 2) optional: tell game manager, drop coins, etc.
+        // GameManager.Zuzim += bonusOnDeath;
+
+        Destroy(gameObject, 0.05f);     // destroy after one frame
     }
 
 #if UNITY_EDITOR
@@ -165,3 +178,8 @@ public class CreatureCore : MonoBehaviour,
     }
 #endif
 }
+
+
+
+
+
