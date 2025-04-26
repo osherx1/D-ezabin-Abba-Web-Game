@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4240241959464260315}
   m_Layer: 8
   m_Name: Scythe
-  m_TagString: Untagged
+  m_TagString: Scythe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

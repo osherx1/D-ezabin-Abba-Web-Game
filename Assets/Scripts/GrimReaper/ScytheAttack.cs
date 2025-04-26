@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -133,7 +132,7 @@ namespace GrimReaper
         // This method is called when the scythe collides with a creature or blocker
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (((1 << other.gameObject.layer) & creatureLayerMask.value ) != 0)
+            if (((1 << other.gameObject.layer) & _creatureLayerMaskValue ) != 0)
             {
                 Debug.Log("hit creature");
                 CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
