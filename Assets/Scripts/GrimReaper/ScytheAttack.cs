@@ -10,7 +10,9 @@ namespace GrimReaper
     {
         [Header("Target and Blocker layers")] 
         [SerializeField] private LayerMask creatureLayerMask;
+        private int _creatureLayerMaskValue;
         [SerializeField] private LayerMask blockerLayerMask;
+        private int _blockerLayerMaskValue;
 
         [Header("Attack parameters")] 
         [SerializeField] private float attackSpeed = 1f;
@@ -33,6 +35,7 @@ namespace GrimReaper
             _rb = GetComponent<Rigidbody2D>(); 
             ResetScythe(); // set the scythe to its start position
             OnStartScytheAttack(); // for now, starts the scythe attack immediately
+            Debug.Log(creatureLayerMask.value);
         }
 
         private void OnEnable()
@@ -50,7 +53,7 @@ namespace GrimReaper
             if(_isAttacking) return;
             // reset scythe position + health
             ResetScythe();
-            // make scythe visible
+            // make scythe visible ?
             _isAttacking = true;
             // start movement
             MoveScythe();
@@ -124,13 +127,14 @@ namespace GrimReaper
         public void OnPointerClick(PointerEventData eventData)
         {
             TakeDamage(damageAgainstScythe);
-            // Vector2 knockbackDirection = (Vector2)transform.position - (Vector2)eventData.pointerPressRaycast.worldPosition;
-            // _rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
         }
 
         // This method is called when the scythe collides with a creature or blocker
         private void OnTriggerEnter2D(Collider2D other)
         {
+            // Debug.Log(other.gameObject.name);
+            // Debug.Log(other.gameObject.layer);
+            // Debug.Log(creatureLayerMask);
             if (other.gameObject.layer == creatureLayerMask)
             {
                 Debug.Log("hit creature");

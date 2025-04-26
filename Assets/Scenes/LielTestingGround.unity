@@ -250,6 +250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ez
       objectReference: {fileID: 0}
+    - target: {fileID: 6087100894281900654, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
       propertyPath: nextPrefab
       value: 
@@ -416,7 +420,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509357168}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
