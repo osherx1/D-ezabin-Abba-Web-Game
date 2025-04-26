@@ -250,37 +250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ez
       objectReference: {fileID: 0}
-    - target: {fileID: 5277156884244402296, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: m_TagString
-      value: Creatures
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: idleRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: nextPrefab
-      value: 
-      objectReference: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-    - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: idleStepTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: creatureMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530571965049181797, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5277156884244402296, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 509357174}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
 --- !u!1 &433729239
 GameObject:
@@ -387,8 +360,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 562763063
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -416,57 +389,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &509357168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5277156884244402296, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-  m_PrefabInstance: {fileID: 292751696}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &509357174
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509357168}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.26, y: 1.004}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,18 +679,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ez (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5277156884244402296, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: m_TagString
-      value: Creatures
-      objectReference: {fileID: 0}
-    - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: nextPrefab
-      value: 
-      objectReference: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-    - target: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-      propertyPath: creatureMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1041,8 +951,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 562763063
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1175,8 +1085,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 562763063
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1339,14 +1249,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2980553023650323975, guid: f7b842ccd830d5742bddc40c4dd33827, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2980553023650323975, guid: f7b842ccd830d5742bddc40c4dd33827, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8009800804365043236, guid: f7b842ccd830d5742bddc40c4dd33827, type: 3}
       propertyPath: m_Name
       value: Hatul
@@ -1407,30 +1309,6 @@ PrefabInstance:
     - target: {fileID: 3692009782177488797, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
       propertyPath: m_Name
       value: Ez + Hatul
-      objectReference: {fileID: 0}
-    - target: {fileID: 3692009782177488797, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3692009782177488797, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-      propertyPath: m_TagString
-      value: Creatures
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-      propertyPath: stage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-      propertyPath: idleRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-      propertyPath: idleStepTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-      propertyPath: creatureMask.m_Bits
-      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
