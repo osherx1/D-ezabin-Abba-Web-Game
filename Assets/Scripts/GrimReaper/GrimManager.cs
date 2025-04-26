@@ -24,7 +24,7 @@ public class GrimManager : MonoBehaviour
         GameEvents.StartScytheAttack?.Invoke();
     }
 
-    private void CallMinionsAttack()
+    private void CallMinionsAttack(Transform traget)
     {
         // TODO: implement the minions attack
         // need: a way to find the most earning creature
