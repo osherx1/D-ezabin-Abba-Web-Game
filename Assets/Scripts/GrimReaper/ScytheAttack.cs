@@ -35,7 +35,8 @@ namespace GrimReaper
             _rb = GetComponent<Rigidbody2D>(); 
             ResetScythe(); // set the scythe to its start position
             OnStartScytheAttack(); // for now, starts the scythe attack immediately
-            Debug.Log(creatureLayerMask.value);
+            _creatureLayerMaskValue = creatureLayerMask.value;
+            _blockerLayerMaskValue = blockerLayerMask.value;
         }
 
         private void OnEnable()
@@ -132,10 +133,7 @@ namespace GrimReaper
         // This method is called when the scythe collides with a creature or blocker
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // Debug.Log(other.gameObject.name);
-            // Debug.Log(other.gameObject.layer);
-            // Debug.Log(creatureLayerMask);
-            if (other.gameObject.layer == creatureLayerMask)
+            if (((1 << other.gameObject.layer) & creatureLayerMask.value ) != 0)
             {
                 Debug.Log("hit creature");
                 CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();

@@ -265,7 +265,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
       propertyPath: m_Name
-      value: Scyth
+      value: Scythe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
+      propertyPath: m_TagString
+      value: Scythe
       objectReference: {fileID: 0}
     - target: {fileID: 5483212339078617273, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
       propertyPath: m_LocalPosition.x
