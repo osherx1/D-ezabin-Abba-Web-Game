@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utilities;
 
 namespace GrimReaper
 {
@@ -24,17 +25,27 @@ namespace GrimReaper
         [SerializeField] private int damageAgainstScythe = 1;
 
         private Rigidbody2D _rb;
-        private bool _isAttacking = false;
+        private bool _isAttacking;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>(); 
             ResetScythe(); // set the scythe to its start position
-            StartScytheAttack();
+            OnStartScytheAttack(); // for now, starts the scythe attack immediately
         }
 
-        private void StartScytheAttack()
+        private void OnEnable()
+        {
+            GameEvents.StartScytheAttack += OnStartScytheAttack;
+        }
+        
+        private void OnDisable()
+        {
+            GameEvents.StartScytheAttack -= OnStartScytheAttack;
+        }
+
+        private void OnStartScytheAttack()
         {
             if(_isAttacking) return;
             // reset scythe position + health
