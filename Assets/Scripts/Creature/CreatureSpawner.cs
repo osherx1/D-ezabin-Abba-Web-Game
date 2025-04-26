@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class CreatureSpawner : MonoBehaviour
 {
     [Header("Prefab")]
     [SerializeField] CreatureCore basePrefab;
