@@ -3,7 +3,7 @@ using Utilities;
 
 public class GrimManager : MonoBehaviour
 {
-    //TODO: attacks timing
+    //TODO: attacks timing? 
     //todo: implement the Grim Reaper's attacks (Scythe, minions, etc...)
     //need : a way to find the most earning creature
     // todo: defense against the Grim Reaper's attacks, power ups?
