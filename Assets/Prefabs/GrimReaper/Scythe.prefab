@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 410335878575671889}
   - component: {fileID: 4240241959464260315}
   m_Layer: 8
-  m_Name: Scyth
-  m_TagString: Untagged
+  m_Name: Scythe
+  m_TagString: Scythe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 3380827200456028406}
   - component: {fileID: 6202994487595020490}
   m_Layer: 8
-  m_Name: ScythArt
+  m_Name: ScytheArt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utilities;
 
 namespace GrimReaper
 {
@@ -9,7 +9,9 @@ namespace GrimReaper
     {
         [Header("Target and Blocker layers")] 
         [SerializeField] private LayerMask creatureLayerMask;
+        private int _creatureLayerMaskValue;
         [SerializeField] private LayerMask blockerLayerMask;
+        private int _blockerLayerMaskValue;
 
         [Header("Attack parameters")] 
         [SerializeField] private float attackSpeed = 1f;
@@ -24,34 +26,37 @@ namespace GrimReaper
         [SerializeField] private int damageAgainstScythe = 1;
 
         private Rigidbody2D _rb;
-        private bool _isAttacking = false;
+        private bool _isAttacking;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>(); 
-            ResetScythe();
-            _isAttacking = true; // start the attack
-            MoveScythe();
-            // set the scythe to its start position
-            
-        }
-        // Update is called once per frame
-        void Update()
-        {
-            // if (_isAttacking)
-            // {
-            //     MoveScythe();
-            // }
+            ResetScythe(); // set the scythe to its start position
+            OnStartScytheAttack(); // for now, starts the scythe attack immediately
+            _creatureLayerMaskValue = creatureLayerMask.value;
+            _blockerLayerMaskValue = blockerLayerMask.value;
         }
 
-        private void StartScytheAttack()
+        private void OnEnable()
         {
+            GameEvents.StartScytheAttack += OnStartScytheAttack;
+        }
+        
+        private void OnDisable()
+        {
+            GameEvents.StartScytheAttack -= OnStartScytheAttack;
+        }
+
+        private void OnStartScytheAttack()
+        {
+            if(_isAttacking) return;
             // reset scythe position + health
-            // make scythe visible
+            ResetScythe();
+            // make scythe visible ?
+            _isAttacking = true;
             // start movement
-            // when clicked on, the scythe should take damage and get knocked back
-            // if the scythe hit a creature, it should kill the creature
+            MoveScythe();
         }
 
         private void MoveScythe()
@@ -62,7 +67,6 @@ namespace GrimReaper
             // check if the scythe has reached the end position
             if (Vector2.Distance(transform.position, scytheEndPosition) < 0.1f)
             {
-                _isAttacking = false;
                 // _rb.linearVelocity = Vector2.zero;
                 ResetScythe();
             }
@@ -72,9 +76,11 @@ namespace GrimReaper
         {
             // reset the scythe to its original position
             // reset the scythe health
+            _isAttacking = false;
             _currentScytheHealth = scytheHealth;
             transform.position = scytheStartPosition;
             _rb.linearVelocity = Vector2.zero;
+            StopAllCoroutines();
         }
 
         private void TakeDamage(int damage)
@@ -98,13 +104,13 @@ namespace GrimReaper
 
         private IEnumerator ResumeMovementAfterKnockback()
         {
-            _isAttacking = false;
+            // _isAttacking = false;
             _rb.linearVelocity = Vector2.zero;
             
             // wait for a short duration before resuming movement
             yield return new WaitForSeconds(knockbackDurationSeconds);
             
-            _isAttacking = true;
+            // _isAttacking = true;
             MoveScythe();
         }
 
@@ -112,24 +118,29 @@ namespace GrimReaper
         {
             
             _isAttacking = false;
-            _rb.linearVelocity = Vector2.zero;
             Debug.Log("Scythe destroyed");
             //play destruction animation
             ResetScythe();
         }
 
+        // This method is called when the player clicks on the scythe
         public void OnPointerClick(PointerEventData eventData)
         {
             TakeDamage(damageAgainstScythe);
-            // Vector2 knockbackDirection = (Vector2)transform.position - (Vector2)eventData.pointerPressRaycast.worldPosition;
-            // _rb.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
         }
 
+        // This method is called when the scythe collides with a creature or blocker
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.layer == creatureLayerMask)
+            if (((1 << other.gameObject.layer) & _creatureLayerMaskValue ) != 0)
             {
                 Debug.Log("hit creature");
+                CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
+                if (creature != null)
+                {
+                    // apply damage to the creature
+                    creature.Death();
+                }
             }
         }
     }
