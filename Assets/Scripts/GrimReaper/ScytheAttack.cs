@@ -14,7 +14,7 @@ namespace GrimReaper
         private int _blockerLayerMaskValue;
 
         [Header("Attack parameters")] 
-        [SerializeField] private float attackSpeed = 1f;
+        [SerializeField] private float scytheSpeed = 1f;
         [SerializeField] private int scytheHealth = 10;
         [SerializeField] private Vector2 scytheStartPosition;
         [SerializeField] private Vector2 scytheEndPosition;
@@ -29,7 +29,7 @@ namespace GrimReaper
         private bool _isAttacking;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        private void Start()
         {
             _rb = GetComponent<Rigidbody2D>(); 
             ResetScythe(); // set the scythe to its start position
@@ -51,9 +51,9 @@ namespace GrimReaper
         private void OnStartScytheAttack()
         {
             if(_isAttacking) return;
-            // reset scythe position + health
+            // reset scythe position and health
             ResetScythe();
-            // make scythe visible ?
+            // make scythe visible?
             _isAttacking = true;
             // start movement
             MoveScythe();
@@ -62,7 +62,7 @@ namespace GrimReaper
         private void MoveScythe()
         {
             Vector2 direction = (scytheEndPosition - scytheStartPosition).normalized;
-            _rb.linearVelocity = direction * attackSpeed;
+            _rb.linearVelocity = direction * scytheSpeed;
             
             // check if the scythe has reached the end position
             if (Vector2.Distance(transform.position, scytheEndPosition) < 0.1f)
@@ -83,7 +83,7 @@ namespace GrimReaper
             StopAllCoroutines();
         }
 
-        private void TakeDamage(int damage)
+        public void TakeDamage(int damage)
         {
             _currentScytheHealth -= damage;
             KnockbackScythe(Vector2.right);
@@ -99,13 +99,14 @@ namespace GrimReaper
         {
             // apply knockback to the scythe
             _rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
+            StopAllCoroutines();
             StartCoroutine(ResumeMovementAfterKnockback());
         }
 
         private IEnumerator ResumeMovementAfterKnockback()
         {
             // _isAttacking = false;
-            _rb.linearVelocity = Vector2.zero;
+            // _rb.linearVelocity = Vector2.zero;
             
             // wait for a short duration before resuming movement
             yield return new WaitForSeconds(knockbackDurationSeconds);
@@ -141,6 +142,12 @@ namespace GrimReaper
                     // apply damage to the creature
                     creature.Death();
                 }
+            }
+            else if(((1<< other.gameObject.layer) & _blockerLayerMaskValue) != 0)
+            {
+                Debug.Log("hit blocker");
+                // apply damage to the blocker
+                // after blocker took damage, the scythe needs to also take damage and get knocked back
             }
         }
     }
