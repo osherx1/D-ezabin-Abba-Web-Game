@@ -35,13 +35,13 @@ namespace GrimReaper
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
-            _rb = GetComponent<Rigidbody2D>(); 
-            ResetScythe(); // set the scythe to its start position
-            OnStartScytheAttack(); // for now, starts the scythe attack immediately
+            _rb = GetComponent<Rigidbody2D>();
+            // OnStartScytheAttack(); // for now, starts the scythe attack immediately
             _creatureLayerMaskValue = creatureLayerMask.value;
             _blockerLayerMaskValue = blockerLayerMask.value;
             _scytheStartPosition = scytheRightPosition;
             _scytheEndPosition = scytheLeftPosition;
+            ResetScythe(); // set the scythe to its start position
         }
 
         private void OnEnable()
