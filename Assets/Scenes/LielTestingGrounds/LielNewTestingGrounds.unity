@@ -263,18 +263,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
-      propertyPath: scytheSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
-      propertyPath: scytheHealth
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
-      propertyPath: knockbackForce
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
       propertyPath: m_Name
       value: Scythe

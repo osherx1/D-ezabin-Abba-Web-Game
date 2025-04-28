@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace GrimReaper
 {
@@ -16,9 +17,12 @@ namespace GrimReaper
         [Header("Attack parameters")] 
         [SerializeField] private float scytheSpeed = 1f;
         [SerializeField] private int scytheHealth = 10;
-        [SerializeField] private Vector2 scytheStartPosition;
-        [SerializeField] private Vector2 scytheEndPosition;
+        [SerializeField] private Vector2 scytheRightPosition;
+        [SerializeField] private Vector2 scytheLeftPosition;
         private int _currentScytheHealth;
+        private Vector2 _scytheStartPosition;
+        private Vector2 _scytheEndPosition;
+        private Vector2 _direction;
 
         [Header("Counter attack parameters")] 
         [SerializeField] private float knockbackForce = 1f;
@@ -27,7 +31,7 @@ namespace GrimReaper
 
         private Rigidbody2D _rb;
         private bool _isAttacking;
-
+        
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
@@ -36,6 +40,8 @@ namespace GrimReaper
             OnStartScytheAttack(); // for now, starts the scythe attack immediately
             _creatureLayerMaskValue = creatureLayerMask.value;
             _blockerLayerMaskValue = blockerLayerMask.value;
+            _scytheStartPosition = scytheRightPosition;
+            _scytheEndPosition = scytheLeftPosition;
         }
 
         private void OnEnable()
@@ -52,6 +58,8 @@ namespace GrimReaper
         {
             if(_isAttacking) return;
             // reset scythe position and health
+            SetScytheDirectionRandomly(); // needs to be set outside from the grim manager
+            SetScytheStartPosition();
             ResetScythe();
             // make scythe visible?
             _isAttacking = true;
@@ -60,25 +68,51 @@ namespace GrimReaper
         }
 
         private void MoveScythe()
-        {
-            Vector2 direction = (scytheEndPosition - scytheStartPosition).normalized;
-            _rb.linearVelocity = direction * scytheSpeed;
+        { 
+            _rb.linearVelocity = _direction * scytheSpeed;
             
             // check if the scythe has reached the end position
-            if (Vector2.Distance(transform.position, scytheEndPosition) < 0.1f)
+            if (Vector2.Distance(transform.position, _scytheEndPosition) < 0.1f)
             {
                 // _rb.linearVelocity = Vector2.zero;
                 ResetScythe();
             }
         }
 
+        private void SetScytheDirectionRandomly()
+        {
+            int dir = Random.Range(0, 2);
+            _direction = dir == 0 ? (scytheRightPosition - scytheLeftPosition).normalized : (scytheLeftPosition - scytheRightPosition).normalized;
+        }
+        
+        public void SetScytheDirection(Vector2 direction)
+        {
+            // set the scythe direction to the given direction
+            _direction = direction.normalized;
+        }
+        
+        private void SetScytheStartPosition()
+        {
+            // set the scythe start position to the current position
+            if(_direction.x > 0)
+            {
+                _scytheStartPosition = scytheLeftPosition;
+                _scytheEndPosition = scytheRightPosition;
+            }
+            else
+            {
+                _scytheStartPosition = scytheRightPosition;
+                _scytheEndPosition = scytheLeftPosition;
+            }
+        }
+
         private void ResetScythe()
         {
-            // reset the scythe to its original position
+            // reset the scythe to its start position
             // reset the scythe health
             _isAttacking = false;
             _currentScytheHealth = scytheHealth;
-            transform.position = scytheStartPosition;
+            transform.position = _scytheStartPosition;
             _rb.linearVelocity = Vector2.zero;
             StopAllCoroutines();
         }
@@ -86,7 +120,7 @@ namespace GrimReaper
         public void TakeDamage(int damage)
         {
             _currentScytheHealth -= damage;
-            KnockbackScythe(Vector2.right);
+            KnockbackScythe();
             Debug.Log("Scythe took damage: " + damage);
             if (_currentScytheHealth <= 0)
             {
@@ -95,10 +129,10 @@ namespace GrimReaper
             }
         }
         
-        private void KnockbackScythe(Vector2 direction)
+        private void KnockbackScythe()
         {
             // apply knockback to the scythe
-            _rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
+            _rb.AddForce((-_direction) * knockbackForce, ForceMode2D.Impulse);
             StopAllCoroutines();
             StartCoroutine(ResumeMovementAfterKnockback());
         }
@@ -122,6 +156,7 @@ namespace GrimReaper
             Debug.Log("Scythe destroyed");
             //play destruction animation
             ResetScythe();
+            // OnStartScytheAttack();
         }
 
         // This method is called when the player clicks on the scythe
