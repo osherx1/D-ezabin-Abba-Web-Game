@@ -263,6 +263,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
+      propertyPath: scytheSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
+      propertyPath: scytheHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
+      propertyPath: knockbackForce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
       propertyPath: m_Name
       value: Scythe
@@ -741,6 +757,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
+--- !u!1 &1429224766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429224768}
+  - component: {fileID: 1429224767}
+  m_Layer: 0
+  m_Name: Creature Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1429224767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429224766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e474229185a8c45a53dd18dabdd738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePrefab: {fileID: 6334393940198156188, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
+  interval: 4
+  bottomLeft: {x: -5, y: -3}
+  topRight: {x: 5, y: 3}
+--- !u!4 &1429224768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429224766}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57426554, y: -0.8078319, z: 9.272852}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610883792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,3 +1685,4 @@ SceneRoots:
   - {fileID: 5709317866589040354}
   - {fileID: 8213534701633658867}
   - {fileID: 314444674}
+  - {fileID: 1429224768}
