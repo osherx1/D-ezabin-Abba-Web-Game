@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class CreatureSpawner : MonoBehaviour
+public class CreatureSpawner : MonoSingleton<CreatureSpawner>
 {
-    [Header("Prefab")]
-    [SerializeField] CreatureCore basePrefab;
+    // [Header("Prefab")]
+    // [SerializeField] CreatureCore basePrefab;
 
-    [Header("Timing")]
-    [SerializeField] float interval = 4f;
+    // [Header("Timing")]
+    // [SerializeField] float interval = 4f;
 
     [Header("Spawn Bounds")]
     [Tooltip("leftest corner of the area")]
@@ -15,13 +15,13 @@ public class CreatureSpawner : MonoBehaviour
     [Tooltip("rightest corner of the area")]
     [SerializeField] Vector2 topRight   = new Vector2(5, 3);
 
-    void Start() => InvokeRepeating(nameof(Spawn), 0f, interval);
+    // void Start() => InvokeRepeating(nameof(Spawn), 0f, interval);
 
-    void Spawn()
+    public void Spawn(GameObject prefab)
     {
         float x = Random.Range(bottomLeft.x, topRight.x);
         float y = Random.Range(bottomLeft.y, topRight.y);
-        Instantiate(basePrefab, new Vector3(x, y, 0), Quaternion.identity);
+        Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
     }
 
 #if UNITY_EDITOR
