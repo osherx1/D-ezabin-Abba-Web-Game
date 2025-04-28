@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utilities;
 
 public class MinionSpawner : MonoBehaviour
 {
@@ -9,14 +10,23 @@ public class MinionSpawner : MonoBehaviour
     [SerializeField] private LayerMask creatureLayer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // void Start()
+    // {
+    //     
+    // }
+    //
+    // void OnEnable()
+    // {
+    //     GameEvents.StartMinionsAttack += OnStartMinionsAttack;
+    // }
+    //
+    // void OnDisable()
+    // {
+    //     GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
+    // }
+    //
+    // private void OnStartMinionsAttack()
+    // {
+    //     
+    // }
 }
