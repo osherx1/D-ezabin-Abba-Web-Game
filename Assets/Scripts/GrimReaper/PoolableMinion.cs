@@ -1,25 +1,52 @@
+using System.Collections;
 using Pool;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using Utilities;
 
-public class PoolableMinion : MonoBehaviour, IPoolable
+public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 {
     private Transform _target;
+    [Header("Minion Settings")]
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed = 200f;
+    [SerializeField] private int minionStartingHealth = 5;
     private Rigidbody2D _rb;
+    
+    [Header("Target and Blocker layers")]
     [SerializeField]private LayerMask _creatureLayer;
+    
+    [Header("Counter attack parameters")]
+    [SerializeField] private float knockbackForce;
+    [SerializeField] private float knockbackDurationSeconds = 0.5f;
+    [SerializeField] private int damageAgainstMinion = 1;
 
     private bool _shouldMove;
     private bool _isDead;
 
     private int _creatureLayerMaskValue;
+    private int _minionHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _creatureLayerMaskValue = _creatureLayer.value;
-        _shouldMove = true;
+        // _shouldMove = true;
+        _isDead = false; 
+    }
+    
+    private void OnEnable()
+    {
+        GameEvents.StartMinionsAttack += OnStartMinionsAttack;
+        _minionHealth = minionStartingHealth;
+        OnStartMinionsAttack();
+    }
+    
+    private void OnDisable()
+    {
+        GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
+        // Reset();
     }
 
     // Update is called once per frame
@@ -30,6 +57,19 @@ public class PoolableMinion : MonoBehaviour, IPoolable
         {
             FindCosestCreature(_creatureLayer);
         }
+        MoveMinion();
+    }
+
+    private void OnStartMinionsAttack()
+    {
+        FindCosestCreature(_creatureLayer);
+        SetShouldMove(true);
+        // MoveMinion();
+    }
+
+    private void MoveMinion()
+    {
+        if (_target == null) return;
         Vector2 direction = ((Vector2)_target.position - _rb.position).normalized;
         float rotateAmount = Vector3.Cross(transform.up, direction).z;
         _rb.angularVelocity = rotateAmount * rotationSpeed;
@@ -59,22 +99,23 @@ public class PoolableMinion : MonoBehaviour, IPoolable
         this.rotationSpeed = rotationSpeed;
     }
 
-    public void FindCosestCreature(LayerMask creatureLayer)
+    private void FindCosestCreature(LayerMask creatureLayer)
     {
         // if (creatureLayer == _creatureLayer) return;
-        GameObject closestCreature = FindClosestObjectWithLayer(creatureLayer);
+        var closestCreature = FindClosestObjectWithLayer(creatureLayer);
         SetTarget(closestCreature.transform);
     }
     
     private GameObject FindClosestObjectWithLayer(LayerMask layer)
     {
-        GameObject closestObject = null;
+        CreatureCore closestObject = null;
         float closestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
+        var allObjects = FindObjectsByType<CreatureCore>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        foreach (var obj in allObjects)
 
-        foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>())
         {
-            if (((1 << obj.layer ) & layer.value) != 0)
+            // if (((1 << obj.layer ) & layer.value) != 0)
             {
                 float distance = Vector3.Distance(currentPosition, obj.transform.position);
                 if (distance < closestDistance)
@@ -85,7 +126,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable
             }
         }
 
-        return closestObject;
+        return closestObject?.gameObject;
     }
     
     public void SetCreatureLayer(LayerMask layer)
@@ -110,5 +151,50 @@ public class PoolableMinion : MonoBehaviour, IPoolable
                 creature.Death();
             }
         }
+    }
+
+    // How to handle the minions
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        TakeDamage(damageAgainstMinion);
+    }
+
+    private void TakeDamage(int damage)
+    {
+        _minionHealth -= damage;
+        Debug.Log("Minion took damage: " + damage);
+        // apply knockback to the minion
+        KnokcbackMinion();
+        if (_minionHealth <= 0)
+        {
+            // reset minion
+            HandleMinionDestruction();
+        }
+    }
+
+    private void KnokcbackMinion()
+    {
+        // apply knockback to the minion
+        _rb.AddForce((-_target.position) * knockbackForce, ForceMode2D.Impulse);
+        StopAllCoroutines();
+        StartCoroutine(ResumeMovementAfterKnockback());
+    }
+
+    private IEnumerator ResumeMovementAfterKnockback()
+    { 
+        SetShouldMove(false);
+        // _rb.linearVelocity = Vector2.zero;
+        
+        // wait for a short duration before resuming movement
+        yield return new WaitForSeconds(knockbackDurationSeconds);
+        
+        // _isAttacking = true;
+        SetShouldMove(true);
+        MoveMinion();
+    }
+
+    private void HandleMinionDestruction()
+    {
+        MinionPool.Instance.Return(this);
     }
 }

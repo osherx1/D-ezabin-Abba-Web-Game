@@ -10,23 +10,23 @@ public class MinionSpawner : MonoBehaviour
     [SerializeField] private LayerMask creatureLayer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    void OnEnable()
-    {
-        GameEvents.StartMinionsAttack += OnStartMinionsAttack;
-    }
-
-    void OnDisable()
-    {
-        GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
-    }
-
-    private void OnStartMinionsAttack()
-    {
-        
-    }
+    // void Start()
+    // {
+    //     
+    // }
+    //
+    // void OnEnable()
+    // {
+    //     GameEvents.StartMinionsAttack += OnStartMinionsAttack;
+    // }
+    //
+    // void OnDisable()
+    // {
+    //     GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
+    // }
+    //
+    // private void OnStartMinionsAttack()
+    // {
+    //     
+    // }
 }
