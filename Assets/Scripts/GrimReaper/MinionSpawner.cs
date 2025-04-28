@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utilities;
 
 public class MinionSpawner : MonoBehaviour
 {
@@ -14,8 +15,17 @@ public class MinionSpawner : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()
+    {
+        GameEvents.StartMinionsAttack += OnStartMinionsAttack;
+    }
+
+    void OnDisable()
+    {
+        GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
+    }
+
+    private void OnStartMinionsAttack()
     {
         
     }

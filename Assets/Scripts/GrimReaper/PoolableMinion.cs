@@ -7,19 +7,32 @@ public class PoolableMinion : MonoBehaviour, IPoolable
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed = 200f;
     private Rigidbody2D _rb;
+    [SerializeField]private LayerMask _creatureLayer;
+
+    private bool _shouldMove;
+    private bool _isDead;
+
+    private int _creatureLayerMaskValue;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _creatureLayerMaskValue = _creatureLayer.value;
+        _shouldMove = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_target == null) return;
+        if (!_shouldMove || _isDead) return;
+        if (_target == null)
+        {
+            FindCosestCreature(_creatureLayer);
+        }
         Vector2 direction = ((Vector2)_target.position - _rb.position).normalized;
-        float rotatAmount = Vector3.Cross(transform.up, direction).z;
-        _rb.angularVelocity = rotatAmount * rotationSpeed;
+        float rotateAmount = Vector3.Cross(transform.up, direction).z;
+        _rb.angularVelocity = rotateAmount * rotationSpeed;
         _rb.linearVelocity = transform.up * speed;
     }
 
@@ -32,6 +45,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable
     
     private void SetTarget(Transform target)
     {
+        if(target == null) return;
         _target = target;
     }
     
@@ -47,9 +61,11 @@ public class PoolableMinion : MonoBehaviour, IPoolable
 
     public void FindCosestCreature(LayerMask creatureLayer)
     {
+        // if (creatureLayer == _creatureLayer) return;
         GameObject closestCreature = FindClosestObjectWithLayer(creatureLayer);
         SetTarget(closestCreature.transform);
     }
+    
     private GameObject FindClosestObjectWithLayer(LayerMask layer)
     {
         GameObject closestObject = null;
@@ -70,5 +86,29 @@ public class PoolableMinion : MonoBehaviour, IPoolable
         }
 
         return closestObject;
+    }
+    
+    public void SetCreatureLayer(LayerMask layer)
+    {
+        _creatureLayer = layer;
+    }
+    
+    public void SetShouldMove(bool shouldMove)
+    {
+        _shouldMove = shouldMove;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (((1 << other.gameObject.layer) & _creatureLayerMaskValue ) != 0)
+        {
+            Debug.Log("hit creature");
+            CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
+            if (creature != null)
+            {
+                // apply damage to the creature
+                creature.Death();
+            }
+        }
     }
 }
