@@ -32,20 +32,27 @@ public class CreatureCore : MonoBehaviour,
     private float   idleTimer, moneyTimer;
     private Camera  cam;
     [SerializeField] private Animator anim;
+    private Vector3 lastPosition;
+    private float lastXDirection = 1f;
+
 
     /* ---------- MonoBehaviour ---------- */
     private void Start()
     {
         cam  = Camera.main;
         anim = GetComponent<Animator>();
+        lastPosition = transform.position;
         PickIdleTarget();
     }
 
     private void Update()
     {
         if (!isDragging) HandleIdle();
+
+        AnimateWalking();
         ProduceMoney();
     }
+
 
     /* ---------- Idle Walk ---------- */
     private void HandleIdle()
@@ -68,6 +75,31 @@ public class CreatureCore : MonoBehaviour,
         Vector2 r = Random.insideUnitCircle * idleRadius;
         idleTarget = transform.position + new Vector3(r.x, r.y, 0);
     }
+    
+    /* ---------- Animation ---------- */
+    
+    private void AnimateWalking()
+    {
+        Vector3 currentPosition = transform.position;
+        Vector3 delta = currentPosition - lastPosition;
+
+        bool isMoving = delta != Vector3.zero;
+
+        if (anim)
+            anim.SetBool("IsWalking", isMoving);
+
+        if (isMoving && Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
+        {
+            lastXDirection = Mathf.Sign(delta.x);  // update direction only on horizontal move
+        }
+
+        Vector3 scale = transform.localScale;
+        scale.x = lastXDirection * Mathf.Abs(scale.x);
+        transform.localScale = scale;
+
+        lastPosition = currentPosition;
+    }
+
 
     /* ---------- Passive Income ---------- */
     private void ProduceMoney()

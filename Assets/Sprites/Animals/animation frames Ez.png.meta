@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 5b6159504137dbc4e8fe70435752cb65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3383429676092001857
+    second: animation frames Ez_0
+  - first:
+      213: -2311393317173665168
+    second: animation frames Ez_1
+  - first:
+      213: 7704784998267583161
+    second: animation frames Ez_2
+  - first:
+      213: -8183479766694341589
+    second: animation frames Ez_3
+  - first:
+      213: -1913202527650679314
+    second: animation frames Ez_4
+  - first:
+      213: 3365597942207905133
+    second: animation frames Ez_5
+  - first:
+      213: -8039178961770035014
+    second: animation frames Ez_6
+  - first:
+      213: -8865821583416536735
+    second: animation frames Ez_7
+  - first:
+      213: -4119603984913529187
+    second: animation frames Ez_8
+  - first:
+      213: 1492927081507795778
+    second: animation frames Ez_9
+  - first:
+      213: -1982791039621581191
+    second: animation frames Ez_10
+  - first:
+      213: 716191659858791013
+    second: animation frames Ez_11
+  - first:
+      213: 3989432444238240567
+    second: animation frames Ez_12
+  - first:
+      213: -2933605814983603166
+    second: animation frames Ez_13
+  - first:
+      213: 7675931168576404346
+    second: animation frames Ez_14
+  - first:
+      213: 7690544669333794114
+    second: animation frames Ez_15
+  - first:
+      213: -6126834733775495937
+    second: animation frames Ez_16
+  - first:
+      213: 5602019020019521536
+    second: animation frames Ez_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Ez_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1691
+        width: 532
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e8afd3d5b54fe20800000000000000
+      internalID: 3383429676092001857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_1
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 1691
+        width: 532
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072e6a936084cefd0800000000000000
+      internalID: -2311393317173665168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_2
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 1691
+        width: 532
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba7f7c5225ecea60800000000000000
+      internalID: 7704784998267583161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_3
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 1691
+        width: 532
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24569792807e6e80800000000000000
+      internalID: -8183479766694341589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_4
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 1691
+        width: 532
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5700c0070f275e0800000000000000
+      internalID: -1913202527650679314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1153
+        width: 526
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d761a2f7105be20800000000000000
+      internalID: 3365597942207905133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_6
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1153
+        width: 529
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab847e1e3591f6090800000000000000
+      internalID: -8039178961770035014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_7
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1153
+        width: 528
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16157763e3646f480800000000000000
+      internalID: -8865821583416536735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_8
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 1153
+        width: 529
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9602f7900a34d6c0800000000000000
+      internalID: -4119603984913529187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_9
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1153
+        width: 526
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24335d05541f7b410800000000000000
+      internalID: 1492927081507795778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_10
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 635
+        width: 529
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97637830e06bb74e0800000000000000
+      internalID: -1982791039621581191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_11
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 635
+        width: 528
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a0bf4258c60f900800000000000000
+      internalID: 716191659858791013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_12
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 632
+        width: 529
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b1d3ecbaf4d5730800000000000000
+      internalID: 3989432444238240567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_13
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 632
+        width: 526
+        height: 340
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22cc1eedd0db947d0800000000000000
+      internalID: -2933605814983603166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_14
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 635
+        width: 529
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b785f9ab2668a60800000000000000
+      internalID: 7675931168576404346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 116
+        width: 532
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d2ae861ad4aba60800000000000000
+      internalID: 7690544669333794114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_16
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 116
+        width: 529
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc59cf554c19faa0800000000000000
+      internalID: -6126834733775495937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Ez_17
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 119
+        width: 526
+        height: 341
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008de313e9e5ebd40800000000000000
+      internalID: 5602019020019521536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5fdfd19d10b293840b572a02b9b4b4c2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation frames Ez_0: 3383429676092001857
+      animation frames Ez_1: -2311393317173665168
+      animation frames Ez_10: -1982791039621581191
+      animation frames Ez_11: 716191659858791013
+      animation frames Ez_12: 3989432444238240567
+      animation frames Ez_13: -2933605814983603166
+      animation frames Ez_14: 7675931168576404346
+      animation frames Ez_15: 7690544669333794114
+      animation frames Ez_16: -6126834733775495937
+      animation frames Ez_17: 5602019020019521536
+      animation frames Ez_2: 7704784998267583161
+      animation frames Ez_3: -8183479766694341589
+      animation frames Ez_4: -1913202527650679314
+      animation frames Ez_5: 3365597942207905133
+      animation frames Ez_6: -8039178961770035014
+      animation frames Ez_7: -8865821583416536735
+      animation frames Ez_8: -4119603984913529187
+      animation frames Ez_9: 1492927081507795778
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
