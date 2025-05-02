@@ -151,9 +151,9 @@ TextureImporter:
       name: animation frames Hatul_0
       rect:
         serializedVersion: 2
-        x: 129
+        x: 126
         y: 1942
-        width: 514
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: animation frames Hatul_1
       rect:
         serializedVersion: 2
-        x: 734
+        x: 733
         y: 1942
-        width: 531
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -197,7 +197,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1378
         y: 1942
-        width: 499
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -219,8 +219,8 @@ TextureImporter:
         serializedVersion: 2
         x: 2026
         y: 1942
-        width: 499
-        height: 414
+        width: 600
+        height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,7 +241,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2660
         y: 1942
-        width: 499
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -261,9 +261,9 @@ TextureImporter:
       name: animation frames Hatul_5
       rect:
         serializedVersion: 2
-        x: 136
-        y: 1452
-        width: 499
+        x: 129
+        y: 1455
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 728
-        y: 1452
-        width: 544
+        y: 1455
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -306,8 +306,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1335
-        y: 1452
-        width: 585
+        y: 1455
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -329,7 +329,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2019
         y: 1449
-        width: 514
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -351,8 +351,8 @@ TextureImporter:
         serializedVersion: 2
         x: 2644
         y: 1452
-        width: 531
-        height: 412
+        width: 600
+        height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,7 +373,7 @@ TextureImporter:
         serializedVersion: 2
         x: 136
         y: 939
-        width: 499
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -395,7 +395,7 @@ TextureImporter:
         serializedVersion: 2
         x: 749
         y: 939
-        width: 502
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -416,8 +416,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1348
-        y: 939
-        width: 559
+        y: 942
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -438,8 +438,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2019
-        y: 939
-        width: 514
+        y: 945
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -461,7 +461,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2650
         y: 939
-        width: 518
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -481,9 +481,9 @@ TextureImporter:
       name: animation frames Hatul_15
       rect:
         serializedVersion: 2
-        x: 93
-        y: 431
-        width: 585
+        x: 91
+        y: 436
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -505,7 +505,7 @@ TextureImporter:
         serializedVersion: 2
         x: 728
         y: 431
-        width: 544
+        width: 600
         height: 413
       alignment: 7
       pivot: {x: 0.5, y: 0}
