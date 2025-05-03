@@ -12,11 +12,20 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private ScytheAttack scythe;
     [SerializeField] private ScytheAttackSettings scytheAttackSettings;
     [SerializeField] private ScytheCounterAttackSettings scytheCounterAttackSettings;
+
+    [Header("Minions Settings")] 
+    [SerializeField] private GameObject spawnerPrefab;
+    [SerializeField] private Vector2 boardMinBounds;
+    [SerializeField] private Vector2 boardMaxBounds;
+    [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
+    [SerializeField] private MinionSettings minionSettings;
+    [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
     
     /// Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetupScytheAttack();
+        CallMinionsAttack();
     }
 
     private void SetupScytheAttack()
@@ -29,38 +38,43 @@ public class GrimManager : MonoBehaviour
         scythe.SetKnockbackDurationSeconds(scytheCounterAttackSettings.knockbackDurationSeconds);
         scythe.SetDamageAgainstScythe(scytheCounterAttackSettings.damageAgainstScythe);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     private void CallScytheAttack()
     {
         GameEvents.StartScytheAttack?.Invoke();
     }
 
-    private void CallMinionsAttack(Transform traget)
+    private void CallMinionsAttack()
     {
-        // TODO: implement the minions attack
-        // need: a way to find the most earning creature
+        CreateMinionSpawner();
+    }
+
+    private void CreateMinionSpawner()
+    {
+        var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
+        var spawner = Instantiate(spawnerPrefab, spawnPosition, Quaternion.identity);
+        var minionSpawner = spawner.GetComponent<MinionSpawner>();
+        minionSpawner.SetSpawnerSettings(minionSpawnerSettings);
+        minionSpawner.SetMinionSettings(minionSettings);
+        minionSpawner.SetMinionCounterAttackSettings(minionCounterAttackSettings);
+        minionSpawner.StartSpawning();
     }
 }
 
-[System.Serializable]
-public class ScytheAttackSettings
-{
-    public float scytheSpeed = 1f;
-    public int scytheHealth = 10;
-    public Vector2 scytheRightPosition;
-    public Vector2 scytheLeftPosition;
-}
+// [System.Serializable]
+// public class ScytheAttackSettings
+// {
+//     public float scytheSpeed = 1f;
+//     public int scytheHealth = 10;
+//     public Vector2 scytheRightPosition;
+//     public Vector2 scytheLeftPosition;
+// }
+//
+// [System.Serializable]
+// public class ScytheCounterAttackSettings
+// {
+//     public float knockbackForce = 1f;
+//     public float knockbackDurationSeconds = 0.5f;
+//     public int damageAgainstScythe = 1;
+// }
 
-[System.Serializable]
-public class ScytheCounterAttackSettings
-{
-    public float knockbackForce = 1f;
-    public float knockbackDurationSeconds = 0.5f;
-    public int damageAgainstScythe = 1;
-}

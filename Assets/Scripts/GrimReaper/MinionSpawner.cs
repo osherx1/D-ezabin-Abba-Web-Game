@@ -1,32 +1,61 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utilities;
 
 public class MinionSpawner : MonoBehaviour
 {
-    [Header("Minions Settings")]
-    [SerializeField] private int minionCount = 5;
-    [SerializeField] private float minionSpawnRadius = 5f;
-    [SerializeField] private float minionSpeed = 2f;
-    [SerializeField] private LayerMask creatureLayer;
+    [Header("Spawner Settings")]
+    [SerializeField] 
+    private MinionSpawnerSettings spawnerSettings;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    // void Start()
-    // {
-    //     
-    // }
-    //
-    // void OnEnable()
-    // {
-    //     GameEvents.StartMinionsAttack += OnStartMinionsAttack;
-    // }
-    //
-    // void OnDisable()
-    // {
-    //     GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
-    // }
-    //
-    // private void OnStartMinionsAttack()
-    // {
-    //     
-    // }
+    [Header("Minion Settings")]
+    [SerializeField] 
+    private MinionSettings minionSettings;
+    [SerializeField] 
+    private MinionCounterAttackSettings minionCounterAttackSettings;
+    
+    public void SetSpawnerSettings(MinionSpawnerSettings newSettings)
+    {
+        spawnerSettings = newSettings;
+    }
+    public void SetMinionSettings(MinionSettings newSettings)
+    {
+        minionSettings = newSettings;
+    }
+    
+    public void SetMinionCounterAttackSettings(MinionCounterAttackSettings newSettings)
+    {
+        minionCounterAttackSettings = newSettings;
+    }
+    public void StartSpawning()
+    {
+        StartCoroutine(SpawnMinions());
+    }
+
+    private IEnumerator SpawnMinions()
+    {
+        yield return new WaitForSeconds(spawnerSettings.spawnDelay);
+        for (int i = 0; i < spawnerSettings.minionCount; i++)
+        {
+            Debug.Log("Spawning minion " + i);
+            var spawnPosition = Random.insideUnitCircle * spawnerSettings.spawnRadius;
+            spawnPosition += (Vector2)transform.position;
+
+            var minion = MinionPool.Instance.Get();
+            if (minion == null)
+            {
+                Debug.LogError("No minion available in the pool");
+                break;
+            }
+            minion.transform.position = spawnPosition;
+            minion.SetMinionSettings(minionSettings, minionCounterAttackSettings);
+            minion.gameObject.SetActive(true);
+        }
+        GameEvents.StartMinionsAttack?.Invoke();
+        // if there is a destrucion animation, then wait for it to finish
+        // yield return new WaitForSeconds(destructionAnimationDuration);
+        // else just destroy the spawner
+        Destroy(gameObject);
+    }
 }

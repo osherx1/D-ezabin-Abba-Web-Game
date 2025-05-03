@@ -74,8 +74,8 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     public void Reset()
     {
         _target = null;
-        _rb.linearVelocity = Vector2.zero;
-        _rb.angularVelocity = 0f;
+        // _rb.linearVelocity = Vector2.zero;
+        // _rb.angularVelocity = 0f;
     }
 
     private void SetTarget(Transform target)
