@@ -745,74 +745,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
---- !u!1 &1312998318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1312998320}
-  - component: {fileID: 1312998319}
-  m_Layer: 0
-  m_Name: GrimReaperManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1312998319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312998318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e7241588b77f5748961592b5f122089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scythe: {fileID: 1655100548}
-  scytheAttackSettings:
-    scytheSpeed: 2
-    scytheHealth: 5
-    scytheRightPosition: {x: 12, y: 0}
-    scytheLeftPosition: {x: -12, y: 0}
-  scytheCounterAttackSettings:
-    knockbackForce: 2
-    knockbackDurationSeconds: 0.5
-    damageAgainstScythe: 1
-  spawnerPrefab: {fileID: 835675431695768437, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
-  boardMinBounds: {x: -8, y: -4}
-  boardMaxBounds: {x: 8, y: 4}
-  minionSpawnerSettings:
-    minionCount: 5
-    spawnRadius: 5
-    spawnDelay: 5
-  minionSettings:
-    speed: 2
-    minionStartingHealth: 5
-  minionCounterAttackSettings:
-    knockbackForce: 1
-    knockbackDurationSeconds: 0.5
-    damageAgainstMinion: 1
---- !u!4 &1312998320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312998318}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610883792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1444,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
+--- !u!1001 &4028855295002125142
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1748603639257784311, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_Name
+      value: GrimReaperManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425653989314023315, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: scythe
+      value: 
+      objectReference: {fileID: 1655100548}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
 --- !u!1001 &5238876017422655233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1762,4 +1755,4 @@ SceneRoots:
   - {fileID: 8213534701633658867}
   - {fileID: 314444674}
   - {fileID: 1281029910377424644}
-  - {fileID: 1312998320}
+  - {fileID: 4028855295002125142}

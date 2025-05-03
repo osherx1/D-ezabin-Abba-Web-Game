@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -459,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Sharleb 2_0: 8700578743422901092
+      animation frames Sharleb 2_1: 4269270517365181864
+      animation frames Sharleb 2_10: -941027730216228918
+      animation frames Sharleb 2_11: 7451695082533701073
+      animation frames Sharleb 2_12: 5825180030448639159
+      animation frames Sharleb 2_13: -6943209725072060569
+      animation frames Sharleb 2_2: 8912690545082292032
+      animation frames Sharleb 2_3: 2992910121782712323
+      animation frames Sharleb 2_4: -9133055580064318651
+      animation frames Sharleb 2_5: -1589368000365338455
+      animation frames Sharleb 2_6: -8665459301607383970
+      animation frames Sharleb 2_7: -6526466880822534719
+      animation frames Sharleb 2_8: 7988554366759202327
+      animation frames Sharleb 2_9: -4872681070657300688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
