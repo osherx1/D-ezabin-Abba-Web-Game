@@ -1,3 +1,4 @@
+using System.Collections;
 using GrimReaper;
 using UnityEngine;
 using Utilities;
@@ -22,14 +23,26 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
     
     /// Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        SetupScytheAttack();
+        // SetupScytheAttack();
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(StartMinionAttack());
+        StartCoroutine(SetupScytheAttack());
+    }
+
+    private IEnumerator StartMinionAttack()
+    {
+        yield return new WaitForSeconds(3f);
         CallMinionsAttack();
     }
 
-    private void SetupScytheAttack()
+    private IEnumerator SetupScytheAttack()
     {
+        yield return new WaitForEndOfFrame();
         scythe.SetScytheSpeed(scytheAttackSettings.scytheSpeed);
         scythe.SetScytheHealth(scytheAttackSettings.scytheHealth);
         scythe.SetScytheRightPosition(scytheAttackSettings.scytheRightPosition);
@@ -51,7 +64,8 @@ public class GrimManager : MonoBehaviour
 
     private void CreateMinionSpawner()
     {
-        var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
+        // var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
+        var spawnPosition = boardMinBounds;
         var spawner = Instantiate(spawnerPrefab, spawnPosition, Quaternion.identity);
         var minionSpawner = spawner.GetComponent<MinionSpawner>();
         minionSpawner.SetSpawnerSettings(minionSpawnerSettings);
