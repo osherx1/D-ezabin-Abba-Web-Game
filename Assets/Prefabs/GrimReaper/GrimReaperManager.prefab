@@ -59,7 +59,7 @@ MonoBehaviour:
   boardMaxBounds: {x: 7, y: 3}
   minionSpawnerSettings:
     minionCount: 5
-    spawnRadius: 5
+    spawnRadius: 3
     spawnDelay: 5
   minionSettings:
     speed: 2

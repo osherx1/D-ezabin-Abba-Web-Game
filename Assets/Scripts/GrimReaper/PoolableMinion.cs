@@ -25,7 +25,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     private int _minionHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _isDead = false;
@@ -45,7 +45,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!_shouldMove || _isDead) return;
         MoveMinion();
@@ -60,6 +60,11 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
     private void MoveMinion()
     {
+        // if (_target == null)
+        // {
+        //     FindCosestCreature();
+        //     if (_target == null) return;
+        // }
         FindCosestCreature();
         if (_target == null) return;
         var direction = ((Vector2)_target.position - _rb.position).normalized;
@@ -74,8 +79,6 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     public void Reset()
     {
         _target = null;
-        // _rb.linearVelocity = Vector2.zero;
-        // _rb.angularVelocity = 0f;
     }
 
     private void SetTarget(Transform target)
@@ -83,16 +86,6 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         if (target == null) return;
         _target = target;
     }
-
-    // private void SetSpeed(float newsSpeed)
-    // {
-    //     speed = newsSpeed;
-    // }
-
-    // private void SetMinionHealth(int newHealth)
-    // {
-    //     _minionHealth = newHealth;
-    // }
     
     private float Speed
     {
@@ -166,13 +159,19 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     // How to handle the minions
     public void OnPointerClick(PointerEventData eventData)
     {
+        StartCoroutine(HandleClick());
+    }
+
+    private IEnumerator HandleClick()
+    {
+        yield return null;
         TakeDamage(damageAgainstMinion);
     }
 
     private void TakeDamage(int damage)
     {
         _minionHealth -= damage;
-        Debug.Log("Minion took damage: " + damage);
+        Debug.Log("Minion took damage, health remaining: " + _minionHealth);
         // apply knockback to the minion
         KnockbackMinion();
         if (_minionHealth <= 0)
@@ -184,9 +183,22 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
     private void KnockbackMinion()
     {
-        // apply knockback to the minion
-        _rb.AddForce(-_target.position * knockbackForce, ForceMode2D.Impulse);
+        if (_target != null && _target.gameObject.activeInHierarchy)
+        {
+            Vector2 knockbackDirection = ((Vector2)transform.position - (Vector2)_target.position).normalized;
+            // _rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+            StartCoroutine(ApplyKnockback(knockbackDirection));
+        }
+
+        // StopAllCoroutines();
+        // StartCoroutine(ResumeMovementAfterKnockback());
+    }
+    private IEnumerator ApplyKnockback(Vector2 direction)
+    {
+        yield return new WaitForEndOfFrame(); // Wait for the next frame
+        _rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
         StopCoroutine(ResumeMovementAfterKnockback());
+        yield return new WaitForEndOfFrame();
         StartCoroutine(ResumeMovementAfterKnockback());
     }
 

@@ -263,10 +263,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4823793741363179112, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
       propertyPath: m_Name
       value: Scythe
@@ -1500,6 +1496,30 @@ PrefabInstance:
       propertyPath: scythe
       value: 
       objectReference: {fileID: 1655100548}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSettings.speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSpawnerSettings.minionCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSpawnerSettings.spawnRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSettings.minionStartingHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionCounterAttackSettings.knockbackForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionCounterAttackSettings.knockbackDurationSeconds
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -56,6 +56,13 @@ public class MinionSpawner : MonoBehaviour
         // if there is a destrucion animation, then wait for it to finish
         // yield return new WaitForSeconds(destructionAnimationDuration);
         // else just destroy the spawner
+        yield return null;
+        HandleDestruction();
+    }
+
+    private void HandleDestruction()
+    {
+        // destroy the spawner
         Destroy(gameObject);
     }
 }
