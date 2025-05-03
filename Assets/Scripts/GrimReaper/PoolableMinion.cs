@@ -8,34 +8,26 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 {
     private Transform _target;
 
-    [Header("Minion Settings")] [SerializeField]
-    private float speed;
-
-    [SerializeField] private float rotationSpeed = 200f;
+    [Header("Minion Settings")] 
+    [SerializeField] private float speed;
+    // [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private int minionStartingHealth = 5;
     private Rigidbody2D _rb;
 
-    [Header("Target and Blocker layers")] [SerializeField]
-    private LayerMask _creatureLayer;
-
-    [Header("Counter attack parameters")] [SerializeField]
-    private float knockbackForce;
-
+    [Header("Counter attack parameters")] 
+    [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackDurationSeconds = 0.5f;
     [SerializeField] private int damageAgainstMinion = 1;
 
     private bool _shouldMove = false;
     private bool _isDead;
 
-    private int _creatureLayerMaskValue;
     private int _minionHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _creatureLayerMaskValue = _creatureLayer.value;
-        // _shouldMove = true;
         _isDead = false;
     }
 
@@ -71,16 +63,19 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         FindCosestCreature();
         if (_target == null) return;
         var direction = ((Vector2)_target.position - _rb.position).normalized;
-        var rotateAmount = Vector3.Cross(transform.up, direction).z;
-        _rb.angularVelocity = rotateAmount * rotationSpeed;
-        _rb.linearVelocity = transform.up * speed;
+        _rb.linearVelocity = direction * speed;
+
+        // if i want to rotate the minion towards the target and then move
+        // var rotateAmount = Vector3.Cross(transform.up, direction).z;
+        // _rb.angularVelocity = rotateAmount * rotationSpeed;
+        // _rb.linearVelocity = transform.up * speed;
     }
 
     public void Reset()
     {
         _target = null;
-        _rb.linearVelocity = Vector2.zero;
-        _rb.angularVelocity = 0f;
+        // _rb.linearVelocity = Vector2.zero;
+        // _rb.angularVelocity = 0f;
     }
 
     private void SetTarget(Transform target)
@@ -89,20 +84,54 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         _target = target;
     }
 
-    public void SetSpeed(float speed)
+    // private void SetSpeed(float newsSpeed)
+    // {
+    //     speed = newsSpeed;
+    // }
+
+    // private void SetMinionHealth(int newHealth)
+    // {
+    //     _minionHealth = newHealth;
+    // }
+    
+    private float Speed
     {
-        this.speed = speed;
+        get => speed;
+        set => speed = value;
     }
 
-    public void SetRotationSpeed(float rotationSpeed)
+    private float KnockbackForce
     {
-        this.rotationSpeed = rotationSpeed;
+        get => knockbackForce;
+        set => knockbackForce = value;
     }
+
+    private float KnockbackDurationSeconds
+    {
+        get => knockbackDurationSeconds;
+        set => knockbackDurationSeconds = value;
+    }
+
+    private int DamageAgainstMinion
+    {
+        get => damageAgainstMinion;
+        set => damageAgainstMinion = value;
+    }
+
+    private int MinionHealth
+    {
+        get => _minionHealth;
+        set => _minionHealth = value;
+    }
+    
+
+    // public void SetRotationSpeed(float rotationSpeed)
+    // {
+    //     this.rotationSpeed = rotationSpeed;
+    // }
 
     private void FindCosestCreature()
     {
-        // if (creatureLayer == _creatureLayer) return;
-        // var closestCreature = FindClosestObjectWithLayer();
         CreatureCore closestCreature = null;
         var closestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
@@ -117,51 +146,20 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
         if (closestCreature != null) SetTarget(closestCreature.gameObject.transform);
     }
+    
 
-    // private GameObject FindClosestObjectWithLayer()
-    // {
-    //     CreatureCore closestObject = null;
-    //     float closestDistance = Mathf.Infinity;
-    //     Vector3 currentPosition = transform.position;
-    //     var allObjects = FindObjectsByType<CreatureCore>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
-    //     foreach (var obj in allObjects)
-    //
-    //     {
-    //         // if (((1 << obj.layer ) & layer.value) != 0)
-    //         {
-    //             float distance = Vector3.Distance(currentPosition, obj.transform.position);
-    //             if (distance < closestDistance)
-    //             {
-    //                 closestDistance = distance;
-    //                 closestObject = obj;
-    //             }
-    //         }
-    //     }
-    //
-    //     return closestObject?.gameObject;
-    // }
-
-    public void SetCreatureLayer(LayerMask layer)
-    {
-        _creatureLayer = layer;
-    }
-
-    public void SetShouldMove(bool shouldMove)
+    private void SetShouldMove(bool shouldMove)
     {
         _shouldMove = shouldMove;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & _creatureLayerMaskValue) != 0)
+        CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
+        if (creature != null)
         {
-            Debug.Log("hit creature");
-            CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
-            if (creature != null)
-            {
-                // apply damage to the creature
-                creature.Death();
-            }
+            // apply damage to the creature
+            creature.Death();
         }
     }
 
@@ -204,5 +202,13 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     private void HandleMinionDestruction()
     {
         MinionPool.Instance.Return(this);
+    }
+    public void SetMinionSettings(MinionSettings minionSettings, MinionCounterAttackSettings minionCounterAttackSettings)
+    {
+        Speed = minionSettings.speed;
+        MinionHealth = minionSettings.minionStartingHealth;
+        KnockbackForce = minionCounterAttackSettings.knockbackForce;
+        KnockbackDurationSeconds = minionCounterAttackSettings.knockbackDurationSeconds;
+        DamageAgainstMinion = minionCounterAttackSettings.damageAgainstMinion;
     }
 }
