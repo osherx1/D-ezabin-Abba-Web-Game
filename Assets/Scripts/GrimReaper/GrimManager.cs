@@ -16,7 +16,18 @@ public class GrimManager : MonoBehaviour
     /// Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        SetupScytheAttack();
+    }
+
+    private void SetupScytheAttack()
+    {
+        scythe.SetScytheSpeed(scytheAttackSettings.scytheSpeed);
+        scythe.SetScytheHealth(scytheAttackSettings.scytheHealth);
+        scythe.SetScytheRightPosition(scytheAttackSettings.scytheRightPosition);
+        scythe.SetScytheLeftPosition(scytheAttackSettings.scytheLeftPosition);
+        scythe.SetKnockbackForce(scytheCounterAttackSettings.knockbackForce);
+        scythe.SetKnockbackDurationSeconds(scytheCounterAttackSettings.knockbackDurationSeconds);
+        scythe.SetDamageAgainstScythe(scytheCounterAttackSettings.damageAgainstScythe);
     }
 
     // Update is called once per frame

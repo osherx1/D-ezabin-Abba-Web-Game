@@ -185,5 +185,34 @@ namespace GrimReaper
                 // after blocker took damage, the scythe needs to also take damage and get knocked back
             }
         }
+        // Setters
+        public void SetScytheSpeed(float speed)
+        {
+            scytheSpeed = speed;
+        }
+        public void SetScytheHealth(int health)
+        {
+            scytheHealth = health;
+        }
+        public void SetScytheRightPosition(Vector2 position)
+        {
+            scytheRightPosition = position;
+        }
+        public void SetScytheLeftPosition(Vector2 position)
+        {
+            scytheLeftPosition = position;
+        }
+        public void SetKnockbackForce(float force)
+        {
+            knockbackForce = force;
+        }
+        public void SetKnockbackDurationSeconds(float duration)
+        {
+            knockbackDurationSeconds = duration;
+        }
+        public void SetDamageAgainstScythe(int damage)
+        {
+            damageAgainstScythe = damage;
+        }
     }
 }
