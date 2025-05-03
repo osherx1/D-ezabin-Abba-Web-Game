@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: aa978886bd97dea44a135fa5ffc03682
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6355705714116976719
+    second: animation frames Azul_0
+  - first:
+      213: 1891777858095830551
+    second: animation frames Azul_1
+  - first:
+      213: 648372091490538453
+    second: animation frames Azul_2
+  - first:
+      213: 5972030123422232273
+    second: animation frames Azul_3
+  - first:
+      213: 4225716591255971172
+    second: animation frames Azul_4
+  - first:
+      213: -5312538502023803550
+    second: animation frames Azul_5
+  - first:
+      213: -6586307797245022130
+    second: animation frames Azul_6
+  - first:
+      213: 8826951472273869258
+    second: animation frames Azul_7
+  - first:
+      213: 997153883071249408
+    second: animation frames Azul_8
+  - first:
+      213: 6286037496413800126
+    second: animation frames Azul_9
+  - first:
+      213: -566773466696657129
+    second: animation frames Azul_10
+  - first:
+      213: 2532069609751315883
+    second: animation frames Azul_11
+  - first:
+      213: -59166921136829187
+    second: animation frames Azul_12
+  - first:
+      213: -8504466519601927600
+    second: animation frames Azul_13
+  - first:
+      213: -8366756500516241606
+    second: animation frames Azul_14
+  - first:
+      213: 6092786354564843645
+    second: animation frames Azul_15
+  - first:
+      213: -5455509298260272351
+    second: animation frames Azul_16
+  - first:
+      213: 1610209788690211258
+    second: animation frames Azul_17
+  - first:
+      213: -8075116656854624125
+    second: animation frames Azul_18
+  - first:
+      213: 5037016109864512658
+    second: animation frames Azul_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Azul_0
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 2332
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf1325b35ffbc7a0800000000000000
+      internalID: -6355705714116976719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_1
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 2332
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71650c950f1f04a10800000000000000
+      internalID: 1891777858095830551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_2
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 2332
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d312936bfa7ff800800000000000000
+      internalID: 648372091490538453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_3
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2332
+        width: 526
+        height: 381
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dea38e81c9e0e250800000000000000
+      internalID: 5972030123422232273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_4
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1813
+        width: 537
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4656947d9d2c4aa30800000000000000
+      internalID: 4225716591255971172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_5
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1809
+        width: 575
+        height: 387
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d094321621646b0800000000000000
+      internalID: -5312538502023803550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_6
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1809
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4033d344fbb894a0800000000000000
+      internalID: -6586307797245022130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_7
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1809
+        width: 526
+        height: 381
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9ce7ac891af7a70800000000000000
+      internalID: 8826951472273869258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1270
+        width: 537
+        height: 370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00cfcda6c2a96dd00800000000000000
+      internalID: 997153883071249408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_9
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1266
+        width: 560
+        height: 401
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6c7825ccd7c3750800000000000000
+      internalID: 6286037496413800126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_10
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1270
+        width: 520
+        height: 385
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717dd61f88a6228f0800000000000000
+      internalID: -566773466696657129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_11
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 1270
+        width: 505
+        height: 385
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba50ac305e7b32320800000000000000
+      internalID: 2532069609751315883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_12
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 706
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc8f2baffbcd2ff0800000000000000
+      internalID: -59166921136829187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_13
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 706
+        width: 505
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05aacee42c01af980800000000000000
+      internalID: -8504466519601927600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_14
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 706
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ff980ba4f43eb80800000000000000
+      internalID: -8366756500516241606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_15
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 706
+        width: 505
+        height: 385
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d784f2498eced8450800000000000000
+      internalID: 6092786354564843645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_16
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 165
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b1b50a2332a44b0800000000000000
+      internalID: -5455509298260272351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_17
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 165
+        width: 505
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1acb4854d985610800000000000000
+      internalID: 1610209788690211258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_18
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 165
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38817543f2c6fef80800000000000000
+      internalID: -8075116656854624125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Azul_19
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 165
+        width: 520
+        height: 384
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ce464f67317e540800000000000000
+      internalID: 5037016109864512658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4fbf0a622f1f92e46934741476bec752
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation frames Azul_0: -6355705714116976719
+      animation frames Azul_1: 1891777858095830551
+      animation frames Azul_10: -566773466696657129
+      animation frames Azul_11: 2532069609751315883
+      animation frames Azul_12: -59166921136829187
+      animation frames Azul_13: -8504466519601927600
+      animation frames Azul_14: -8366756500516241606
+      animation frames Azul_15: 6092786354564843645
+      animation frames Azul_16: -5455509298260272351
+      animation frames Azul_17: 1610209788690211258
+      animation frames Azul_18: -8075116656854624125
+      animation frames Azul_19: 5037016109864512658
+      animation frames Azul_2: 648372091490538453
+      animation frames Azul_3: 5972030123422232273
+      animation frames Azul_4: 4225716591255971172
+      animation frames Azul_5: -5312538502023803550
+      animation frames Azul_6: -6586307797245022130
+      animation frames Azul_7: 8826951472273869258
+      animation frames Azul_8: 997153883071249408
+      animation frames Azul_9: 6286037496413800126
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

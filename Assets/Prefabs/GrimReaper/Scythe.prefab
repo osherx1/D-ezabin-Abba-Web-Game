@@ -53,11 +53,11 @@ MonoBehaviour:
   blockerLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  attackSpeed: 1
-  scytheHealth: 10
-  scytheStartPosition: {x: 10, y: 0}
-  scytheEndPosition: {x: -10, y: 0}
-  knockbackForce: 1
+  scytheSpeed: 2
+  scytheHealth: 5
+  scytheRightPosition: {x: 10, y: 0}
+  scytheLeftPosition: {x: -10, y: 0}
+  knockbackForce: 2
   knockbackDurationSeconds: 0.5
   damageAgainstScythe: 1
 --- !u!61 &410335878575671889
