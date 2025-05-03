@@ -8,16 +8,14 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 {
     private Transform _target;
 
-    [Header("Minion Settings")] [SerializeField]
-    private float speed;
-
+    [Header("Minion Settings")] 
+    [SerializeField] private float speed;
     // [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private int minionStartingHealth = 5;
     private Rigidbody2D _rb;
 
-    [Header("Counter attack parameters")] [SerializeField]
-    private float knockbackForce;
-
+    [Header("Counter attack parameters")] 
+    [SerializeField] private float knockbackForce;
     [SerializeField] private float knockbackDurationSeconds = 0.5f;
     [SerializeField] private int damageAgainstMinion = 1;
 
@@ -86,10 +84,46 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         _target = target;
     }
 
-    public void SetSpeed(float speed)
+    // private void SetSpeed(float newsSpeed)
+    // {
+    //     speed = newsSpeed;
+    // }
+
+    // private void SetMinionHealth(int newHealth)
+    // {
+    //     _minionHealth = newHealth;
+    // }
+    
+    private float Speed
     {
-        this.speed = speed;
+        get => speed;
+        set => speed = value;
     }
+
+    private float KnockbackForce
+    {
+        get => knockbackForce;
+        set => knockbackForce = value;
+    }
+
+    private float KnockbackDurationSeconds
+    {
+        get => knockbackDurationSeconds;
+        set => knockbackDurationSeconds = value;
+    }
+
+    private int DamageAgainstMinion
+    {
+        get => damageAgainstMinion;
+        set => damageAgainstMinion = value;
+    }
+
+    private int MinionHealth
+    {
+        get => _minionHealth;
+        set => _minionHealth = value;
+    }
+    
 
     // public void SetRotationSpeed(float rotationSpeed)
     // {
@@ -168,5 +202,13 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     private void HandleMinionDestruction()
     {
         MinionPool.Instance.Return(this);
+    }
+    public void SetMinionSettings(MinionSettings minionSettings, MinionCounterAttackSettings minionCounterAttackSettings)
+    {
+        Speed = minionSettings.speed;
+        MinionHealth = minionSettings.minionStartingHealth;
+        KnockbackForce = minionCounterAttackSettings.knockbackForce;
+        KnockbackDurationSeconds = minionCounterAttackSettings.knockbackDurationSeconds;
+        DamageAgainstMinion = minionCounterAttackSettings.damageAgainstMinion;
     }
 }
