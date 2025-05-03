@@ -71,9 +71,12 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         FindCosestCreature();
         if (_target == null) return;
         var direction = ((Vector2)_target.position - _rb.position).normalized;
-        var rotateAmount = Vector3.Cross(transform.up, direction).z;
-        _rb.angularVelocity = rotateAmount * rotationSpeed;
-        _rb.linearVelocity = transform.up * speed;
+        _rb.linearVelocity = direction * speed;
+        
+        // if i want to rotate the minion towards the target and then move
+        // var rotateAmount = Vector3.Cross(transform.up, direction).z;
+        // _rb.angularVelocity = rotateAmount * rotationSpeed;
+        // _rb.linearVelocity = transform.up * speed;
     }
 
     public void Reset()
@@ -101,8 +104,6 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
     private void FindCosestCreature()
     {
-        // if (creatureLayer == _creatureLayer) return;
-        // var closestCreature = FindClosestObjectWithLayer();
         CreatureCore closestCreature = null;
         var closestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
@@ -117,29 +118,6 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
         if (closestCreature != null) SetTarget(closestCreature.gameObject.transform);
     }
-
-    // private GameObject FindClosestObjectWithLayer()
-    // {
-    //     CreatureCore closestObject = null;
-    //     float closestDistance = Mathf.Infinity;
-    //     Vector3 currentPosition = transform.position;
-    //     var allObjects = FindObjectsByType<CreatureCore>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
-    //     foreach (var obj in allObjects)
-    //
-    //     {
-    //         // if (((1 << obj.layer ) & layer.value) != 0)
-    //         {
-    //             float distance = Vector3.Distance(currentPosition, obj.transform.position);
-    //             if (distance < closestDistance)
-    //             {
-    //                 closestDistance = distance;
-    //                 closestObject = obj;
-    //             }
-    //         }
-    //     }
-    //
-    //     return closestObject?.gameObject;
-    // }
 
     public void SetCreatureLayer(LayerMask layer)
     {
