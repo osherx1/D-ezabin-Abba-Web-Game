@@ -117,7 +117,7 @@ namespace GrimReaper
             StopAllCoroutines();
         }
 
-        public void TakeDamage(int damage)
+        private void TakeDamage(int damage)
         {
             _currentScytheHealth -= damage;
             KnockbackScythe();
