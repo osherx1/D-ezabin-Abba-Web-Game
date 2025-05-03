@@ -11,12 +11,9 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     [Header("Minion Settings")] [SerializeField]
     private float speed;
 
-    [SerializeField] private float rotationSpeed = 200f;
+    // [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private int minionStartingHealth = 5;
     private Rigidbody2D _rb;
-
-    [Header("Target and Blocker layers")] [SerializeField]
-    private LayerMask _creatureLayer;
 
     [Header("Counter attack parameters")] [SerializeField]
     private float knockbackForce;
@@ -27,15 +24,12 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     private bool _shouldMove = false;
     private bool _isDead;
 
-    private int _creatureLayerMaskValue;
     private int _minionHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _creatureLayerMaskValue = _creatureLayer.value;
-        // _shouldMove = true;
         _isDead = false;
     }
 
@@ -72,7 +66,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         if (_target == null) return;
         var direction = ((Vector2)_target.position - _rb.position).normalized;
         _rb.linearVelocity = direction * speed;
-        
+
         // if i want to rotate the minion towards the target and then move
         // var rotateAmount = Vector3.Cross(transform.up, direction).z;
         // _rb.angularVelocity = rotateAmount * rotationSpeed;
@@ -97,10 +91,10 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         this.speed = speed;
     }
 
-    public void SetRotationSpeed(float rotationSpeed)
-    {
-        this.rotationSpeed = rotationSpeed;
-    }
+    // public void SetRotationSpeed(float rotationSpeed)
+    // {
+    //     this.rotationSpeed = rotationSpeed;
+    // }
 
     private void FindCosestCreature()
     {
@@ -118,28 +112,20 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
         if (closestCreature != null) SetTarget(closestCreature.gameObject.transform);
     }
+    
 
-    public void SetCreatureLayer(LayerMask layer)
-    {
-        _creatureLayer = layer;
-    }
-
-    public void SetShouldMove(bool shouldMove)
+    private void SetShouldMove(bool shouldMove)
     {
         _shouldMove = shouldMove;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & _creatureLayerMaskValue) != 0)
+        CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
+        if (creature != null)
         {
-            Debug.Log("hit creature");
-            CreatureCore creature = other.gameObject.GetComponent<CreatureCore>();
-            if (creature != null)
-            {
-                // apply damage to the creature
-                creature.Death();
-            }
+            // apply damage to the creature
+            creature.Death();
         }
     }
 
