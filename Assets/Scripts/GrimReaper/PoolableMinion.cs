@@ -67,7 +67,12 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         //     if (_target == null) return;
         // }
         FindCosestCreature();
-        if (_target == null) return;
+        if (_target == null)
+        {
+            // _shouldMove = false;
+            _rb.linearVelocity = Vector2.zero;
+            return;
+        }
         var direction = ((Vector2)_target.position - _rb.position).normalized;
         _rb.linearVelocity = direction * speed;
         _shouldFlip = direction.x < 0;

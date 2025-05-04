@@ -13,6 +13,9 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private ScytheAttack scythe;
     [SerializeField] private ScytheAttackSettings scytheAttackSettings;
     [SerializeField] private ScytheCounterAttackSettings scytheCounterAttackSettings;
+    
+    [Header("Spinning Scythe Settings")]
+    [SerializeField] private GameObject spinningScythePrefab;
 
     [Header("Minions Settings")] 
     [SerializeField] private GameObject spawnerPrefab;
@@ -30,8 +33,25 @@ public class GrimManager : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(StartMinionAttack());
-        StartCoroutine(SetupScytheAttack());
+        // StartCoroutine(StartMinionAttack());
+        StartCoroutine(SetupScytheAttack()); 
+        // StartCoroutine(StartScytheAttackRoutine());
+        StartCoroutine(StartSpinningScythe());
+    }
+
+    private IEnumerator StartSpinningScythe()
+    {
+        yield return new WaitForSeconds(1f);
+        var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
+        var spinningScytheGameObject = Instantiate(spinningScythePrefab, spawnPosition, Quaternion.identity);
+        var spinningScythe = spinningScytheGameObject.GetComponent<SpinningScytheAttack>();
+        spinningScythe.StartAttack();
+    }
+
+    private IEnumerator StartScytheAttackRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        CallScytheAttack();
     }
 
     private IEnumerator StartMinionAttack()
