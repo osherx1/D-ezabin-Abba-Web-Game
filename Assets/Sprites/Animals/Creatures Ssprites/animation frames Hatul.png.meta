@@ -1,0 +1,542 @@
+fileFormatVersion: 2
+guid: b2403e8b3441aa748b446873b8d5a43a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3652440840910495175
+    second: animation frames Hatul_0
+  - first:
+      213: -5678850864327318487
+    second: animation frames Hatul_1
+  - first:
+      213: 6067299854830096618
+    second: animation frames Hatul_2
+  - first:
+      213: -1212275054617088586
+    second: animation frames Hatul_3
+  - first:
+      213: 7786137009337584366
+    second: animation frames Hatul_4
+  - first:
+      213: 7706661094210449861
+    second: animation frames Hatul_5
+  - first:
+      213: 8283478516436773422
+    second: animation frames Hatul_6
+  - first:
+      213: -5595673450819342219
+    second: animation frames Hatul_7
+  - first:
+      213: 7407199923695979070
+    second: animation frames Hatul_8
+  - first:
+      213: -5581636711233316829
+    second: animation frames Hatul_9
+  - first:
+      213: -1703357246607342701
+    second: animation frames Hatul_10
+  - first:
+      213: -6161877962240993856
+    second: animation frames Hatul_11
+  - first:
+      213: 4426324151453560320
+    second: animation frames Hatul_12
+  - first:
+      213: 2731055234090689214
+    second: animation frames Hatul_13
+  - first:
+      213: 1134019011494499391
+    second: animation frames Hatul_14
+  - first:
+      213: -2460495640981131213
+    second: animation frames Hatul_15
+  - first:
+      213: 8481522326586969019
+    second: animation frames Hatul_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Hatul_0
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1942
+        width: 514
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932a66a186cef4dc0800000000000000
+      internalID: -3652440840910495175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_1
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1942
+        width: 531
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924a95b0a3ba031b0800000000000000
+      internalID: -5678850864327318487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_2
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 1942
+        width: 499
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae05de07211633450800000000000000
+      internalID: 6067299854830096618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_3
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 1942
+        width: 499
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd2b7fb2422d2fe0800000000000000
+      internalID: -1212275054617088586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_4
+      rect:
+        serializedVersion: 2
+        x: 2660
+        y: 1942
+        width: 499
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeac6167b5aed0c60800000000000000
+      internalID: 7786137009337584366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_5
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1452
+        width: 499
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1bcbcfe6f83fa60800000000000000
+      internalID: 7706661094210449861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_6
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 1452
+        width: 544
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a2bcca2d3d4f270800000000000000
+      internalID: 8283478516436773422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_7
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1452
+        width: 585
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57034d4c4ac2852b0800000000000000
+      internalID: -5595673450819342219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_8
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 1452
+        width: 514
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a0338e519abc660800000000000000
+      internalID: 7407199923695979070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_9
+      rect:
+        serializedVersion: 2
+        x: 2644
+        y: 1452
+        width: 531
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32898a1ebfa0a82b0800000000000000
+      internalID: -5581636711233316829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_10
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 939
+        width: 499
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 393c166eb957c58e0800000000000000
+      internalID: -1703357246607342701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_11
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 939
+        width: 502
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5515fe3ac9c7aa0800000000000000
+      internalID: -6161877962240993856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_12
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 939
+        width: 559
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e2f143d567d6d30800000000000000
+      internalID: 4426324151453560320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_13
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 939
+        width: 514
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb262f10448a6e520800000000000000
+      internalID: 2731055234090689214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_14
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 939
+        width: 518
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f345bac5848dcbf00800000000000000
+      internalID: 1134019011494499391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_15
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 431
+        width: 585
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3303ce330409addd0800000000000000
+      internalID: -2460495640981131213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Hatul_16
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 431
+        width: 544
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbc2c67e9b64b570800000000000000
+      internalID: 8481522326586969019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
