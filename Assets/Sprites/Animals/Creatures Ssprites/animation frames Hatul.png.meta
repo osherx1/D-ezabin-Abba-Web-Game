@@ -534,7 +534,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Hatul_0: -3652440840910495175
+      animation frames Hatul_1: -5678850864327318487
+      animation frames Hatul_10: -1703357246607342701
+      animation frames Hatul_11: -6161877962240993856
+      animation frames Hatul_12: 4426324151453560320
+      animation frames Hatul_13: 2731055234090689214
+      animation frames Hatul_14: 1134019011494499391
+      animation frames Hatul_15: -2460495640981131213
+      animation frames Hatul_16: 8481522326586969019
+      animation frames Hatul_2: 6067299854830096618
+      animation frames Hatul_3: -1212275054617088586
+      animation frames Hatul_4: 7786137009337584366
+      animation frames Hatul_5: 7706661094210449861
+      animation frames Hatul_6: 8283478516436773422
+      animation frames Hatul_7: -5595673450819342219
+      animation frames Hatul_8: 7407199923695979070
+      animation frames Hatul_9: -5581636711233316829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

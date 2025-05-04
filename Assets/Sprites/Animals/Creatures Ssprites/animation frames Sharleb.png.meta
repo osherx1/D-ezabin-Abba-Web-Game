@@ -459,7 +459,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Sharleb_0: 5523638218767033536
+      animation frames Sharleb_1: 7184084878004187750
+      animation frames Sharleb_10: -4344757503689638898
+      animation frames Sharleb_11: -5831420582358964684
+      animation frames Sharleb_12: 8473331300445695110
+      animation frames Sharleb_13: -2060171749836293993
+      animation frames Sharleb_2: -5960109305689186748
+      animation frames Sharleb_3: 8933855596088450057
+      animation frames Sharleb_4: 8474152019119875006
+      animation frames Sharleb_5: -3218198426435317886
+      animation frames Sharleb_6: 1404306997890674622
+      animation frames Sharleb_7: 5130697938970291728
+      animation frames Sharleb_8: -8202365128330535619
+      animation frames Sharleb_9: 1389835382696271334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
