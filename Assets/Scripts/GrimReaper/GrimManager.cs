@@ -31,7 +31,7 @@ public class GrimManager : MonoBehaviour
         // StartCoroutine(StartMinionAttack());
         StartCoroutine(SetupSwipingAttack()); 
         // StartCoroutine(StartSwipingAttackRoutine());
-        // StartCoroutine(StartSpinningAttack());
+        StartCoroutine(StartSpinningAttack());
     }
 
     private IEnumerator StartSpinningAttack()
