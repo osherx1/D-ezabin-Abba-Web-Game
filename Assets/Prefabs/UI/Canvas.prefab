@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 35, y: -184}
+  m_AnchoredPosition: {x: -63, y: -184}
   m_SizeDelta: {x: 339.5, y: 75}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &843369868948421827
@@ -211,7 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 2000
   animalPrefab: {fileID: 3478933172451152204, guid: 51f9477e6d5c8404a91979394e409c23, type: 3}
-  lockedSprite: {fileID: 8705874682918076576, guid: 76fce544a9470401ca188f5608c649ad, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: 8705874682918076576, guid: 76fce544a9470401ca188f5608c649ad, type: 3}
   disabledSprite: {fileID: 3936344224108898237, guid: 9ad1784bee13645c9b48ec42b529e13a, type: 3}
   enabledSprite: {fileID: 446611082405080865, guid: 58128c2c6fc864bc5887ed4908767281, type: 3}
 --- !u!1 &1744751440922577547
@@ -349,7 +351,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 200000
   animalPrefab: {fileID: 7658806981352565101, guid: 0db6567f97ba8e94d8d8711c24c99838, type: 3}
-  lockedSprite: {fileID: 234011795983948725, guid: 871a79b84bad64403bc0d1e5029d4c39, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: 234011795983948725, guid: 871a79b84bad64403bc0d1e5029d4c39, type: 3}
   disabledSprite: {fileID: 1319489292364090943, guid: a6a2a80e7fa7f46f1961cb338409de62, type: 3}
   enabledSprite: {fileID: -1514958734636487171, guid: c13e5f5219a964554bdbad5e11a2022f, type: 3}
 --- !u!1 &1784853717980178043
@@ -387,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 35, y: -12}
+  m_AnchoredPosition: {x: -63, y: -12}
   m_SizeDelta: {x: 491.74, y: 167.88}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6495299854433081420
@@ -576,7 +580,7 @@ GameObject:
   - component: {fileID: 5859927182785178510}
   - component: {fileID: 6238386377266133090}
   m_Layer: 5
-  m_Name: Money Brick (1)
+  m_Name: Zoz Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 378, y: -12}
+  m_AnchoredPosition: {x: 280, y: -12}
   m_SizeDelta: {x: 178.7, y: 167.88}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5859927182785178510
@@ -775,7 +779,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 20000
   animalPrefab: {fileID: 669666493744383388, guid: 82138a8c8d20b3d46b31bc4b99a40ad1, type: 3}
-  lockedSprite: {fileID: 129926096205828913, guid: 68772365b265b45a7a20257d2cb90d4c, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: 129926096205828913, guid: 68772365b265b45a7a20257d2cb90d4c, type: 3}
   disabledSprite: {fileID: -8052581716692529549, guid: 2f7521d9a6bcc42a3ac42fb44d71fee4, type: 3}
   enabledSprite: {fileID: -491303751086705135, guid: 9f4cabd90a2ce447da64e9bc116df211, type: 3}
 --- !u!1 &5369306801124935155
@@ -951,7 +957,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 10
   animalPrefab: {fileID: 0}
-  lockedSprite: {fileID: 0}
+  animalName: Goat
+  questionSprite: {fileID: 0}
+  silhouetteSprite: {fileID: 0}
   disabledSprite: {fileID: 0}
   enabledSprite: {fileID: 0}
 --- !u!1 &5811456776861006884
@@ -966,7 +974,7 @@ GameObject:
   - component: {fileID: 9166387122173589595}
   - component: {fileID: 572686325716839548}
   m_Layer: 0
-  m_Name: 1_0
+  m_Name: Zoz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1438,8 +1446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalCost: 20000000
-  animalPrefab: {fileID: 217604745206295886, guid: d8b4ff730dd59e2438e143152be1aae5, type: 3}
-  lockedSprite: {fileID: -7874307153793175862, guid: b8b2ff83bab814092a0729553b2dd8b7, type: 3}
+  animalPrefab: {fileID: 3182862794603731761, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: -7874307153793175862, guid: b8b2ff83bab814092a0729553b2dd8b7, type: 3}
   disabledSprite: {fileID: -6491209959015782822, guid: 31fe61e9526ed40bc8cb70bc6e34f3bb, type: 3}
   enabledSprite: {fileID: -6689015890456219937, guid: 85992cd7c303e4a4d9ce8d2090725ca9, type: 3}
 --- !u!1 &6524024476784469101
@@ -1577,7 +1587,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 200
   animalPrefab: {fileID: 8009800804365043236, guid: f7b842ccd830d5742bddc40c4dd33827, type: 3}
-  lockedSprite: {fileID: 5281162498353764544, guid: d55edff4f10fe4bd7ae366e95a6426d9, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: 5281162498353764544, guid: d55edff4f10fe4bd7ae366e95a6426d9, type: 3}
   disabledSprite: {fileID: 3472377606097985631, guid: 2953ecf67d94546b18e6aa224fba1d63, type: 3}
   enabledSprite: {fileID: -5694650121447499987, guid: 850d40fe89cf1496b85b9d3577b4570a, type: 3}
 --- !u!1 &6683487716641138831
@@ -1618,6 +1630,7 @@ RectTransform:
   - {fileID: 1268845845541901712}
   - {fileID: 9034803072860157294}
   - {fileID: 5733014009904379103}
+  - {fileID: 5240680675721060217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1728,7 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 7388456660645157487}
-  incomeText: {fileID: 0}
+  incomeText: {fileID: 7481007182572309431}
 --- !u!1 &7068089995548735322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1877,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 2000000
   animalPrefab: {fileID: 217604745206295886, guid: d8b4ff730dd59e2438e143152be1aae5, type: 3}
-  lockedSprite: {fileID: 4883837122133598549, guid: 55b7407594bb3411aa194121fd592c30, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: 4883837122133598549, guid: 55b7407594bb3411aa194121fd592c30, type: 3}
   disabledSprite: {fileID: -4323018092487941552, guid: c21429276e88d4bb3a4b1290e8112ed8, type: 3}
   enabledSprite: {fileID: 7680521220765567691, guid: 0522e3996387a4b239231b4058d265a0, type: 3}
 --- !u!1 &7113511710798143064
@@ -2002,7 +2017,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 2
   animalPrefab: {fileID: 5277156884244402296, guid: 57d8d007ed8d5a747b96051005b63a4b, type: 3}
-  lockedSprite: {fileID: -7475128888942989892, guid: f96be82ce1bff45f196fbae5906f3794, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: -7475128888942989892, guid: f96be82ce1bff45f196fbae5906f3794, type: 3}
   disabledSprite: {fileID: 1818293624234740442, guid: f53f0bd13fb4d4c30b0340662c7b79c9, type: 3}
   enabledSprite: {fileID: 7503993635288965333, guid: 07bf8520aae9c4eeeb0bf3c0072270b6, type: 3}
 --- !u!1 &7555789815189063081
@@ -2260,7 +2277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 20
   animalPrefab: {fileID: 3692009782177488797, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
-  lockedSprite: {fileID: -1769538750680886645, guid: 0e85aff2bb30748ea8872d54add22ed9, type: 3}
+  animalName: Goat
+  questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
+  silhouetteSprite: {fileID: -1769538750680886645, guid: 0e85aff2bb30748ea8872d54add22ed9, type: 3}
   disabledSprite: {fileID: -2759209116234105158, guid: eb7401a3e41874ef6b214b06826b257d, type: 3}
   enabledSprite: {fileID: 6354754563396105786, guid: 1365f4866a0d349648f529bcf5568419, type: 3}
 --- !u!1 &8210305432342311571
@@ -2341,8 +2360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: 47}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -23, y: 29.750015}
+  m_SizeDelta: {x: 200, y: 15.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2036734551488340704
 CanvasRenderer:
@@ -2437,9 +2456,111 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -106.44765, y: 0, z: -154.83298, w: -89.51283}
+  m_margin: {x: -37.312576, y: 0, z: -85.69786, w: -57.105736}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &7084122838653382056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3492432144763889530}
+    m_Modifications:
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176998532101687036, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+      propertyPath: m_Name
+      value: TooltipUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+--- !u!224 &5240680675721060217 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3095520501631627985, guid: d0c6881ff857f42a5b79e997f2d71bc9, type: 3}
+  m_PrefabInstance: {fileID: 7084122838653382056}
+  m_PrefabAsset: {fileID: 0}

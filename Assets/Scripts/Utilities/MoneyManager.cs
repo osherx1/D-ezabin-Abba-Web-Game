@@ -6,18 +6,17 @@ namespace Utilities
     {
         [SerializeField] private int startingMoney = 100;
 
-
         public float CurrentMoney { get; private set; }
         public float IncomePerSecond { get; private set; }
 
         /* ---------- Public API ---------- */
-        public void RegisterIncome(float amount) 
+        public void RegisterIncome(float amount)
         {
             IncomePerSecond += amount;
             GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
         }
 
-        public void UnregisterIncome(float amount) 
+        public void UnregisterIncome(float amount)
         {
             IncomePerSecond -= amount;
             GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
