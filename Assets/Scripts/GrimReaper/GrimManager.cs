@@ -1,7 +1,6 @@
 using System.Collections;
 using GrimReaper;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utilities;
 
 public class GrimManager : MonoBehaviour
@@ -26,18 +25,13 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private MinionSettings minionSettings;
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
     
-    /// Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        // SetupSwipingAttack();
-    }
 
     private void OnEnable()
     {
         // StartCoroutine(StartMinionAttack());
         StartCoroutine(SetupSwipingAttack()); 
         // StartCoroutine(StartSwipingAttackRoutine());
-        StartCoroutine(StartSpinningAttack());
+        // StartCoroutine(StartSpinningAttack());
     }
 
     private IEnumerator StartSpinningAttack()
