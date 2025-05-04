@@ -4,7 +4,10 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class SelfDestructOnAnimEnd : MonoBehaviour
 {
-    Animator anim;
+    [Tooltip("The name of the animation state to wait for (e.g. 'Spawn')")]
+    public string stateName = "";
+
+    private Animator anim;
 
     void Awake()
     {
@@ -14,14 +17,14 @@ public class SelfDestructOnAnimEnd : MonoBehaviour
 
     IEnumerator DieAtEnd()
     {
-        // 1) Wait until the Evolve state is actually playing
+        // wait until the named state is playing
         yield return new WaitUntil(() =>
-            anim.GetCurrentAnimatorStateInfo(0).IsName("Evolve"));
+            anim.GetCurrentAnimatorStateInfo(0).IsName(stateName));
 
-        // 2) Then wait until that state's normalizedTime ≥ 1 (animation done)
+        // then wait until that state finishes
         yield return new WaitUntil(() =>
             anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
-        
+
         Destroy(gameObject);
     }
 }
