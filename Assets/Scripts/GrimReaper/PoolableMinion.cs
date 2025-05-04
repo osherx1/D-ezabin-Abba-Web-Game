@@ -23,6 +23,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     private bool _isDead;
 
     private int _minionHealth;
+    private bool _shouldFlip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -69,11 +70,28 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         if (_target == null) return;
         var direction = ((Vector2)_target.position - _rb.position).normalized;
         _rb.linearVelocity = direction * speed;
-
+        _shouldFlip = direction.x < 0;
+        HandleFlipping();
         // if i want to rotate the minion towards the target and then move
         // var rotateAmount = Vector3.Cross(transform.up, direction).z;
         // _rb.angularVelocity = rotateAmount * rotationSpeed;
         // _rb.linearVelocity = transform.up * speed;
+    }
+
+    private void HandleFlipping()
+    {
+        if (_shouldFlip)
+        {
+            var rotation = transform.rotation;
+            rotation.y = 180f;
+            transform.rotation = rotation;
+        }
+        else
+        {
+            var rotation = transform.rotation;
+            rotation.y = 0f;
+            transform.rotation = rotation;
+        }
     }
 
     public void Reset()

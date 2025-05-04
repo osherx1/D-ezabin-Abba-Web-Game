@@ -55,15 +55,15 @@ MonoBehaviour:
     knockbackDurationSeconds: 0.5
     damageAgainstScythe: 1
   spawnerPrefab: {fileID: 835675431695768437, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
-  boardMinBounds: {x: -7, y: -3}
-  boardMaxBounds: {x: 7, y: 3}
+  boardMinBounds: {x: -6, y: -2}
+  boardMaxBounds: {x: 6, y: 2}
   minionSpawnerSettings:
-    minionCount: 1
+    minionCount: 10
     spawnRadius: 2
-    spawnDelay: 5
+    spawnDelay: 8.75
   minionSettings:
     speed: 1
-    minionStartingHealth: 10
+    minionStartingHealth: 1
   minionCounterAttackSettings:
     knockbackForce: 2
     knockbackDurationSeconds: 0.3
