@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 410335878575671889}
   - component: {fileID: 4240241959464260315}
   m_Layer: 8
-  m_Name: Scythe
+  m_Name: SwipingAttack
   m_TagString: Scythe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

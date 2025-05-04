@@ -5,7 +5,7 @@ namespace Utilities
 {
     public class GameEvents : MonoBehaviour
     {
-        public static Action StartScytheAttack;
+        public static Action StartSwipingAttack;
         public static Action StartMinionsAttack;
         public static Action<float> OnMoneyChanged;
         public static Action<float> OnIncomeChanged;

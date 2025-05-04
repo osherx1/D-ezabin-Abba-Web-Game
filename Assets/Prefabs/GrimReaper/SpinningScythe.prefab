@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4565388484460421270}
   - component: {fileID: 4173716864225739663}
+  - component: {fileID: 6059482189486171990}
   - component: {fileID: 1055667601737385413}
   - component: {fileID: 7776933881809987872}
-  - component: {fileID: 6059482189486171990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpinningScythe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,6 +90,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6059482189486171990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311356112410311279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db71d55f5af908245b941f71d1b17e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  speed: 5
 --- !u!50 &1055667601737385413
 Rigidbody2D:
   serializedVersion: 5
@@ -102,7 +116,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 200
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
@@ -153,17 +167,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &6059482189486171990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5311356112410311279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db71d55f5af908245b941f71d1b17e00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallsHitsBeforeDestroy: 3
-  speed: 3
