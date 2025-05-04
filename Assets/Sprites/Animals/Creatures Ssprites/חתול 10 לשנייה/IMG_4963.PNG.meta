@@ -103,12 +103,12 @@ TextureImporter:
       name: IMG_4963_0
       rect:
         serializedVersion: 2
-        x: 127
-        y: 47
-        width: 666
-        height: 550
+        x: 0
+        y: 0
+        width: 850
+        height: 650
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bf6db19fc8afad141884f9e8db12b61f
     internalID: 0
     vertices: []
     indices: 

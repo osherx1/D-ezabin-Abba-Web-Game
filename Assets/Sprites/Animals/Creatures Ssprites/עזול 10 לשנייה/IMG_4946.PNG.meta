@@ -103,12 +103,12 @@ TextureImporter:
       name: IMG_4946_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 35
-        width: 717
-        height: 495
+        x: 0
+        y: 0
+        width: 800
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 210de434500f89a4eb782fa3a18d8283
     internalID: 0
     vertices: []
     indices: 
