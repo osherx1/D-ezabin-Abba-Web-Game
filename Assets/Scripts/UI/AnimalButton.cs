@@ -2,71 +2,74 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
 
-public class AnimalButton : MonoBehaviour
+namespace UI
 {
-    [Header("Cost & Prefab")]
-    public int animalCost = 10;
-    public GameObject animalPrefab;
-
-    [Header("Sprites")]
-    public Sprite lockedSprite;
-    public Sprite disabledSprite;  
-    public Sprite enabledSprite;
-
-    private bool _unlocked = false;
-    private Button _button;
-    private Image  _image;
-
-    private void Awake()
+    public class AnimalButton : MonoBehaviour
     {
-        _button = GetComponent<Button>();
-        _image  = GetComponent<Image>();
-        _button.onClick.AddListener(BuyAnimal);
-    }
+        [Header("Cost & Prefab")]
+        public int animalCost = 10;
+        public GameObject animalPrefab;
 
-    private void OnEnable()
-    {
-        GameEvents.OnMoneyChanged += HandleMoneyChanged;
-        SetVisualState();
-    }
+        [Header("Sprites")]
+        public Sprite lockedSprite;
+        public Sprite disabledSprite;  
+        public Sprite enabledSprite;
 
-    private void OnDisable()
-    {
-        GameEvents.OnMoneyChanged -= HandleMoneyChanged;
-    }
+        private bool _unlocked = false;
+        private Button _button;
+        private Image  _image;
 
-    public void Unlock()
-    {
-        _unlocked = true;
-        SetVisualState();
-    }
-
-    private void HandleMoneyChanged(int _)
-    {
-        if (_unlocked) SetVisualState();
-    }
-
-    private void SetVisualState()
-    {
-        if (!_unlocked)
+        private void Awake()
         {
-            _button.interactable = false;
-            _image.sprite = lockedSprite;
-            return;
+            _button = GetComponent<Button>();
+            _image  = GetComponent<Image>();
+            _button.onClick.AddListener(BuyAnimal);
         }
 
-        var canAfford = MoneyManager.Instance.CurrentMoney >= animalCost;
-        _button.interactable = canAfford;
-        _image.sprite = canAfford ? enabledSprite : disabledSprite;
-    }
+        private void OnEnable()
+        {
+            GameEvents.OnMoneyChanged += HandleMoneyChanged;
+            SetVisualState();
+        }
 
-    private void BuyAnimal()
-    {
-        if (!_unlocked) return;
+        private void OnDisable()
+        {
+            GameEvents.OnMoneyChanged -= HandleMoneyChanged;
+        }
 
-        if (MoneyManager.Instance.SpendMoney(animalCost))
-            CreatureSpawner.Instance.Spawn(animalPrefab);
-        else
-            Debug.Log("Not enough money!");
+        public void Unlock()
+        {
+            _unlocked = true;
+            SetVisualState();
+        }
+
+        private void HandleMoneyChanged(float _)
+        {
+            if (_unlocked) SetVisualState();
+        }
+
+        private void SetVisualState()
+        {
+            if (!_unlocked)
+            {
+                _button.interactable = false;
+                _image.sprite = lockedSprite;
+                return;
+            }
+
+            var canAfford = MoneyManager.Instance.CurrentMoney >= animalCost;
+            _button.interactable = canAfford;
+            _image.sprite = canAfford ? enabledSprite : disabledSprite;
+        }
+
+        private void BuyAnimal()
+        {
+            if (!_unlocked) return;
+
+            if (MoneyManager.Instance.SpendMoney(animalCost))
+                CreatureSpawner.Instance.Spawn(animalPrefab);
+            else
+                Debug.Log("Not enough money!");
+        }
     }
 }
