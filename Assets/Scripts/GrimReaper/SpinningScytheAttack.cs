@@ -1,11 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
-public class SpinningScytheAttack : MonoBehaviour
+public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private int wallsHitsBeforeDestroy = 3;
+    [SerializeField] private int health = 3;
     [SerializeField] private float speed = 3f;
     private Rigidbody2D _rb;
+
+    private readonly Vector2[] _directions =
+    {
+        new Vector2(-1, 1).normalized, // Up-left
+        new Vector2(1, 1).normalized, // Up-right
+        new Vector2(-1, -1).normalized, // Down-left
+        new Vector2(1, -1).normalized // Down-right
+    };
     
     private void Start()
     {
@@ -21,7 +31,7 @@ public class SpinningScytheAttack : MonoBehaviour
     private IEnumerator StartMovement()
     {
         yield return new WaitForEndOfFrame();
-        Vector2 direction = Random.insideUnitCircle.normalized;
+        Vector2 direction = _directions[Random.Range(0, _directions.Length)];
         _rb.linearVelocity = direction * speed;
     }
 
@@ -29,8 +39,8 @@ public class SpinningScytheAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            wallsHitsBeforeDestroy--;
-            if (wallsHitsBeforeDestroy <= 0)
+            health--;
+            if (health <= 0)
             {
                 Destroy(gameObject);
             }
@@ -45,5 +55,27 @@ public class SpinningScytheAttack : MonoBehaviour
             }
             // Destroy(gameObject);
         }
+    }
+
+    private void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            HandleDestruction();
+        }
+    }
+
+    private void HandleDestruction()
+    {
+        Destroy(gameObject);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // Handle click on the scythe
+        // Call the method to destroy the scythe
+        //
+        TakeDamage(1);
     }
 }

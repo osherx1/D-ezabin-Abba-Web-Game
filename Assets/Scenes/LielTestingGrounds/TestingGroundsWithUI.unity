@@ -1796,6 +1796,67 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &1792018375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.1053936
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5426736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565388484460421270, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311356112410311279, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_Name
+      value: SpinningScythe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311356112410311279, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
 --- !u!1 &1920300383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,3 +2639,4 @@ SceneRoots:
   - {fileID: 413498937}
   - {fileID: 808664814}
   - {fileID: 1039673712}
+  - {fileID: 1792018375}

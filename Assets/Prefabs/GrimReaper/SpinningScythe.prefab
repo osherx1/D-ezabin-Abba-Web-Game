@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1055667601737385413}
   - component: {fileID: 7776933881809987872}
   - component: {fileID: 6059482189486171990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpinningScythe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,5 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db71d55f5af908245b941f71d1b17e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallsHitsBeforeDestroy: 3
-  speed: 3
+  wallsHitsBeforeDestroy: 10
+  speed: 5
