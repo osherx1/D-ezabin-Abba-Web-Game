@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 6
   nextPrefab: {fileID: 0}
-  zuzPerSecond: 1
+  zuzPerSecond: 200000
   idleRadius: 0.4
   idleStepTime: 2
   mergeNeeded: 2
