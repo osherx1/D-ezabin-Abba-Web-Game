@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utilities;
 
 
 [RequireComponent(typeof(Collider2D))]
@@ -9,28 +10,24 @@ public class CreatureCore : MonoBehaviour,
     IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     /* ---------- Inspector ---------- */
-    [Header("Stage")]
-    public CreatureStage stage;                    
+    [Header("Stage")] public CreatureStage stage;
     [SerializeField] private CreatureCore nextPrefab;
 
-    [Header("Economy")]
-    public int zuzPerSecond = 1;
+    [Header("Economy")] public int zuzPerSecond = 1;
 
-    [Header("Idle Movement")]
-    public float idleRadius   = 0.4f;
+    [Header("Idle Movement")] public float idleRadius = 0.4f;
     public float idleStepTime = 2f;
 
-    [Header("Merge")]
-    public int   mergeNeeded    = 2;
-    public float mergeRadius    = 0.6f;
+    [Header("Merge")] public int mergeNeeded = 2;
+    public float mergeRadius = 0.6f;
     public float evolveAnimTime = 0.6f;
 
     /* ---------- Private ---------- */
-    private bool    isDragging;
+    private bool isDragging;
     private Vector3 dragOffset;
     private Vector3 idleTarget;
-    private float   idleTimer, moneyTimer;
-    private Camera  cam;
+    private float idleTimer, moneyTimer;
+    private Camera cam;
     [SerializeField] private Animator anim;
     private Vector3 lastPosition;
     private float lastXDirection = 1f;
@@ -39,7 +36,7 @@ public class CreatureCore : MonoBehaviour,
     /* ---------- MonoBehaviour ---------- */
     private void Start()
     {
-        cam  = Camera.main;
+        cam = Camera.main;
         anim = GetComponent<Animator>();
         lastPosition = transform.position;
         PickIdleTarget();
@@ -48,6 +45,7 @@ public class CreatureCore : MonoBehaviour,
     private void Update()
     {
         if (!isDragging) HandleIdle();
+        GameEvents.OnMoneyChanged?.Invoke(zuzPerSecond);
 
         AnimateWalking();
         ProduceMoney();
@@ -75,9 +73,9 @@ public class CreatureCore : MonoBehaviour,
         Vector2 r = Random.insideUnitCircle * idleRadius;
         idleTarget = transform.position + new Vector3(r.x, r.y, 0);
     }
-    
+
     /* ---------- Animation ---------- */
-    
+
     private void AnimateWalking()
     {
         Vector3 currentPosition = transform.position;
@@ -90,7 +88,7 @@ public class CreatureCore : MonoBehaviour,
 
         if (isMoving && Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
-            lastXDirection = Mathf.Sign(delta.x);  // update direction only on horizontal move
+            lastXDirection = Mathf.Sign(delta.x); // update direction only on horizontal move
         }
 
         Vector3 scale = transform.localScale;
@@ -142,8 +140,7 @@ public class CreatureCore : MonoBehaviour,
 
     /* ---------- Merge-Evolution ---------- */
 
-    [Header("Layers")]
-    [SerializeField] private LayerMask creatureMask;   // set to "Creature" in the Inspector
+    [Header("Layers")] [SerializeField] private LayerMask creatureMask; // set to "Creature" in the Inspector
 
     private IEnumerator TryMerge()
     {
@@ -158,9 +155,9 @@ public class CreatureCore : MonoBehaviour,
 
         foreach (var h in hits)
             if (h.TryGetComponent(out CreatureCore c) &&
-                c != this &&                 // ← skip self
-                !c.isDragging &&             // not being dragged
-                c.stage == stage)            // same enum stage
+                c != this && // ← skip self
+                !c.isDragging && // not being dragged
+                c.stage == stage) // same enum stage
                 others.Add(c);
 
         int participants = others.Count + 1; // +1 because 'this' is part of the merge
@@ -170,7 +167,8 @@ public class CreatureCore : MonoBehaviour,
         /* --- play evolve animation on ALL participants (self + others) --- */
         if (anim) anim.CrossFade("Evolve", 0f, 0);
         foreach (var c in others)
-            if (c.anim) c.anim.CrossFade("Evolve", 0f, 0);
+            if (c.anim)
+                c.anim.CrossFade("Evolve", 0f, 0);
 
         yield return new WaitForSeconds(evolveAnimTime);
 
@@ -179,7 +177,10 @@ public class CreatureCore : MonoBehaviour,
         foreach (var c in others) avg += c.transform.position;
         avg /= participants;
 
-        Instantiate(nextPrefab, avg, Quaternion.identity);
+        // Instantiate(nextPrefab, avg, Quaternion.identity);
+        CreatureCore newCreature =
+            Instantiate(nextPrefab, avg, Quaternion.identity);
+        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
 
         /* --- destroy the old creatures --- */
         foreach (var c in others) Destroy(c.gameObject);
@@ -190,7 +191,7 @@ public class CreatureCore : MonoBehaviour,
 
     public void Death()
     {
-        if (_isDead) return;              // avoid double-kill
+        if (_isDead) return; // avoid double-kill
         _isDead = true;
 
         // 1) optional: play death animation / SFX here
@@ -199,7 +200,7 @@ public class CreatureCore : MonoBehaviour,
         // 2) optional: tell game manager, drop coins, etc.
         // GameManager.Zuzim += bonusOnDeath;
 
-        Destroy(gameObject, 0.05f);     // destroy after one frame
+        Destroy(gameObject, 0.05f); // destroy after one frame
     }
 
 #if UNITY_EDITOR
@@ -210,8 +211,3 @@ public class CreatureCore : MonoBehaviour,
     }
 #endif
 }
-
-
-
-
-

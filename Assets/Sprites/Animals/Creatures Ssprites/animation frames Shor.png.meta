@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Shor_0: 2341778185837529094
+      animation frames Shor_1: 2049994598396918795
+      animation frames Shor_10: 3306910564037804228
+      animation frames Shor_11: 2142309796784894318
+      animation frames Shor_12: -5006109682987371432
+      animation frames Shor_13: 4999831699086601845
+      animation frames Shor_14: -7927599019379102976
+      animation frames Shor_15: -7372948309787638164
+      animation frames Shor_16: -6910047157673073774
+      animation frames Shor_17: -3966024169871933480
+      animation frames Shor_18: -3158192898937756840
+      animation frames Shor_19: -4176751342945455100
+      animation frames Shor_2: -3332152756815880970
+      animation frames Shor_3: 4728438160046924852
+      animation frames Shor_4: -4532724800244027475
+      animation frames Shor_5: -3899039699732428076
+      animation frames Shor_6: 2654264473818509346
+      animation frames Shor_7: 2709889114480028633
+      animation frames Shor_8: -2045278450609372240
+      animation frames Shor_9: 2521212763976921953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

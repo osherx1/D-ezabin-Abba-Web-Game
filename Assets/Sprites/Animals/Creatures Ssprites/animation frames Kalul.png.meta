@@ -534,7 +534,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Kalul_0: 4516183258670460294
+      animation frames Kalul_1: 7000115127205311134
+      animation frames Kalul_10: -6586204018970880990
+      animation frames Kalul_11: 4311349640280661804
+      animation frames Kalul_12: -2358729434840457054
+      animation frames Kalul_13: -5738645251708772002
+      animation frames Kalul_14: -493177772716542638
+      animation frames Kalul_15: -8759396053278549947
+      animation frames Kalul_16: 4229629995117601913
+      animation frames Kalul_2: 7228927694183182539
+      animation frames Kalul_3: -4747742413391344241
+      animation frames Kalul_4: 8559497617562407207
+      animation frames Kalul_5: 3350052725444641929
+      animation frames Kalul_6: -7246077102897023006
+      animation frames Kalul_7: -767439134881176148
+      animation frames Kalul_8: -2416174373664447037
+      animation frames Kalul_9: -948262996916451012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
