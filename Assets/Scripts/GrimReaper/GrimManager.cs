@@ -9,6 +9,10 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private Vector2 boardMinBounds;
     [SerializeField] private Vector2 boardMaxBounds;
     
+    [Header("Grim Reaper Settings")]
+    [SerializeField] private float timeBetweenAttacks = 15f;
+    [SerializeField] private float timeBeforeFirstAttack = 5f;
+    
     
     [Header("Swiping Attack Settings")]
     [SerializeField] private GameObject swipingAttackPrefab;
@@ -28,10 +32,29 @@ public class GrimManager : MonoBehaviour
 
     private void OnEnable()
     {
+        StartCoroutine(AttacksRoutine());
         // StartCoroutine(StartMinionAttack());
         StartCoroutine(SetupSwipingAttack()); 
         // StartCoroutine(StartSwipingAttackRoutine());
-        StartCoroutine(StartSpinningAttack());
+        // StartCoroutine(StartSpinningAttack());
+    }
+
+    private IEnumerator AttacksRoutine()
+    {
+        yield return new WaitForSeconds(timeBeforeFirstAttack);
+        while (true)
+        {
+            yield return new WaitForSeconds(timeBetweenAttacks);
+            int attackType = Random.Range(0, 2);
+            if (attackType == 0)
+            {
+                StartCoroutine(StartSpinningAttack());
+            }
+            else if (attackType == 1)
+            {
+                StartCoroutine(StartMinionAttack());
+            }
+        }
     }
 
     private IEnumerator StartSpinningAttack()
