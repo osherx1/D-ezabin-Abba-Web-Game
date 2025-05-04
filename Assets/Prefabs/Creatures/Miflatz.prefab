@@ -185,7 +185,7 @@ MonoBehaviour:
   mergeNeeded: 2
   mergeRadius: 0.6
   evolveAnimTime: 0.6
-  anim: {fileID: 0}
+  anim: {fileID: 2497368009291677354}
   creatureMask:
     serializedVersion: 2
     m_Bits: 64

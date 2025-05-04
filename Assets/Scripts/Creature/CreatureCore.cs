@@ -14,6 +14,7 @@ public class CreatureCore : MonoBehaviour,
     /* ---------- Inspector ---------- */
     [Header("Stage")] public CreatureStage stage;
     [SerializeField] private CreatureCore nextPrefab;
+    [SerializeField] private GameObject evolveEffectPrefab;
 
     [Header("Economy")] public float zuzPerSecond = 0.5f;
 
@@ -156,46 +157,53 @@ public class CreatureCore : MonoBehaviour,
 
     private IEnumerator TryMerge()
     {
-        if (nextPrefab == null) yield break;
+        // (1) Abort if missing references
+        if (nextPrefab == null || evolveEffectPrefab == null)
+            yield break;
 
-        // Scan only colliders on the Creature layer
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position,
-            mergeRadius,
-            creatureMask);
+        // (2) Find all CreatureCore colliders in range
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            transform.position, mergeRadius, creatureMask);
 
+        // (3) Filter valid partners
         var others = new List<CreatureCore>();
-
         foreach (var h in hits)
             if (h.TryGetComponent(out CreatureCore c) &&
-                c != this && // ← skip self
-                !c.isDragging && // not being dragged
-                c.stage == stage) // same enum stage
+                c != this &&
+                !c.isDragging &&
+                c.stage == stage)
                 others.Add(c);
 
-        int participants = others.Count + 1; // +1 because 'this' is part of the merge
+        // (4) Need at least mergeNeeded total (this + others)
+        if (others.Count + 1 < mergeNeeded)
+            yield break;
 
-        if (participants < mergeNeeded) yield break;
-
-        /* --- play evolve animation on ALL participants (self + others) --- */
-        if (anim) anim.CrossFade("Evolve", 0f, 0);
-        foreach (var c in others)
-            if (c.anim)
-                c.anim.CrossFade("Evolve", 0f, 0);
-
-        yield return new WaitForSeconds(evolveAnimTime);
-
-        /* --- spawn the next stage at the average position --- */
+        // (5) Compute average spawn position
         Vector3 avg = transform.position;
         foreach (var c in others) avg += c.transform.position;
-        avg /= participants;
+        avg /= (others.Count + 1);
 
-        // Instantiate(nextPrefab, avg, Quaternion.identity);
-        CreatureCore newCreature =
-            Instantiate(nextPrefab, avg, Quaternion.identity);
-        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
+        // (6) Play this creature’s evolve animation
+        if (anim != null)
+            anim.CrossFade("Evolve", 0f, 0);
 
-        /* --- destroy the old creatures --- */
-        foreach (var c in others) Destroy(c.gameObject);
+        // (7) Spawn the visual‐only effect at avg
+        Instantiate(evolveEffectPrefab, avg, Quaternion.identity);
+
+        // (8) Immediately destroy the other creatures
+        foreach (var c in others)
+            Destroy(c.gameObject);
+
+        // (9) Wait until this creature’s Evolve state is done
+        yield return new WaitUntil(() => {
+            var st = anim.GetCurrentAnimatorStateInfo(0);
+            return st.IsName("Evolve") && st.normalizedTime >= 1f;
+        });
+
+        // (10) Instantiate the merged creature prefab
+        Instantiate(nextPrefab, avg, Quaternion.identity);
+
+        // (11) Destroy this original creature
         Destroy(gameObject);
     }
 

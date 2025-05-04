@@ -132,13 +132,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 3
   nextPrefab: {fileID: 327765978758066985, guid: 82138a8c8d20b3d46b31bc4b99a40ad1, type: 3}
+  evolveEffectPrefab: {fileID: 7161804843239902468, guid: a3197fb232b94e441a6a1d6abefccf90, type: 3}
   zuzPerSecond: 20
   idleRadius: 1
   idleStepTime: 3
   mergeNeeded: 2
   mergeRadius: 0.6
   evolveAnimTime: 0.6
-  anim: {fileID: 0}
+  anim: {fileID: 4720689842502498822}
   creatureMask:
     serializedVersion: 2
     m_Bits: 64
