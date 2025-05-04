@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 2
   nextPrefab: {fileID: 3508427691637504097, guid: 51f9477e6d5c8404a91979394e409c23, type: 3}
-  zuzPerSecond: 4
+  zuzPerSecond: 20
   idleRadius: 2
   idleStepTime: 3
   mergeNeeded: 2
@@ -202,7 +202,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7125, y: 1.375}
+    oldSize: {x: 2.125, y: 1.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
