@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -609,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Kelev_0: 7644630825686891802
+      animation frames Kelev_1: 859737610378294283
+      animation frames Kelev_10: -6707434487277600978
+      animation frames Kelev_11: 1845394705918276409
+      animation frames Kelev_12: 1399621783201504419
+      animation frames Kelev_13: -3874466628664910451
+      animation frames Kelev_14: -1467656433004158058
+      animation frames Kelev_15: -7767834169644127929
+      animation frames Kelev_16: 8395643616369739683
+      animation frames Kelev_17: -183414267512616606
+      animation frames Kelev_18: -6868442175009649526
+      animation frames Kelev_19: 8178376262582474654
+      animation frames Kelev_2: -3744754623203499472
+      animation frames Kelev_3: -1021521834359481467
+      animation frames Kelev_4: -5951112018410421474
+      animation frames Kelev_5: 4086316099708580955
+      animation frames Kelev_6: -3539075415200763227
+      animation frames Kelev_7: 7761618602897733160
+      animation frames Kelev_8: 406102548724100874
+      animation frames Kelev_9: 891933637843339172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

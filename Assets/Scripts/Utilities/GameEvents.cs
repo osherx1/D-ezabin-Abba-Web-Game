@@ -8,6 +8,7 @@ namespace Utilities
         public static Action StartScytheAttack;
         public static Action StartMinionsAttack;
         public static Action<int> OnMoneyChanged; 
+        public static Action<CreatureStage> OnCreatureMerged;
 
     }
 }

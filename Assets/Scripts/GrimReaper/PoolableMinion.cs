@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Utilities;
 
-public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
+public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
 {
     private Transform _target;
 
@@ -157,14 +157,14 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     }
 
     // How to handle the minions
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        StartCoroutine(HandleClick());
+        HandleClick();
     }
 
-    private IEnumerator HandleClick()
+    private void HandleClick()
     {
-        yield return null;
+        // yield return null;
         TakeDamage(damageAgainstMinion);
     }
 
@@ -183,7 +183,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
 
     private void KnockbackMinion()
     {
-        if (_target != null && _target.gameObject.activeInHierarchy)
+        if (_target != null)
         {
             Vector2 knockbackDirection = ((Vector2)transform.position - (Vector2)_target.position).normalized;
             // _rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
@@ -197,8 +197,8 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
     {
         yield return new WaitForEndOfFrame(); // Wait for the next frame
         _rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
-        StopCoroutine(ResumeMovementAfterKnockback());
-        yield return new WaitForEndOfFrame();
+        // StopCoroutine(ResumeMovementAfterKnockback());
+        // yield return new WaitForEndOfFrame();
         StartCoroutine(ResumeMovementAfterKnockback());
     }
 
@@ -208,11 +208,11 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerClickHandler
         // wait for a short duration before resuming movement
         yield return new WaitForSeconds(knockbackDurationSeconds);
         SetShouldMove(true);
-        MoveMinion();
     }
 
     private void HandleMinionDestruction()
     {
+        StopAllCoroutines();
         MinionPool.Instance.Return(this);
     }
     public void SetMinionSettings(MinionSettings minionSettings, MinionCounterAttackSettings minionCounterAttackSettings)

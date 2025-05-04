@@ -147,6 +147,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -559,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Ez_0: 3383429676092001857
+      animation frames Ez_1: -2311393317173665168
+      animation frames Ez_10: -1982791039621581191
+      animation frames Ez_11: 716191659858791013
+      animation frames Ez_12: 3989432444238240567
+      animation frames Ez_13: -2933605814983603166
+      animation frames Ez_14: 7675931168576404346
+      animation frames Ez_15: 7690544669333794114
+      animation frames Ez_16: -6126834733775495937
+      animation frames Ez_17: 5602019020019521536
+      animation frames Ez_2: 7704784998267583161
+      animation frames Ez_3: -8183479766694341589
+      animation frames Ez_4: -1913202527650679314
+      animation frames Ez_5: 3365597942207905133
+      animation frames Ez_6: -8039178961770035014
+      animation frames Ez_7: -8865821583416536735
+      animation frames Ez_8: -4119603984913529187
+      animation frames Ez_9: 1492927081507795778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
