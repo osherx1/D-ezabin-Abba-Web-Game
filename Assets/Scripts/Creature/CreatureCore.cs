@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utilities;
+using Random = UnityEngine.Random;
 
 
 [RequireComponent(typeof(Collider2D))]
@@ -13,7 +15,7 @@ public class CreatureCore : MonoBehaviour,
     [Header("Stage")] public CreatureStage stage;
     [SerializeField] private CreatureCore nextPrefab;
 
-    [Header("Economy")] public int zuzPerSecond = 1;
+    [Header("Economy")] public float zuzPerSecond = 0.5f;
 
     [Header("Idle Movement")] public float idleRadius = 0.4f;
     public float idleStepTime = 2f;
@@ -42,13 +44,23 @@ public class CreatureCore : MonoBehaviour,
         PickIdleTarget();
     }
 
+    private void OnEnable()
+    {
+        MoneyManager.Instance.RegisterIncome(zuzPerSecond);
+    }
+    
+    private void OnDestroy()
+    {
+        MoneyManager.Instance.UnregisterIncome(zuzPerSecond); 
+    }
+
     private void Update()
     {
         if (!isDragging) HandleIdle();
-        GameEvents.OnMoneyChanged?.Invoke(zuzPerSecond);
+        // GameEvents.OnMoneyChanged?.Invoke(zuzPerSecond);
 
         AnimateWalking();
-        ProduceMoney();
+        // ProduceMoney();
     }
 
 
@@ -100,15 +112,15 @@ public class CreatureCore : MonoBehaviour,
 
 
     /* ---------- Passive Income ---------- */
-    private void ProduceMoney()
-    {
-        moneyTimer += Time.deltaTime;
-        if (moneyTimer >= 1f)
-        {
-            GameManager.Zuzim += zuzPerSecond;
-            moneyTimer = 0f;
-        }
-    }
+    // private void ProduceMoney()
+    // {
+    //     moneyTimer += Time.deltaTime;
+    //     if (moneyTimer >= 1f)
+    //     {
+    //         GameManager.Zuzim += zuzPerSecond;
+    //         moneyTimer = 0f;
+    //     }
+    // }
 
     /* =====================================================================
        Drag-and-Drop – works with new/old Input System, desktop & mobile
@@ -199,7 +211,7 @@ public class CreatureCore : MonoBehaviour,
 
         // 2) optional: tell game manager, drop coins, etc.
         // GameManager.Zuzim += bonusOnDeath;
-
+        // MoneyManager.Instance.UnregisterIncome(zuzPerSecond); 
         Destroy(gameObject, 0.05f); // destroy after one frame
     }
 
