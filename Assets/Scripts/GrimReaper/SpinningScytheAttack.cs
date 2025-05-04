@@ -78,4 +78,14 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         //
         TakeDamage(1);
     }
+    
+    public void SetHealth(int newHealth)
+    {
+        health = newHealth;
+    }
+    
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
 }

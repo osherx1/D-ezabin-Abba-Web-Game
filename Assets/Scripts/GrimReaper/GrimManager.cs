@@ -1,26 +1,32 @@
 using System.Collections;
 using GrimReaper;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utilities;
 
 public class GrimManager : MonoBehaviour
 {
     //TODO: attacks timing? 
-    //todo: implement the Grim Reaper's attacks (Scythe, minions, etc...)
+    //todo: implement the Grim Reaper's attacks (SwipingAttack, minions, etc...)
     //need : a way to find the most earning creature
     // todo: defense against the Grim Reaper's attacks, power ups?
-    [Header("Scythe Settings")]
-    [SerializeField] private ScytheAttack scythe;
-    [SerializeField] private ScytheAttackSettings scytheAttackSettings;
-    [SerializeField] private ScytheCounterAttackSettings scytheCounterAttackSettings;
-    
-    [Header("Spinning Scythe Settings")]
-    [SerializeField] private GameObject spinningScythePrefab;
 
-    [Header("Minions Settings")] 
-    [SerializeField] private GameObject spawnerPrefab;
+    [Header("Board Settings")]
     [SerializeField] private Vector2 boardMinBounds;
     [SerializeField] private Vector2 boardMaxBounds;
+    
+    
+    [Header("Swiping Attack Settings")]
+    [SerializeField] private GameObject swipingAttackPrefab;
+    [SerializeField] private SwipingAttackSettings swipingAttackSettings;
+    [SerializeField] private SwipingCounterAttackSettings swipingAttackCounterAttackSettings;
+    
+    [Header("Spinning Attack Settings")]
+    [SerializeField] private GameObject spinningAttackPrefab;
+    [SerializeField] private SpinningScytheAttackSettings spinningScytheAttackSettings;
+    
+    [Header("Minions Settings")] 
+    [SerializeField] private GameObject spawnerPrefab;
     [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
     [SerializeField] private MinionSettings minionSettings;
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
@@ -28,30 +34,32 @@ public class GrimManager : MonoBehaviour
     /// Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        // SetupScytheAttack();
+        // SetupSwipingAttack();
     }
 
     private void OnEnable()
     {
         // StartCoroutine(StartMinionAttack());
-        StartCoroutine(SetupScytheAttack()); 
-        // StartCoroutine(StartScytheAttackRoutine());
-        StartCoroutine(StartSpinningScythe());
+        StartCoroutine(SetupSwipingAttack()); 
+        // StartCoroutine(StartSwipingAttackRoutine());
+        StartCoroutine(StartSpinningAttack());
     }
 
-    private IEnumerator StartSpinningScythe()
+    private IEnumerator StartSpinningAttack()
     {
         yield return new WaitForSeconds(1f);
         var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
-        var spinningScytheGameObject = Instantiate(spinningScythePrefab, spawnPosition, Quaternion.identity);
-        var spinningScythe = spinningScytheGameObject.GetComponent<SpinningScytheAttack>();
-        spinningScythe.StartAttack();
+        var spinningAttackGameObject = Instantiate(spinningAttackPrefab, spawnPosition, Quaternion.identity);
+        var spinningAttack = spinningAttackGameObject.GetComponent<SpinningScytheAttack>();
+        spinningAttack.SetHealth(spinningScytheAttackSettings.spinningScytheHealth);
+        spinningAttack.SetSpeed(spinningScytheAttackSettings.spinningScytheSpeed);
+        spinningAttack.StartAttack();
     }
 
-    private IEnumerator StartScytheAttackRoutine()
+    private IEnumerator StartSwipingAttackRoutine()
     {
         yield return new WaitForSeconds(1f);
-        CallScytheAttack();
+        CallSwipingAttack();
     }
 
     private IEnumerator StartMinionAttack()
@@ -60,21 +68,23 @@ public class GrimManager : MonoBehaviour
         CallMinionsAttack();
     }
 
-    private IEnumerator SetupScytheAttack()
+    private IEnumerator SetupSwipingAttack()
     {
         yield return new WaitForEndOfFrame();
-        scythe.SetScytheSpeed(scytheAttackSettings.scytheSpeed);
-        scythe.SetScytheHealth(scytheAttackSettings.scytheHealth);
-        scythe.SetScytheRightPosition(scytheAttackSettings.scytheRightPosition);
-        scythe.SetScytheLeftPosition(scytheAttackSettings.scytheLeftPosition);
-        scythe.SetKnockbackForce(scytheCounterAttackSettings.knockbackForce);
-        scythe.SetKnockbackDurationSeconds(scytheCounterAttackSettings.knockbackDurationSeconds);
-        scythe.SetDamageAgainstScythe(scytheCounterAttackSettings.damageAgainstScythe);
+        var swipingAttackGameObject = Instantiate(swipingAttackPrefab, swipingAttackSettings.SwipingAttackRightPosition, Quaternion.identity);
+        var swipingAttack = swipingAttackGameObject.GetComponent<SwipingAttack>();
+        swipingAttack.SetSwipingAttackSpeed(swipingAttackSettings.SwipingAttackSpeed);
+        swipingAttack.SetSwipingAttackHealth(swipingAttackSettings.SwipingAttackHealth);
+        swipingAttack.SetSwipingAttackRightPosition(swipingAttackSettings.SwipingAttackRightPosition);
+        swipingAttack.SetSwipingAttackLeftPosition(swipingAttackSettings.SwipingAttackLeftPosition);
+        swipingAttack.SetKnockbackForce(swipingAttackCounterAttackSettings.knockbackForce);
+        swipingAttack.SetKnockbackDurationSeconds(swipingAttackCounterAttackSettings.knockbackDurationSeconds);
+        swipingAttack.SetDamageAgainstSwipingAttack(swipingAttackCounterAttackSettings.damageAgainstSwipingAttack);
     }
     
-    private void CallScytheAttack()
+    private void CallSwipingAttack()
     {
-        GameEvents.StartScytheAttack?.Invoke();
+        GameEvents.StartSwipingAttack?.Invoke();
     }
 
     private void CallMinionsAttack()
@@ -94,21 +104,4 @@ public class GrimManager : MonoBehaviour
         minionSpawner.StartSpawning();
     }
 }
-
-// [System.Serializable]
-// public class ScytheAttackSettings
-// {
-//     public float scytheSpeed = 1f;
-//     public int scytheHealth = 10;
-//     public Vector2 scytheRightPosition;
-//     public Vector2 scytheLeftPosition;
-// }
-//
-// [System.Serializable]
-// public class ScytheCounterAttackSettings
-// {
-//     public float knockbackForce = 1f;
-//     public float knockbackDurationSeconds = 0.5f;
-//     public int damageAgainstScythe = 1;
-// }
 
