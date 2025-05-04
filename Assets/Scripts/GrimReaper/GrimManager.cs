@@ -6,11 +6,6 @@ using Utilities;
 
 public class GrimManager : MonoBehaviour
 {
-    //TODO: attacks timing? 
-    //todo: implement the Grim Reaper's attacks (SwipingAttack, minions, etc...)
-    //need : a way to find the most earning creature
-    // todo: defense against the Grim Reaper's attacks, power ups?
-
     [Header("Board Settings")]
     [SerializeField] private Vector2 boardMinBounds;
     [SerializeField] private Vector2 boardMaxBounds;
