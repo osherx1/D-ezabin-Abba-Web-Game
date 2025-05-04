@@ -489,6 +489,10 @@ PrefabInstance:
       propertyPath: scythe
       value: 
       objectReference: {fileID: 314444675}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: spinningScythePrefab
+      value: 
+      objectReference: {fileID: 5311356112410311279, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -507,7 +511,7 @@ GameObject:
   - component: {fileID: 433729240}
   m_Layer: 7
   m_Name: Border 2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1644,7 +1648,7 @@ GameObject:
   - component: {fileID: 1610883796}
   m_Layer: 7
   m_Name: Border
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1805,7 +1809,7 @@ GameObject:
   - component: {fileID: 1920300384}
   m_Layer: 7
   m_Name: Border 3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1996,7 +2000,7 @@ GameObject:
   - component: {fileID: 2036324649}
   m_Layer: 7
   m_Name: Border 4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
