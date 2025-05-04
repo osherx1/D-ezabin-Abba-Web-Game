@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Creatures
   - Scythe
+  - Wall
   layers:
   - Default
   - TransparentFX
