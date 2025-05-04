@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -609,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Azul_0: -6355705714116976719
+      animation frames Azul_1: 1891777858095830551
+      animation frames Azul_10: -566773466696657129
+      animation frames Azul_11: 2532069609751315883
+      animation frames Azul_12: -59166921136829187
+      animation frames Azul_13: -8504466519601927600
+      animation frames Azul_14: -8366756500516241606
+      animation frames Azul_15: 6092786354564843645
+      animation frames Azul_16: -5455509298260272351
+      animation frames Azul_17: 1610209788690211258
+      animation frames Azul_18: -8075116656854624125
+      animation frames Azul_19: 5037016109864512658
+      animation frames Azul_2: 648372091490538453
+      animation frames Azul_3: 5972030123422232273
+      animation frames Azul_4: 4225716591255971172
+      animation frames Azul_5: -5312538502023803550
+      animation frames Azul_6: -6586307797245022130
+      animation frames Azul_7: 8826951472273869258
+      animation frames Azul_8: 997153883071249408
+      animation frames Azul_9: 6286037496413800126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

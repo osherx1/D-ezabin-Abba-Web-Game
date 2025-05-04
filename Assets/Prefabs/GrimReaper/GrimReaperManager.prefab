@@ -59,12 +59,12 @@ MonoBehaviour:
   boardMaxBounds: {x: 7, y: 3}
   minionSpawnerSettings:
     minionCount: 5
-    spawnRadius: 3
+    spawnRadius: 2
     spawnDelay: 5
   minionSettings:
-    speed: 2
-    minionStartingHealth: 5
+    speed: 1
+    minionStartingHealth: 3
   minionCounterAttackSettings:
-    knockbackForce: 1
-    knockbackDurationSeconds: 0.5
+    knockbackForce: 2
+    knockbackDurationSeconds: 0.3
     damageAgainstMinion: 1

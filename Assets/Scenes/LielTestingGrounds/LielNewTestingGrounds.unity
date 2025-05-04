@@ -1497,28 +1497,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1655100548}
     - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSettings.speed
+      propertyPath: minionSpawnerSettings.minionCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSpawnerSettings.minionCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSpawnerSettings.spawnRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
       propertyPath: minionSettings.minionStartingHealth
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionCounterAttackSettings.knockbackForce
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionCounterAttackSettings.knockbackDurationSeconds
-      value: 0.3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
