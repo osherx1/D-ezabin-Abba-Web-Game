@@ -144,6 +144,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -534,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Kalul 2_0: -1826413520653226113
+      animation frames Kalul 2_1: -6677529602160476239
+      animation frames Kalul 2_10: 5405300705189646380
+      animation frames Kalul 2_11: -8816589764886487856
+      animation frames Kalul 2_12: 5095545725237217518
+      animation frames Kalul 2_13: -9022207110605849763
+      animation frames Kalul 2_14: -4094011916954914614
+      animation frames Kalul 2_15: 7850592738330007043
+      animation frames Kalul 2_16: -7496942159121382179
+      animation frames Kalul 2_2: 3664916385722234507
+      animation frames Kalul 2_3: -3262614286255107321
+      animation frames Kalul 2_4: 1749430307631300409
+      animation frames Kalul 2_5: -1740874493009838154
+      animation frames Kalul 2_6: 2117540152324967982
+      animation frames Kalul 2_7: 3213324983875603327
+      animation frames Kalul 2_8: 3632888001844620660
+      animation frames Kalul 2_9: -7618690035245508506
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

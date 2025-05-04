@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -609,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Shor 2_0: -6381466879486491870
+      animation frames Shor 2_1: -4483296145850527517
+      animation frames Shor 2_10: -5875433331933070182
+      animation frames Shor 2_11: 4960334644242011268
+      animation frames Shor 2_12: 39971911204665249
+      animation frames Shor 2_13: 6149996993012575611
+      animation frames Shor 2_14: 671398599473852195
+      animation frames Shor 2_15: -6697090271589376563
+      animation frames Shor 2_16: 8149187207262775112
+      animation frames Shor 2_17: 8022183775824226881
+      animation frames Shor 2_18: -2491531801550310062
+      animation frames Shor 2_19: -7521906009656187873
+      animation frames Shor 2_2: 3248759803664272918
+      animation frames Shor 2_3: -5723634041005591642
+      animation frames Shor 2_4: 5741239090291287468
+      animation frames Shor 2_5: 1957676377551111023
+      animation frames Shor 2_6: 3255475623035558962
+      animation frames Shor 2_7: 2657698332345825996
+      animation frames Shor 2_8: -1821171048860610235
+      animation frames Shor 2_9: 3511627064001614351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

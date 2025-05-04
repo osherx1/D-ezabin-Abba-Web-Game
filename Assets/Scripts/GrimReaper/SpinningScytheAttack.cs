@@ -25,9 +25,9 @@ public class SpinningScytheAttack : MonoBehaviour
         _rb.linearVelocity = direction * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall"))
         {
             wallsHitsBeforeDestroy--;
             if (wallsHitsBeforeDestroy <= 0)
@@ -35,10 +35,10 @@ public class SpinningScytheAttack : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (other.CompareTag("Creatures"))
+        else if (other.gameObject.CompareTag("Creatures"))
         {
             // Handle damage to the creature
-            var creature = other.GetComponent<CreatureCore>();
+            var creature = other.gameObject.GetComponent<CreatureCore>();
             if (creature != null)
             {
                 creature.Death();
