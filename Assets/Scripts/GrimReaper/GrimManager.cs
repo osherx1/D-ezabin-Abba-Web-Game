@@ -11,7 +11,7 @@ public class GrimManager : MonoBehaviour
     
     [Header("Grim Reaper Settings")]
     [SerializeField] private float timeBetweenAttacks = 15f;
-    [SerializeField] private float timeBeforeFirstAttack = 5f;
+    [SerializeField] private float timeBeforeFirstAttack = 10f;
     
     
     [Header("Swiping Attack Settings")]
@@ -44,16 +44,17 @@ public class GrimManager : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeFirstAttack);
         while (true)
         {
-            yield return new WaitForSeconds(timeBetweenAttacks);
             int attackType = Random.Range(0, 2);
-            if (attackType == 0)
+            switch (attackType)
             {
-                StartCoroutine(StartSpinningAttack());
+                case 0:
+                    StartCoroutine(StartSpinningAttack());
+                    break;
+                case 1:
+                    StartCoroutine(StartMinionAttack());
+                    break;
             }
-            else if (attackType == 1)
-            {
-                StartCoroutine(StartMinionAttack());
-            }
+            yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }
 

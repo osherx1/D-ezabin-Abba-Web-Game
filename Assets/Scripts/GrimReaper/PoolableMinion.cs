@@ -20,6 +20,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     [SerializeField] private int damageAgainstMinion = 1;
 
     private bool _shouldMove = false;
+    private bool _isInvincible = false;
     private bool _isDead;
 
     private int _minionHealth;
@@ -69,10 +70,11 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         FindCosestCreature();
         if (_target == null)
         {
-            // _shouldMove = false;
+            SetIsInvincible(true);
             _rb.linearVelocity = Vector2.zero;
             return;
         }
+        SetIsInvincible(false);
         var direction = ((Vector2)_target.position - _rb.position).normalized;
         _rb.linearVelocity = direction * speed;
         _shouldFlip = direction.x < 0;
@@ -168,6 +170,11 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     {
         _shouldMove = shouldMove;
     }
+    
+    private void SetIsInvincible(bool isInvincible)
+    {
+        _isInvincible = isInvincible;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -193,6 +200,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
 
     private void TakeDamage(int damage)
     {
+        if(_isInvincible) return;
         _minionHealth -= damage;
         Debug.Log("Minion took damage, health remaining: " + _minionHealth);
         // apply knockback to the minion
