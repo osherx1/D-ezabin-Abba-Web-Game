@@ -64,8 +64,8 @@ public class GrimManager : MonoBehaviour
 
     private void CreateMinionSpawner()
     {
-        // var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
-        var spawnPosition = boardMinBounds;
+        var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
+        // var spawnPosition = boardMinBounds;
         var spawner = Instantiate(spawnerPrefab, spawnPosition, Quaternion.identity);
         var minionSpawner = spawner.GetComponent<MinionSpawner>();
         minionSpawner.SetSpawnerSettings(minionSpawnerSettings);
