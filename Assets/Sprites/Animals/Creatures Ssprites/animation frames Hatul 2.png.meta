@@ -144,6 +144,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -534,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation frames Hatul 2_0: -2543622772416716796
+      animation frames Hatul 2_1: -1080334330544998524
+      animation frames Hatul 2_10: 6701893472782155453
+      animation frames Hatul 2_11: 3594757961254596857
+      animation frames Hatul 2_12: 8802745952392239487
+      animation frames Hatul 2_13: 6100914912740537009
+      animation frames Hatul 2_14: 1545987602251153516
+      animation frames Hatul 2_15: 5949442808766102240
+      animation frames Hatul 2_16: -7671130142173189814
+      animation frames Hatul 2_2: 574092861612982950
+      animation frames Hatul 2_3: 5899398781940264439
+      animation frames Hatul 2_4: -2336114618624674813
+      animation frames Hatul 2_5: 5310548392135407227
+      animation frames Hatul 2_6: 1231157711117400825
+      animation frames Hatul 2_7: 2893846576577258309
+      animation frames Hatul 2_8: 3407736923193960913
+      animation frames Hatul 2_9: 9027299961555133915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
