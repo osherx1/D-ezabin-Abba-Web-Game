@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7241588b77f5748961592b5f122089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardMinBounds: {x: -6, y: -2}
+  boardMaxBounds: {x: 6, y: 2}
+  timeBetweenAttacks: 15
+  timeBeforeFirstAttack: 10
   swipingAttackPrefab: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
   swipingAttackSettings:
     SwipingAttackSpeed: 1
@@ -59,8 +63,6 @@ MonoBehaviour:
     spinningScytheSpeed: 4
     spinningScytheHealth: 5
   spawnerPrefab: {fileID: 835675431695768437, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
-  boardMinBounds: {x: -6, y: -2}
-  boardMaxBounds: {x: 6, y: 2}
   minionSpawnerSettings:
     minionCount: 10
     spawnRadius: 2
