@@ -1391,13 +1391,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1172727712551446350, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1258431873958291482, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
       propertyPath: m_Name
       value: Minion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258431873958291482, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4136866172779877473, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1442,38 +1442,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1258431873958291482, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1497401821214912195}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
---- !u!1 &1497401821214912194 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1258431873958291482, guid: 21a3bce889346fc41abe08506ca3046d, type: 3}
-  m_PrefabInstance: {fileID: 1497401821214912193}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1497401821214912195
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497401821214912194}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fb2f165ffed4b004eb8c091a96c9c38d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1727311558558509265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1588,36 +1558,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1655100548}
     - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMaxBounds.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMaxBounds.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMinBounds.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMinBounds.y
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
       propertyPath: minionSettings.speed
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSpawnerSettings.spawnDelay
-      value: 8.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
       propertyPath: minionSpawnerSettings.minionCount
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSettings.minionStartingHealth
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

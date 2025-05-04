@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6175831462928011253}
   - component: {fileID: 4506003967500714740}
   - component: {fileID: 5181180633288909709}
+  - component: {fileID: 2982311379629672940}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.86, y: 0.93, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -171,3 +172,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.5980463, y: -0.05993843}
   m_Size: {x: 1.31246, y: 2.3386993}
   m_Direction: 0
+--- !u!95 &2982311379629672940
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258431873958291482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb2f165ffed4b004eb8c091a96c9c38d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
