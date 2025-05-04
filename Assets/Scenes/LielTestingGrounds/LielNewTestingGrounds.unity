@@ -1557,14 +1557,6 @@ PrefabInstance:
       propertyPath: scythe
       value: 
       objectReference: {fileID: 1655100548}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSettings.speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSpawnerSettings.minionCount
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
