@@ -62,7 +62,7 @@ MonoBehaviour:
     spawnRadius: 2
     spawnDelay: 8.75
   minionSettings:
-    speed: 1
+    speed: 2
     minionStartingHealth: 1
   minionCounterAttackSettings:
     knockbackForce: 2
