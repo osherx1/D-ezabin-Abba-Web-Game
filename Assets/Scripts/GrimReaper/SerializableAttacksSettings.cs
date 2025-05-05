@@ -46,3 +46,11 @@ public class SpinningScytheAttackSettings
     public float spinningScytheSpeed = 1f;
     public int spinningScytheHealth = 10;
 }
+
+[System.Serializable]
+public class SpinningScytheSpawnerSettings
+{
+    public float startingSpawnTime = 3f;
+    public float endingSpawnTime = 8.75f;
+    public int spinningScytheAmount = 3;
+}
