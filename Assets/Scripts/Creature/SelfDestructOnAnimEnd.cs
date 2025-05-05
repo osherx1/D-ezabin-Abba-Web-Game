@@ -12,6 +12,17 @@ public class SelfDestructOnAnimEnd : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+
+        // ─── FLIP ON X
+        // Only mirror horizontally if this effect is playing the "Spawn" state
+        if (stateName == "Spawn")
+        {
+            Vector3 s = transform.localScale;
+            s.x = -Mathf.Abs(s.x);
+            transform.localScale = s;
+        }
+        
+
         StartCoroutine(DieAtEnd());
     }
 
