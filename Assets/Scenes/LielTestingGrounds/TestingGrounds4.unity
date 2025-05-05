@@ -754,11 +754,6 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 8535328297174654220, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
   m_PrefabInstance: {fileID: 1039673712}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &949802182 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5240680675721060217, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-  m_PrefabInstance: {fileID: 1039673712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021906419
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +848,7 @@ PrefabInstance:
     - target: {fileID: 1827114403649499902, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: rt
       value: 
-      objectReference: {fileID: 949802182}
+      objectReference: {fileID: 0}
     - target: {fileID: 1827114403649499902, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: canvas
       value: 
