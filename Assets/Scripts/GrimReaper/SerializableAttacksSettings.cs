@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class SwipingAttackSettings
 {
-    public float SwipingAttackSpeed = 1f;
-    public int SwipingAttackHealth = 10;
-    public Vector2 SwipingAttackRightPosition;
-    public Vector2 SwipingAttackLeftPosition;
+    public float swipingAttackSpeed = 1f;
+    public int swipingAttackHealth = 10;
+    public Vector2 swipingAttackRightPosition;
+    public Vector2 swipingAttackLeftPosition;
 }
 
 [System.Serializable]
