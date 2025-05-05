@@ -173,7 +173,24 @@ public class CreatureCore : MonoBehaviour,
                 !c.isDragging &&
                 c.stage == stage)
                 others.Add(c);
-
+        if (others.Count > 1)
+        {
+            CreatureCore closest = null;
+            float minDist = float.MaxValue;
+            foreach (var c in others)
+            {
+                float d = (c.transform.position - transform.position).sqrMagnitude;
+                if (d < minDist)
+                {
+                    minDist = d;
+                    closest = c;
+                }
+            }
+            others.Clear();
+            if (closest != null)
+                others.Add(closest);
+        }
+        
         // (4) Need at least mergeNeeded total (this + others)
         if (others.Count + 1 < mergeNeeded)
             yield break;
