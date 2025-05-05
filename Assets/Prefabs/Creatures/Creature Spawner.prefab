@@ -47,7 +47,7 @@ MonoBehaviour:
   bottomLeft: {x: -5, y: -3}
   topRight: {x: 5, y: 3}
   specialStage: 0
-  specialSpawnPoint: {fileID: 0}
+  specialSpawnPoint: {fileID: 8992902333216172498, guid: 645e7b7e335c09f4986355ead3c320f0, type: 3}
   spawnEffectPrefab: {fileID: 7486890608111271335, guid: 468f635416ea2e045be6ec4d55a600a6, type: 3}
   spawnEffectDuration: 1
   spawnDelay: 1.2
