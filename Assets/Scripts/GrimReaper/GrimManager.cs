@@ -10,9 +10,10 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private Vector2 boardMaxBounds;
     
     [Header("Grim Reaper Settings")]
-    [SerializeField] private float timeBetweenAttacks = 15f;
-    [SerializeField] private float timeBeforeFirstAttack = 10f;
-    
+    [SerializeField] private float timeBetweenAttacks = 45f;
+    [SerializeField] private float timeBeforeFirstAttack = 25f;
+    [SerializeField] private float timeDiviation = 3f;
+    private float _timeBetweenAttacks;
     
     [Header("Swiping Attack Settings")]
     [SerializeField] private GameObject swipingAttackPrefab;
@@ -30,15 +31,34 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
     [SerializeField] private MinionSettings minionSettings;
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
-    
+
+    private CreatureStage _bestCreatureStage = CreatureStage.Goat;
 
     private void OnEnable()
     {
+        _timeBetweenAttacks = timeBetweenAttacks;
         StartCoroutine(AttacksRoutine());
         // StartCoroutine(StartMinionAttack());
         // StartCoroutine(SetupSwipingAttack()); 
         // StartCoroutine(StartSwipingAttackRoutine());
         // StartCoroutine(StartSpinningAttack());
+        GameEvents.OnCreatureMerged += HandleCreatureMerged;
+    }
+    
+    private void OnDisable()
+    {
+        GameEvents.OnCreatureMerged -= HandleCreatureMerged;
+    }
+
+    private void HandleCreatureMerged(CreatureStage stage)
+    {
+        if(_bestCreatureStage < stage)
+        {
+            _bestCreatureStage = stage;
+            IncreaseDifficulty();
+            // Debug.Log("Best creature stage: " + _bestCreatureStage);
+            // CallMinionsAttack();
+        }
     }
 
     private IEnumerator AttacksRoutine()
@@ -56,8 +76,52 @@ public class GrimManager : MonoBehaviour
                     StartCoroutine(StartMinionAttack());
                     break;
             }
-            yield return new WaitForSeconds(timeBetweenAttacks);
+            yield return new WaitForSeconds(timeBetweenAttacks + Random.Range(-timeBetweenAttacks, timeBetweenAttacks));
         }
+    }
+    
+    private void IncreaseDifficulty()
+    {
+        // float randomTimeDeviation = Random.Range(-timeDiviation, timeDiviation);
+        switch (_bestCreatureStage)
+        {
+            case CreatureStage.Goat:
+                return;
+            case CreatureStage.GoatCat:
+                minionSpawnerSettings.minionCount++;
+                break;
+            case CreatureStage.Cat:
+                minionSpawnerSettings.minionCount++;
+                spinningScytheSpawnerSettings.spinningScytheAmount++;
+                timeBetweenAttacks -= 5f;
+                break;
+            case CreatureStage.CatDog:
+                minionSpawnerSettings.minionCount++;
+                minionSettings.speed += 0.5f;
+                spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
+                break;
+            case CreatureStage.Dog:
+                timeBetweenAttacks -= 5f;
+                minionSpawnerSettings.minionCount++;
+                spinningScytheSpawnerSettings.spinningScytheAmount++;
+                break;
+            case CreatureStage.DogOx:
+                timeBetweenAttacks -= 5f;
+                minionSpawnerSettings.minionCount++;
+                minionSettings.speed += 0.5f;
+                spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
+                spinningScytheAttackSettings.spinningScytheHealth++;
+                break;
+            case CreatureStage.Ox:
+                timeBetweenAttacks -= 5f;
+                minionSpawnerSettings.minionCount++;
+                spinningScytheSpawnerSettings.spinningScytheAmount++;
+                minionSettings.speed += 0.5f;
+                spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
+                spinningScytheAttackSettings.spinningScytheHealth++;
+                break;
+        }
+        
     }
 
     private IEnumerator StartSpinningAttack()
