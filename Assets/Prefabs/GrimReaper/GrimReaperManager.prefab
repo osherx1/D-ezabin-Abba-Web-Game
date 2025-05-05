@@ -58,6 +58,11 @@ MonoBehaviour:
     knockbackForce: 1
     knockbackDurationSeconds: 0.5
     damageAgainstSwipingAttack: 1
+  spinningAttackSpawnerPrefab: {fileID: 917138685201689039, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
+  spinningScytheSpawnerSettings:
+    startingSpawnTime: 3
+    endingSpawnTime: 8.75
+    spinningScytheAmount: 3
   spinningAttackPrefab: {fileID: 5311356112410311279, guid: 706700760c804024dbb78b07f8950b8a, type: 3}
   spinningScytheAttackSettings:
     spinningScytheSpeed: 4

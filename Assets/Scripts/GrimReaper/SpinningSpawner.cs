@@ -39,6 +39,8 @@ public class SpinningSpawner : MonoBehaviour
             SpawnSpinningScythe();
             yield return new WaitForSeconds(_spawnInterval);
         }
+        yield return new WaitForSeconds(3f);
+        HandleDestruction();
     }
 
     private void SpawnSpinningScythe()
@@ -49,5 +51,12 @@ public class SpinningSpawner : MonoBehaviour
         spinningScythe.GetComponent<SpinningScytheAttack>().SetHealth(spinningScytheHealth);
         spinningScythe.GetComponent<SpinningScytheAttack>().SetSpeed(spinningScytheSpeed);
         spinningScythe.GetComponent<SpinningScytheAttack>().StartAttack();
+    }
+    
+    private void HandleDestruction()
+    {
+        // Handle destruction logic here
+        StopAllCoroutines();
+        Destroy(gameObject);
     }
 }

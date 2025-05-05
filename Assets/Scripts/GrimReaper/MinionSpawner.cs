@@ -63,6 +63,7 @@ public class MinionSpawner : MonoBehaviour
     private void HandleDestruction()
     {
         // destroy the spawner
+        StopAllCoroutines();
         Destroy(gameObject);
     }
 }
