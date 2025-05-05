@@ -1206,7 +1206,7 @@ MonoBehaviour:
   specialSpawnPoint: {fileID: 1747617178}
   spawnEffectPrefab: {fileID: 7486890608111271335, guid: 468f635416ea2e045be6ec4d55a600a6, type: 3}
   spawnEffectDuration: 1
-  spawnDelay: 1.2
+  spawnDelay: 0.6
 --- !u!4 &1429224768
 Transform:
   m_ObjectHideFlags: 0

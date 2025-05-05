@@ -47,12 +47,12 @@ public class CreatureCore : MonoBehaviour,
 
     private void OnEnable()
     {
-        MoneyManager.Instance.RegisterIncome(zuzPerSecond);
+        MoneyManager.Instance?.RegisterIncome(zuzPerSecond);
     }
     
     private void OnDestroy()
     {
-        MoneyManager.Instance.UnregisterIncome(zuzPerSecond); 
+        MoneyManager.Instance?.UnregisterIncome(zuzPerSecond); 
     }
 
     private void Update()
@@ -201,7 +201,9 @@ public class CreatureCore : MonoBehaviour,
         });
 
         // (10) Instantiate the merged creature prefab
-        Instantiate(nextPrefab, avg, Quaternion.identity);
+        var newCreature =
+            Instantiate(nextPrefab, avg, Quaternion.identity);
+        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
 
         // (11) Destroy this original creature
         Destroy(gameObject);
