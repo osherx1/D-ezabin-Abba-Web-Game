@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4319753069209468329}
   - component: {fileID: 7508820674453766791}
   - component: {fileID: 3567313810450328445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shorhet
-  m_TagString: Untagged
+  m_TagString: Creatures
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   creatureMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!95 &3567313810450328445
 Animator:
   serializedVersion: 7

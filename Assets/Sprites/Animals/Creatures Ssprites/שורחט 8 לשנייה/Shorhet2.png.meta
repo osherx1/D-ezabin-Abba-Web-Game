@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shorhet2_0: 2099329601512972827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
