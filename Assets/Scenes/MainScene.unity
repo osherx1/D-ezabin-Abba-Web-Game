@@ -896,6 +896,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -907767961651953922, guid: 8cc1ad6e894f3404599384aa5fcde03f, type: 3}
+    - target: {fileID: 1438744703894949762, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -109
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497316784411719066, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -109.000015
+      objectReference: {fileID: 0}
     - target: {fileID: 1827114403649499902, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: rt
       value: 
@@ -988,6 +996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6709727941365868120, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -109.000015
+      objectReference: {fileID: 0}
     - target: {fileID: 6852708259379343430, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1059,6 +1071,14 @@ PrefabInstance:
     - target: {fileID: 7481007182572309431, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772706490083454876, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772706490083454876, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -103
       objectReference: {fileID: 0}
     - target: {fileID: 8446311831067175364, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Type
