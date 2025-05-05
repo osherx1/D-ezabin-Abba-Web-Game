@@ -105,13 +105,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 0
   nextPrefab: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
+  evolveEffectPrefab: {fileID: 7161804843239902468, guid: a3197fb232b94e441a6a1d6abefccf90, type: 3}
   zuzPerSecond: 0.2
   idleRadius: 1
   idleStepTime: 3
   mergeNeeded: 2
   mergeRadius: 0.6
   evolveAnimTime: 0.6
-  anim: {fileID: 0}
+  anim: {fileID: 8995010406200202993}
   creatureMask:
     serializedVersion: 2
     m_Bits: 64
@@ -202,7 +203,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7725, y: 1.1375}
+    oldSize: {x: 1.875, y: 1.275}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

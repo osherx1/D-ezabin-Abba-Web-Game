@@ -179,13 +179,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 8
   nextPrefab: {fileID: 0}
-  zuzPerSecond: 2000000
+  evolveEffectPrefab: {fileID: 0}
+  zuzPerSecond: 100
   idleRadius: 0.4
   idleStepTime: 2
   mergeNeeded: 2
   mergeRadius: 0.6
   evolveAnimTime: 0.6
-  anim: {fileID: 0}
+  anim: {fileID: 2497368009291677354}
   creatureMask:
     serializedVersion: 2
     m_Bits: 64

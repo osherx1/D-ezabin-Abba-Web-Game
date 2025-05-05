@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace Utilities
 {
     public class MoneyManager : MonoSingleton<MoneyManager>
     {
         [SerializeField] private int startingMoney = 100;
+        [SerializeField]private int _badEndSceneIndex = 2;
 
         public float CurrentMoney { get; private set; }
         public float IncomePerSecond { get; private set; }
@@ -20,6 +23,7 @@ namespace Utilities
         {
             IncomePerSecond -= amount;
             GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
+            
         }
 
         public bool SpendMoney(float amount)
@@ -48,7 +52,11 @@ namespace Utilities
 
         private void Update()
         {
-            if (IncomePerSecond == 0) return;
+            if (IncomePerSecond <= 0)
+            {
+                SceneManager.LoadScene(_badEndSceneIndex);
+                return;
+            };
 
             _timer += Time.deltaTime;
             if (!(_timer >= 1f)) return;
