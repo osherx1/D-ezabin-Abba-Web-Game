@@ -36,7 +36,7 @@ public class GrimManager : MonoBehaviour
     {
         StartCoroutine(AttacksRoutine());
         // StartCoroutine(StartMinionAttack());
-        StartCoroutine(SetupSwipingAttack()); 
+        // StartCoroutine(SetupSwipingAttack()); 
         // StartCoroutine(StartSwipingAttackRoutine());
         // StartCoroutine(StartSpinningAttack());
     }
@@ -90,12 +90,12 @@ public class GrimManager : MonoBehaviour
     private IEnumerator SetupSwipingAttack()
     {
         yield return new WaitForEndOfFrame();
-        var swipingAttackGameObject = Instantiate(swipingAttackPrefab, swipingAttackSettings.SwipingAttackRightPosition, Quaternion.identity);
+        var swipingAttackGameObject = Instantiate(swipingAttackPrefab, swipingAttackSettings.swipingAttackRightPosition, Quaternion.identity);
         var swipingAttack = swipingAttackGameObject.GetComponent<SwipingAttack>();
-        swipingAttack.SetSwipingAttackSpeed(swipingAttackSettings.SwipingAttackSpeed);
-        swipingAttack.SetSwipingAttackHealth(swipingAttackSettings.SwipingAttackHealth);
-        swipingAttack.SetSwipingAttackRightPosition(swipingAttackSettings.SwipingAttackRightPosition);
-        swipingAttack.SetSwipingAttackLeftPosition(swipingAttackSettings.SwipingAttackLeftPosition);
+        swipingAttack.SetSwipingAttackSpeed(swipingAttackSettings.swipingAttackSpeed);
+        swipingAttack.SetSwipingAttackHealth(swipingAttackSettings.swipingAttackHealth);
+        swipingAttack.SetSwipingAttackRightPosition(swipingAttackSettings.swipingAttackRightPosition);
+        swipingAttack.SetSwipingAttackLeftPosition(swipingAttackSettings.swipingAttackLeftPosition);
         swipingAttack.SetKnockbackForce(swipingAttackCounterAttackSettings.knockbackForce);
         swipingAttack.SetKnockbackDurationSeconds(swipingAttackCounterAttackSettings.knockbackDurationSeconds);
         swipingAttack.SetDamageAgainstSwipingAttack(swipingAttackCounterAttackSettings.damageAgainstSwipingAttack);
