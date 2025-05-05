@@ -18,12 +18,14 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private GameObject swipingAttackPrefab;
     [SerializeField] private SwipingAttackSettings swipingAttackSettings;
     [SerializeField] private SwipingCounterAttackSettings swipingAttackCounterAttackSettings;
-    
-    [Header("Spinning Attack Settings")]
+
+    [Header("Spinning Attack Settings")] 
+    [SerializeField] private GameObject spinningAttackSpawnerPrefab;
+    [SerializeField] private SpinningScytheSpawnerSettings spinningScytheSpawnerSettings;
     [SerializeField] private GameObject spinningAttackPrefab;
     [SerializeField] private SpinningScytheAttackSettings spinningScytheAttackSettings;
     
-    [Header("Minions Settings")] 
+    [Header("Minions Attack Settings")] 
     [SerializeField] private GameObject spawnerPrefab;
     [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
     [SerializeField] private MinionSettings minionSettings;
@@ -60,13 +62,17 @@ public class GrimManager : MonoBehaviour
 
     private IEnumerator StartSpinningAttack()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForEndOfFrame();
         var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
-        var spinningAttackGameObject = Instantiate(spinningAttackPrefab, spawnPosition, Quaternion.identity);
-        var spinningAttack = spinningAttackGameObject.GetComponent<SpinningScytheAttack>();
-        spinningAttack.SetHealth(spinningScytheAttackSettings.spinningScytheHealth);
-        spinningAttack.SetSpeed(spinningScytheAttackSettings.spinningScytheSpeed);
-        spinningAttack.StartAttack();
+        var spinningScytheSpawner = Instantiate(spinningAttackSpawnerPrefab, spawnPosition, Quaternion.identity);
+        var spinningScytheSpawnerComponent = spinningScytheSpawner.GetComponent<SpinningSpawner>();
+        spinningScytheSpawnerComponent.SetupSpawnerSettings(spinningScytheSpawnerSettings, spinningAttackPrefab);
+        spinningScytheSpawnerComponent.StartSpawning();
+        // var spinningAttackGameObject = Instantiate(spinningAttackPrefab, spawnPosition, Quaternion.identity);
+        // var spinningAttack = spinningAttackGameObject.GetComponent<SpinningScytheAttack>();
+        // spinningAttack.SetHealth(spinningScytheAttackSettings.spinningScytheHealth);
+        // spinningAttack.SetSpeed(spinningScytheAttackSettings.spinningScytheSpeed);
+        // spinningAttack.StartAttack();
     }
 
     private IEnumerator StartSwipingAttackRoutine()
@@ -77,7 +83,7 @@ public class GrimManager : MonoBehaviour
 
     private IEnumerator StartMinionAttack()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForEndOfFrame();
         CallMinionsAttack();
     }
 
