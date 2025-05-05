@@ -52,7 +52,7 @@ namespace Utilities
 
         private void Update()
         {
-            if (IncomePerSecond == 0)
+            if (IncomePerSecond <= 0)
             {
                 SceneManager.LoadScene(_badEndSceneIndex);
                 return;
