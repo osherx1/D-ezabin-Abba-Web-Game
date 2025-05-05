@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a35377500c05342b385b59ed85ad95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage: 0
+  stage: 7
   nextPrefab: {fileID: -8173162711225070234, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
   evolveEffectPrefab: {fileID: 0}
   zuzPerSecond: 0.5
