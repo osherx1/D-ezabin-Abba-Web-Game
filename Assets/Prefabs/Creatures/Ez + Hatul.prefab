@@ -139,6 +139,10 @@ MonoBehaviour:
   mergeNeeded: 2
   mergeRadius: 0.6
   evolveAnimTime: 0.6
+  allowedBottomLeft: {x: -9, y: -5}
+  allowedTopRight: {x: 9, y: 5}
+  fallStateName: Fall
+  fallAnimTime: 0.6
   anim: {fileID: 2175643461397906328}
   creatureMask:
     serializedVersion: 2

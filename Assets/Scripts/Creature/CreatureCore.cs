@@ -24,6 +24,17 @@ public class CreatureCore : MonoBehaviour,
     [Header("Merge")] public int mergeNeeded = 2;
     public float mergeRadius = 0.6f;
     public float evolveAnimTime = 0.6f;
+    
+    [Header("Drag & Fall Bounds")]
+    [Tooltip("Creatures must stay within this area; drop outside → fall.")]
+    [SerializeField] private Vector2 allowedBottomLeft  = new Vector2(-5, -3);
+    [SerializeField] private Vector2 allowedTopRight    = new Vector2( 5,  3);
+
+    [Header("Fall Animation")]
+    [Tooltip("Name of your Fall state in the Animator")]
+    [SerializeField] private string   fallStateName     = "Fall";
+    [SerializeField] private float    fallAnimTime      = 0.6f;
+
 
     /* ---------- Private ---------- */
     private bool isDragging;
@@ -83,9 +94,21 @@ public class CreatureCore : MonoBehaviour,
 
     private void PickIdleTarget()
     {
+        // pick a random point within idleRadius
         Vector2 r = Random.insideUnitCircle * idleRadius;
-        idleTarget = transform.position + new Vector3(r.x, r.y, 0);
+        Vector3 candidate = transform.position + new Vector3(r.x, r.y, 0);
+
+        // clamp it to the allowed square
+        candidate.x = Mathf.Clamp(candidate.x,
+            allowedBottomLeft.x,
+            allowedTopRight.x);
+        candidate.y = Mathf.Clamp(candidate.y,
+            allowedBottomLeft.y,
+            allowedTopRight.y);
+
+        idleTarget = candidate;
     }
+
 
     /* ---------- Animation ---------- */
 
@@ -132,7 +155,12 @@ public class CreatureCore : MonoBehaviour,
         Vector3 world = cam.ScreenToWorldPoint(data.position);
         world.z = 0;
         dragOffset = transform.position - world;
+
+        // — NEW: play lift animation
+        if (anim != null)
+            anim.CrossFade("Lifted", 0f, 0);
     }
+
 
     public void OnDrag(PointerEventData data)
     {
@@ -146,10 +174,34 @@ public class CreatureCore : MonoBehaviour,
     public void OnPointerUp(PointerEventData data)
     {
         if (!isDragging) return;
-
         isDragging = false;
+
+        // world drop position under the cursor
+        Vector3 world = cam.ScreenToWorldPoint(data.position);
+        world.z = 0;
+        Vector3 dropPos = world + dragOffset;
+
+        // clamp X/Y to your allowed bounds
+        float clampedX = Mathf.Clamp(dropPos.x,
+            allowedBottomLeft.x,
+            allowedTopRight.x);
+        float clampedY = Mathf.Clamp(dropPos.y,
+            allowedBottomLeft.y,
+            allowedTopRight.y);
+        Vector3 clampedPos = new Vector3(clampedX, clampedY, transform.position.z);
+
+        // move the creature back inside
+        transform.position = clampedPos;
+
+        // return to idle animation
+        if (anim != null)
+            anim.CrossFade("Idle", 0f, 0);
+
+        // then attempt merge as before
         StartCoroutine(TryMerge());
     }
+
+
 
     /* ---------- Merge-Evolution ---------- */
 
@@ -225,6 +277,19 @@ public class CreatureCore : MonoBehaviour,
         // (11) Destroy this original creature
         Destroy(gameObject);
     }
+    
+    private IEnumerator FallFromCursor()
+    {
+        // play fall animation
+        if (anim != null)
+            anim.CrossFade(fallStateName, 0f, 0);
+
+        // wait for it to finish
+        yield return new WaitForSeconds(fallAnimTime);
+
+        Destroy(gameObject);
+    }
+
 
     private bool _isDead;
 
