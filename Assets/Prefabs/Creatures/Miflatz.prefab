@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 8
   nextPrefab: {fileID: 0}
+  evolveEffectPrefab: {fileID: 0}
   zuzPerSecond: 100
   idleRadius: 0.4
   idleStepTime: 2
