@@ -202,7 +202,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     {
         if(_isInvincible) return;
         _minionHealth -= damage;
-        Debug.Log("Minion took damage, health remaining: " + _minionHealth);
+        // Debug.Log("Minion took damage, health remaining: " + _minionHealth);
         // apply knockback to the minion
         KnockbackMinion();
         if (_minionHealth <= 0)

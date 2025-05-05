@@ -38,7 +38,7 @@ public class MinionSpawner : MonoBehaviour
         yield return new WaitForSeconds(spawnerSettings.spawnDelay);
         for (int i = 0; i < spawnerSettings.minionCount; i++)
         {
-            Debug.Log("Spawning minion " + i);
+            // Debug.Log("Spawning minion " + i);
             var spawnPosition = Random.insideUnitCircle * spawnerSettings.spawnRadius;
             spawnPosition += (Vector2)transform.position;
 
