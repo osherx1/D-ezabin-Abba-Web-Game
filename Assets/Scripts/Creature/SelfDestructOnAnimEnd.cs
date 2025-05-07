@@ -15,7 +15,7 @@ public class SelfDestructOnAnimEnd : MonoBehaviour
 
         // ─── FLIP ON X
         // Only mirror horizontally if this effect is playing the "Spawn" state
-        if (stateName == "Spawn")
+        if (stateName == "Ez")
         {
             Vector3 s = transform.localScale;
             s.x = -Mathf.Abs(s.x);

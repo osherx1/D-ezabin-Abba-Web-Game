@@ -266,7 +266,7 @@ public class CreatureCore : MonoBehaviour,
         // (9) Wait until this creature’s Evolve state is done
         yield return new WaitUntil(() => {
             var st = anim.GetCurrentAnimatorStateInfo(0);
-            return st.IsName("Evolve") && st.normalizedTime >= 1f;
+            return st.IsName("Evolve") && st.normalizedTime >= 0.3f;
         });
 
         // (10) Instantiate the merged creature prefab
