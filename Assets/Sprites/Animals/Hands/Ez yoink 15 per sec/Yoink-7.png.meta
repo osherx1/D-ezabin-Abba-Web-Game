@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Yoink-7_0: 3578560431615080705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
