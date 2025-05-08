@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: c7ad6e610bf009c49ae8eecc1323d90e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6247869027844516126
+    second: Poof-16_0
+  - first:
+      213: 1125615403128254335
+    second: Poof-16_1
+  - first:
+      213: 5869605137688144306
+    second: Poof-16_2
+  - first:
+      213: 8656346137333636129
+    second: Poof-16_3
+  - first:
+      213: -8379631117649651457
+    second: Poof-16_4
+  - first:
+      213: 7351259379509142835
+    second: Poof-16_5
+  - first:
+      213: -231883158939706146
+    second: Poof-16_6
+  - first:
+      213: 109577155117938645
+    second: Poof-16_7
+  - first:
+      213: 4646368975603639798
+    second: Poof-16_8
+  - first:
+      213: -283023220540513706
+    second: Poof-16_9
+  - first:
+      213: -5318024572764632975
+    second: Poof-16_10
+  - first:
+      213: 1196887836182524492
+    second: Poof-16_11
+  - first:
+      213: -4422059110549094927
+    second: Poof-16_12
+  - first:
+      213: 4374583538531026192
+    second: Poof-16_13
+  - first:
+      213: -7747546362915929474
+    second: Poof-16_14
+  - first:
+      213: 6094684030033939951
+    second: Poof-16_15
+  - first:
+      213: 93113267571012014
+    second: Poof-16_16
+  - first:
+      213: 4391072774732593084
+    second: Poof-16_17
+  - first:
+      213: -4477818149691322071
+    second: Poof-16_18
+  - first:
+      213: -5267679553582981035
+    second: Poof-16_19
+  - first:
+      213: -6498323511794129123
+    second: Poof-16_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Poof-16_0
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 755
+        width: 112
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e69928c83c1b49a0800000000000000
+      internalID: -6247869027844516126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_1
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 695
+        width: 115
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7fea21de3dfe9f00800000000000000
+      internalID: 1125615403128254335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 518
+        width: 139
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9a5b336c6057150800000000000000
+      internalID: 5869605137688144306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 593
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c9898d2f4812870800000000000000
+      internalID: 8656346137333636129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_4
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 590
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8deab45e195bb80800000000000000
+      internalID: -8379631117649651457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_5
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 556
+        width: 55
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335a66ff47be40660800000000000000
+      internalID: 7351259379509142835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_6
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 545
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edcd00ade7f28ccf0800000000000000
+      internalID: -231883158939706146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 371
+        width: 79
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d77d4e87db458100800000000000000
+      internalID: 109577155117938645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_8
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 369
+        width: 61
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5204e37f73b7040800000000000000
+      internalID: 4646368975603639798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_9
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 331
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652ee7461ef721cf0800000000000000
+      internalID: -283023220540513706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_10
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 204
+        width: 59
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178c091c3d49236b0800000000000000
+      internalID: -5318024572764632975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 279
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4235a745233c9010800000000000000
+      internalID: 1196887836182524492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_12
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 277
+        width: 35
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdf0f30ba0b1a2c0800000000000000
+      internalID: -4422059110549094927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_13
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 246
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015c96efc84a5bc30800000000000000
+      internalID: 4374583538531026192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_14
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 200
+        width: 63
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72c68591af2b7490800000000000000
+      internalID: -7747546362915929474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_15
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 182
+        width: 57
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed4b6495daa49450800000000000000
+      internalID: 6094684030033939951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_16
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 181
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea13275060eca4100800000000000000
+      internalID: 93113267571012014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_17
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 197
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb733d87c6930fc30800000000000000
+      internalID: 4391072774732593084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_18
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 139
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9211ada0e189bd1c0800000000000000
+      internalID: -4477818149691322071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_19
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 121
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550291afa5175e6b0800000000000000
+      internalID: -5267679553582981035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poof-16_20
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 32
+        width: 156
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1721f3123151d5a0800000000000000
+      internalID: -6498323511794129123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Poof-16_0: -6247869027844516126
+      Poof-16_1: 1125615403128254335
+      Poof-16_10: -5318024572764632975
+      Poof-16_11: 1196887836182524492
+      Poof-16_12: -4422059110549094927
+      Poof-16_13: 4374583538531026192
+      Poof-16_14: -7747546362915929474
+      Poof-16_15: 6094684030033939951
+      Poof-16_16: 93113267571012014
+      Poof-16_17: 4391072774732593084
+      Poof-16_18: -4477818149691322071
+      Poof-16_19: -5267679553582981035
+      Poof-16_2: 5869605137688144306
+      Poof-16_20: -6498323511794129123
+      Poof-16_3: 8656346137333636129
+      Poof-16_4: -8379631117649651457
+      Poof-16_5: 7351259379509142835
+      Poof-16_6: -231883158939706146
+      Poof-16_7: 109577155117938645
+      Poof-16_8: 4646368975603639798
+      Poof-16_9: -283023220540513706
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
