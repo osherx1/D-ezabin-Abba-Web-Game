@@ -13,5 +13,6 @@ namespace Utilities
         public static Action MuteSounds;
         public static Action<string> StopSound;
         public static Action PauseUnpauseBackgroundMusic;
+        public static Action FreezeEnemies;
     }
 }
