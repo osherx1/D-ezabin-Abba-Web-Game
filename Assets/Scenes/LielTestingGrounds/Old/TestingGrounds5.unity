@@ -1450,11 +1450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1710606297023213826, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8482347
+      value: -2.56
       objectReference: {fileID: 0}
     - target: {fileID: 1710606297023213826, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9659247
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 1710606297023213826, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1487,6 +1487,22 @@ PrefabInstance:
     - target: {fileID: 1710606297023213826, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960969751722057358, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
+      propertyPath: m_Size.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960969751722057358, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
+      propertyPath: m_Size.y
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960969751722057358, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 90baa1803436554499b1c3a8a135d8be, type: 3}
+    - target: {fileID: 6960969751722057358, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
