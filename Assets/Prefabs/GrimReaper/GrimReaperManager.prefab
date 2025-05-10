@@ -72,7 +72,7 @@ MonoBehaviour:
   minionSpawnerSettings:
     minionCount: 4
     spawnRadius: 2
-    spawnDelay: 4
+    spawnDelay: 4.04
   minionSettings:
     speed: 2
     minionStartingHealth: 1

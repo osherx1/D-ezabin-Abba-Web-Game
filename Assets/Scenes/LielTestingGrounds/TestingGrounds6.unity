@@ -315,10 +315,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: minionSpawnerSettings.spawnDelay
-      value: 4.04
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1429,63 +1425,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645e7b7e335c09f4986355ead3c320f0, type: 3}
---- !u!1001 &1519981119
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 917138685201689039, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_Name
-      value: SpinningSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.2846177
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2888887
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661421308375818512, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
 --- !u!1 &1610883792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,4 +2574,3 @@ SceneRoots:
   - {fileID: 1438477713}
   - {fileID: 1405433780}
   - {fileID: 1451078980}
-  - {fileID: 1519981119}
