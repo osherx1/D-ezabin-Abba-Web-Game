@@ -128,6 +128,7 @@ namespace UI
         /* ---------- Tooltip ---------- */
         public void OnPointerEnter(PointerEventData e)
         {
+            // if (_state == State.Question) return;
             // Ensure TooltipUI.Instance is valid
             if (TooltipUI.Instance == null) return;
 
@@ -157,9 +158,12 @@ namespace UI
             // Offset tooltip position by 60% of button height
             var yOffset = _rect != null && _rect.rect.height > 0 ? _rect.rect.height * 0.6f : 0f;
             var tooltipPos = localPoint + new Vector2(0f, yOffset);
-
+            CreatureCore creatureCore = animalPrefab.GetComponent<CreatureCore>();
+            if (creatureCore == null) return;
+            
             // Show the tooltip
-            TooltipUI.Instance.Show($"{animalCost} zuz", tooltipPos);
+            TooltipUI.Instance.Show($"{((int)animalCost).ToString("N0")} zuz\n +{creatureCore.zuzPerSecond} zps", tooltipPos);
+            // TooltipUI.Instance.Show($"{animalCost}\n{animal} zuz", tooltipPos);
         }
 
         public void OnPointerExit(PointerEventData _) => TooltipUI.Instance.Hide();
