@@ -10,5 +10,8 @@ namespace Utilities
         public static Action<float> OnMoneyChanged;
         public static Action<float> OnIncomeChanged;
         public static Action<CreatureStage> OnCreatureMerged;
+        public static Action MuteSounds;
+        public static Action<string> StopSound;
+        public static Action PauseUnpauseBackgroundMusic;
     }
 }
