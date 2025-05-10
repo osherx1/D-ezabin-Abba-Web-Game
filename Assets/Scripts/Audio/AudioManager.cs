@@ -22,9 +22,9 @@ namespace Audio
         private Dictionary<string, AudioClip> _audioClipDictionary;
 
     
-        [Header("Audio Pool")]
-        [SerializeField] private AudioSourcePool audioSourcePool;
-    
+        // [Header("Audio Pool")]
+        // [SerializeField] private AudioSourcePool audioSourcePool;
+        //
         private bool _isMuted = false;
         private static AudioManager _instance;
 
