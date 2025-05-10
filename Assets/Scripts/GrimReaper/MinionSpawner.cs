@@ -14,7 +14,32 @@ public class MinionSpawner : MonoBehaviour
     private MinionSettings minionSettings;
     [SerializeField] 
     private MinionCounterAttackSettings minionCounterAttackSettings;
+    private Animator _animator;
     
+    
+    private void OnEnable()
+    {
+        GameEvents.FreezeEnemies += OnFreezeEnemies;
+        _animator = GetComponent<Animator>();
+    }
+    
+    private void OnDisable()
+    {
+        GameEvents.FreezeEnemies -= OnFreezeEnemies;
+    }
+
+    private void OnFreezeEnemies()
+    {
+        // Stop Sounds
+        // Stop summoning minions
+        StopAllCoroutines();
+        // Freeze animator
+        if (_animator != null)
+        {
+            _animator.speed = 0;
+        }
+    }
+
     public void SetSpawnerSettings(MinionSpawnerSettings newSettings)
     {
         spawnerSettings = newSettings;
@@ -66,4 +91,5 @@ public class MinionSpawner : MonoBehaviour
         StopAllCoroutines();
         Destroy(gameObject);
     }
+    
 }

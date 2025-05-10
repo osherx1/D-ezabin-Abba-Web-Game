@@ -25,6 +25,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
 
     private int _minionHealth;
     private bool _shouldFlip;
+    private bool _isFrozen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -49,7 +50,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (!_shouldMove || _isDead) return;
+        if (!_shouldMove || _isDead || _isFrozen) return;
         MoveMinion();
     }
 
@@ -104,6 +105,10 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     public void Reset()
     {
         _target = null;
+        _shouldMove = false;
+        _isInvincible = false;
+        _isDead = false;
+        _isFrozen = false;
     }
 
     private void SetTarget(Transform target)
@@ -142,11 +147,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         set => _minionHealth = value;
     }
     
-
-    // public void SetRotationSpeed(float rotationSpeed)
-    // {
-    //     this.rotationSpeed = rotationSpeed;
-    // }
+    
 
     private void FindCosestCreature()
     {
