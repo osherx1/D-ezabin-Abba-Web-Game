@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using Audio;
 using Pool;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using Utilities;
+using Random = UnityEngine.Random;
 
 public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
 {
@@ -14,11 +15,12 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     [SerializeField] private float speed;
     // [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private int minionStartingHealth = 5;
-    [SerializeField] private string movementClipName = "MinionMovement";
-    [SerializeField] private string distructionClipName = "MinionHit";
+    [SerializeField] private string[] movementClipNames;
+    [SerializeField] private string destructionClipName = "MinionHit";
+    [SerializeField] private float timeBetweenClips = 1.3f;
+    private readonly float _clipDiviation = 2.5f;
     private Rigidbody2D _rb;
     private Animator _animator;
-    private PooledAudioSource _audioSource;
 
     [Header("Counter attack parameters")] 
     [SerializeField] private float knockbackForce;
@@ -47,7 +49,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         GameEvents.StopAllEnemies += OnStopAllEnemies;
         GameEvents.DestroyAllEnemies += OnDestroyAllEnemies;
         _minionHealth = minionStartingHealth;
-        OnStartMinionsAttack();
+        // OnStartMinionsAttack();
     }
 
     private void OnDisable()
@@ -85,7 +87,19 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         FindCosestCreature();
         SetShouldMove(true);
         // MoveMinion();
-        _audioSource = AudioManager.Instance.PlaySound(transform.position, movementClipName , 1f, 1f, true);
+        StartCoroutine(MovementSoundRoutine());
+    }
+
+    private IEnumerator MovementSoundRoutine()
+    {
+        int numberOfClips = movementClipNames.Length;
+        // Random random = new Random();
+        while (!_isDead)
+        {
+            int clipIndex = Random.Range(0, numberOfClips);
+            AudioManager.Instance.PlaySound(transform.position, movementClipNames[clipIndex], Random.Range(0.5f, 0.7f), Random.Range(0.8f, 1.2f));
+            yield return new WaitForSeconds(timeBetweenClips + Random.Range(1f, _clipDiviation));
+        }
     }
 
     private void MoveMinion()
@@ -195,6 +209,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         // yield return null;
         TakeDamage(damageAgainstMinion);
     }
+    
 
     private void TakeDamage(int damage)
     {
@@ -245,8 +260,8 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         // if(_audioSource != null)
         //     _audioSource.StopAudio();
         // _audioSource.StopAudio();
-        AudioManager.Instance.StopAllSoundWithName(movementClipName);
-        AudioManager.Instance.PlaySound(transform.position, distructionClipName);
+        // AudioManager.Instance.StopAllSoundWithName(movementClipName);
+        AudioManager.Instance.PlaySound(transform.position, destructionClipName);
         MinionPool.Instance.Return(this);
     }
     public void SetMinionSettings(MinionSettings minionSettings, MinionCounterAttackSettings minionCounterAttackSettings)
@@ -256,7 +271,8 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         knockbackForce = minionCounterAttackSettings.knockbackForce;
         knockbackDurationSeconds = minionCounterAttackSettings.knockbackDurationSeconds;
         damageAgainstMinion = minionCounterAttackSettings.damageAgainstMinion;
-        movementClipName = minionSettings.movementClipName;
-        distructionClipName = minionSettings.distructionClipName;
+        movementClipNames = minionSettings.movementClipNames;
+        destructionClipName = minionSettings.distructionClipName;
+        timeBetweenClips = minionSettings.timeBetweenClips;
     }
 }
