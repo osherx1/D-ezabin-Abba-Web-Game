@@ -824,10 +824,6 @@ PrefabInstance:
       propertyPath: childAnimator
       value: 
       objectReference: {fileID: 815843506}
-    - target: {fileID: 2787137783221620288, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3492432144763889530, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Pivot.x
       value: 0
