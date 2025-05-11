@@ -180,7 +180,7 @@ MonoBehaviour:
   stage: 8
   nextPrefab: {fileID: 0}
   evolveEffectPrefab: {fileID: 0}
-  zuzPerSecond: 6561
+  zuzPerSecond: 40
   idleRadius: 0.4
   idleStepTime: 2
   mergeNeeded: 2
