@@ -19,5 +19,8 @@ namespace Utilities
         public static Action OnFinalCreatureAnimationEnded;
         public static Action StopAllEnemies;
         public static Action DestroyAllEnemies;
+        public static Action OnShieldActivated;
+        public static Action OnSwordActivated;
+        public static Action OnDoubleUpCoinsActivated;
     }
 }
