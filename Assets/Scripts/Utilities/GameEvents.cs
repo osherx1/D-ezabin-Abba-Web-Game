@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public class GameEvents : MonoBehaviour
+    public class GameEvents
     {
         public static Action StartSwipingAttack;
         public static Action StartMinionsAttack;
