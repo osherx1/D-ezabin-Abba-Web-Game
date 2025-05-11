@@ -108,8 +108,18 @@ MonoBehaviour:
   minionSettings:
     speed: 2
     minionStartingHealth: 1
-    movementClipName: MinionMovement
+    movementClipNames:
+    - MinionMovement1
+    - MinionMovement2
+    - MinionMovement3
+    - MinionMovement4
+    - MinionMovement5
+    - MinionMovement6
+    - MinionMovement7
+    - MinionMovement8
+    - MinionMovement9
     distructionClipName: MinionHit
+    timeBetweenClips: 0.5
   minionCounterAttackSettings:
     knockbackForce: 0
     knockbackDurationSeconds: 0.5
