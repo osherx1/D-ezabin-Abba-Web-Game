@@ -28,6 +28,13 @@ namespace UI
         public Sprite disabledSprite; // Unaffordable
         public Sprite enabledSprite; // Purchasable
 
+
+        [Header("Cooldown")] [SerializeField]
+        private Image cooldownOverlay; // Child image with Fill Method = Radial / Vertical
+
+        [SerializeField] private float cooldownDuration = 3f;
+
+
         /* ---------- Internal ---------- */
         private enum State
         {
@@ -36,12 +43,19 @@ namespace UI
             Disabled,
             Enabled
         }
+        /* ---------- Internal ---------- */
 
         private State _state = State.Question;
-
         private Button _button;
         private Image _image;
         private RectTransform _rect; // add this field
+
+        // cooldown bookkeeping
+        private bool _isCoolingDown = false;
+        private float _cooldownTimer = 0f;
+
+        /* ---------- Properties ---------- */
+        public bool IsUnlocked => _state == State.Enabled || _state == State.Disabled;
 
         /* ---------- MonoBehaviour ---------- */
         private void Awake()
@@ -50,6 +64,7 @@ namespace UI
             _image = GetComponent<Image>();
             _button.onClick.AddListener(BuyAnimal);
             _rect = GetComponent<RectTransform>(); // assign RectTransform
+            if (cooldownOverlay) cooldownOverlay.gameObject.SetActive(false);
             RefreshVisual();
         }
 
@@ -74,6 +89,25 @@ namespace UI
             }
         }
 
+        private void Update()
+        {
+            if (!_isCoolingDown) return;
+
+            _cooldownTimer -= Time.deltaTime;
+            if (cooldownOverlay)
+                cooldownOverlay.fillAmount = _cooldownTimer / cooldownDuration;
+
+            if (_cooldownTimer <= 0f)
+            {
+                _isCoolingDown = false;
+                if (cooldownOverlay) cooldownOverlay.gameObject.SetActive(false);
+
+                // restore state according to affordability
+                _state = CanAfford() ? State.Enabled : State.Disabled;
+                RefreshVisual();
+            }
+        }
+
         /// <summary>Unlocks the button for purchase (called by ShopUIManager).</summary>
         public void Unlock()
         {
@@ -81,9 +115,31 @@ namespace UI
             RefreshVisual();
         }
 
+        /// <summary>Starts the cooldown on this button.</summary>
+        public void StartCooldown()
+        {
+            if (!IsUnlocked) return;
+
+            _isCoolingDown = true;
+            _cooldownTimer = cooldownDuration;
+
+            // _state = State.Disabled; 
+            // RefreshVisual(); //
+
+            if (cooldownOverlay)
+            {
+                cooldownOverlay.fillAmount = 1f;
+                cooldownOverlay.gameObject.SetActive(true);
+            }
+
+            _button.interactable = false;
+        }
+
         /* ---------- Event Handlers ---------- */
         private void HandleMoneyChanged(float _)
         {
+            if (_isCoolingDown) return; 
+
             if (_state != State.Disabled && _state != State.Enabled) return;
 
             _state = CanAfford() ? State.Enabled : State.Disabled;
@@ -95,7 +151,10 @@ namespace UI
             if (_state != State.Enabled) return;
 
             if (MoneyManager.Instance.SpendMoney(animalCost))
+            {
                 CreatureSpawner.Instance.Spawn(animalPrefab);
+                GameEvents.OnCreaturePurchased?.Invoke();
+            }
         }
 
         /* ---------- UI Helpers ---------- */
@@ -160,9 +219,10 @@ namespace UI
             var tooltipPos = localPoint + new Vector2(0f, yOffset);
             CreatureCore creatureCore = animalPrefab.GetComponent<CreatureCore>();
             if (creatureCore == null) return;
-            
+
             // Show the tooltip
-            TooltipUI.Instance.Show($"{((int)animalCost).ToString("N0")} zuz\n +{creatureCore.zuzPerSecond} zps", tooltipPos);
+            TooltipUI.Instance.Show(
+                $"{((int)animalCost).ToString("N0")} zuz\n +{creatureCore.zuzPerSecond} zps", tooltipPos);
             // TooltipUI.Instance.Show($"{animalCost}\n{animal} zuz", tooltipPos);
         }
 

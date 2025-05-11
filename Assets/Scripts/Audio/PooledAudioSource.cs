@@ -18,16 +18,16 @@ namespace Audio
             _audioSource = GetComponent<AudioSource>();
             // _originalVolume = _audioSource.volume;
             GameEvents.MuteSounds += MuteSounds;
-            GameEvents.StopSound += StopSound;
+            GameEvents.StopSoundByName += StopSoundByName;
         }
 
         private void OnDisable()
         {
             GameEvents.MuteSounds -= MuteSounds;
-            GameEvents.StopSound -= StopSound;
+            GameEvents.StopSoundByName -= StopSoundByName;
         }
 
-        private void StopSound(string soundName)
+        private void StopSoundByName(string soundName)
         {
             if (_audioSource.clip.name == soundName)
             {
@@ -81,7 +81,7 @@ namespace Audio
             StartCoroutine(ReturnToPoolWhenFinished());
         }
 
-        private void Stop()
+        public void Stop()
         {
             _audioSource.Stop();
             AudioSourcePool.Instance.Return(this);

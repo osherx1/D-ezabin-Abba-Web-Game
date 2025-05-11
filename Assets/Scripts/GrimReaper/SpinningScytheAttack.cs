@@ -3,6 +3,7 @@ using Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using Utilities;
 
 public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
 {
@@ -29,7 +30,19 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        StartAttack();
+        // StartAttack();
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.StopAllEnemies += OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies += OnDestroyAllEnemies;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.StopAllEnemies -= OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies -= OnDestroyAllEnemies;
     }
 
     public void StartAttack()
@@ -55,13 +68,29 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         else if (other.gameObject.CompareTag("Creatures"))
         {
             // Handle damage to the creature
+            // Debug.Log("Hit creature: " + other.gameObject.name);
             var creature = other.gameObject.GetComponent<CreatureCore>();
             if (creature != null)
             {
+                Debug.Log("Hit creature: " + creature.name);
                 creature.Death();
             }
             // Destroy(gameObject);
         }
+    }
+
+    private void OnStopAllEnemies()
+    {
+        StopAllCoroutines();
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
+        _rb.linearVelocity = Vector2.zero;
+        _animator.speed = 0;
+    }
+
+    private void OnDestroyAllEnemies()
+    {
+        OnStopAllEnemies();
+        HandleDestruction();
     }
 
     private void TakeDamage(int damage)
@@ -77,7 +106,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     private void HandleDestruction()
     {
         StopAllCoroutines();
-        AudioManager.Instance.StopSound(movementClipName);
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
         var position = transform.position;
         AudioManager.Instance.PlaySound(position, deathClipName);
         Destroy(gameObject);
@@ -113,7 +142,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         // Set the knockback flag and start coroutine to restore velocity
         _isKnockbackActive = true;
         _animator.SetBool("Hit", true);
-        AudioManager.Instance.StopSound(movementClipName);
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
         StartCoroutine(RestoreOriginalDirection());
     }
 
@@ -130,27 +159,13 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         _animator.SetBool("Hit", false);
         AudioManager.Instance.PlaySound(transform.position, movementClipName, 1f, 1f, true);
     }
-
-    public void SetHealth(int newHealth)
-    {
-        health = newHealth;
-    }
     
-    public void SetSpeed(float newSpeed)
-    {
-        speed = newSpeed;
-    }
     
-    public void SetKnockbackDuration(float newKnockbackDuration)
-    {
-        knockbackDurationSeconds = newKnockbackDuration;
-    }
-
     public void SetSpinningScytheAttackSettings(SpinningScytheAttackSettings newSettings)
     {
-        SetHealth(newSettings.spinningScytheHealth);
-        SetSpeed(newSettings.spinningScytheSpeed);
-        SetKnockbackDuration(newSettings.knockbackDurationSeconds);
+        health = newSettings.spinningScytheHealth;
+        speed = newSettings.spinningScytheSpeed;
+        knockbackDurationSeconds = newSettings.knockbackDurationSeconds;
         movementClipName = newSettings.movementClipName;
         hitClipName = newSettings.hitClipName;
         deathClipName = newSettings.deathClipName;
