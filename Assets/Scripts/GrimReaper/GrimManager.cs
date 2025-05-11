@@ -29,7 +29,6 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private SpinningScytheSpawnerSettings spinningScytheSpawnerSettings;
     [SerializeField] private GameObject spinningAttackPrefab;
     [SerializeField] private SpinningScytheAttackSettings spinningScytheAttackSettings;
-    [SerializeField] private string spinningScytheAttackAudioName;
     [SerializeField] private string spinningScytheSummoningAudioName;
     
     [Header("Minions Attack Settings")] 

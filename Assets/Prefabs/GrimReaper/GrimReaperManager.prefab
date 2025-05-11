@@ -69,6 +69,10 @@ MonoBehaviour:
   spinningScytheAttackSettings:
     spinningScytheSpeed: 3
     spinningScytheHealth: 3
+    knockbackDurationSeconds: 0.2
+    movementClipName: SpinningScytheMovement
+    hitClipName: SpinningScytheHit
+    deathClipName: SpinningScytheDeath
   spinningScytheAttackAudioName: 
   spinningScytheSummoningAudioName: SpinningScytheSummoning
   spawnerPrefab: {fileID: 835675431695768437, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
