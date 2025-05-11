@@ -15,6 +15,7 @@ public class CreatureSpawner : MonoSingleton<CreatureSpawner>
 
     [Tooltip("Where to play the Spawn effect and place the creature")]
     [SerializeField] private Transform specialSpawnPoint;
+    [SerializeField] private Transform handSpawnPoint;
 
     /// <summary>
     /// Call this with any GameObject prefab.
@@ -55,7 +56,7 @@ public class CreatureSpawner : MonoSingleton<CreatureSpawner>
     {
         // 1) play the effect
         Instantiate(entry.effectPrefab,
-                    specialSpawnPoint.position,
+            handSpawnPoint.position,
                     Quaternion.identity);
 
         // 2) wait the configured delay

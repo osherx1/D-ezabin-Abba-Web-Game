@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6556767764409807316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4759123066033496229}
+  m_Layer: 0
+  m_Name: AnimalsSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4759123066033496229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556767764409807316}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4869187, y: 1.2540275, z: -9.316369}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7194907163122485157}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7518378113684130683
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +60,8 @@ Transform:
   m_LocalPosition: {x: 0.57426554, y: -0.8078319, z: 9.272852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4759123066033496229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &934495055633027515
@@ -46,8 +78,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeft: {x: -5, y: -3}
   topRight: {x: 5, y: 3}
-  specialStage: 0
-  specialSpawnPoint: {fileID: 8992902333216172498, guid: 645e7b7e335c09f4986355ead3c320f0, type: 3}
-  spawnEffectPrefab: {fileID: 7486890608111271335, guid: 468f635416ea2e045be6ec4d55a600a6, type: 3}
-  spawnEffectDuration: 1
-  spawnDelay: 1.2
+  spawnEffects:
+  - stage: 0
+    effectPrefab: {fileID: 7486890608111271335, guid: 468f635416ea2e045be6ec4d55a600a6, type: 3}
+    spawnDelay: 1.2
+  - stage: 1
+    effectPrefab: {fileID: 7438630425326526200, guid: 7356d0012b865c94aa6530f2f59ea473, type: 3}
+    spawnDelay: 1.2
+  - stage: 2
+    effectPrefab: {fileID: 8566124705628978972, guid: ab9a440b833d4784a9457618fe4e3acc, type: 3}
+    spawnDelay: 1.2
+  - stage: 3
+    effectPrefab: {fileID: 5454107833985954851, guid: aa4d9629da8ffc34eb70c47db65094b0, type: 3}
+    spawnDelay: 1.2
+  - stage: 4
+    effectPrefab: {fileID: 9003660883306027910, guid: 62c73ad090aecd24793993bf690cda6c, type: 3}
+    spawnDelay: 1.2
+  - stage: 5
+    effectPrefab: {fileID: 3891764401060865069, guid: 2d32f664483ddde42894ec4ea8519c67, type: 3}
+    spawnDelay: 1.2
+  - stage: 6
+    effectPrefab: {fileID: 7482396146854925026, guid: 68ce1b1caa33e6a48adc80ab95f56e23, type: 3}
+    spawnDelay: 1.2
+  - stage: 7
+    effectPrefab: {fileID: 2671498750443015765, guid: 15bdc85ab48ca014aa731242ba2423bf, type: 3}
+    spawnDelay: 1.2
+  - stage: 8
+    effectPrefab: {fileID: 3729723347125102542, guid: ad539651cbd882543aab8d450112297c, type: 3}
+    spawnDelay: 1.2
+  specialSpawnPoint: {fileID: 0}
+  handSpawnPoint: {fileID: 0}

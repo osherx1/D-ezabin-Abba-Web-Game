@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5119897402214347595}
   - component: {fileID: 7263198193484248438}
   - component: {fileID: 8429033136799031557}
-  - component: {fileID: -5928267152066329526}
+  - component: {fileID: 7535469657560644232}
   m_Layer: 0
   m_Name: Evovle Poof
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-5928267152066329526
+--- !u!114 &7535469657560644232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,4 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706286727e4aca544ace4c5aee43814b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateName: Evolve
+  stateName: 

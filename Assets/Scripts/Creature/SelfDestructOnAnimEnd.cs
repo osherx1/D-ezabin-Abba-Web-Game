@@ -38,4 +38,10 @@ public class SelfDestructOnAnimEnd : MonoBehaviour
 
         Destroy(gameObject);
     }
+    
+    public void DestroySelfFunc()
+    {
+        Debug.Log("DestroySelfFunc");
+        Destroy(gameObject);
+    }
 }
