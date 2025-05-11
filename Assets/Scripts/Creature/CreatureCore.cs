@@ -316,7 +316,7 @@ public class CreatureCore : MonoBehaviour,
     private IEnumerator PlayHitAndDie()
     {
         // 1) crossfade into the “Hit” state (layer 0, no transition time)
-        anim.CrossFade("Hit", 0f, 1);
+        anim.CrossFade("Hit", 0f, 0);
 
         // 2) wait until “Hit” has played through once
         yield return new WaitUntil(() => {
