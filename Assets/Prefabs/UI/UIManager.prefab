@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 781250
+  animalCost: 3359232
   animalPrefab: {fileID: 3182862794603731761, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
   animalName: Goat
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 250
+  animalCost: 432
   animalPrefab: {fileID: 3478933172451152204, guid: 51f9477e6d5c8404a91979394e409c23, type: 3}
   animalName: CatDog
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 6250
+  animalCost: 15552
   animalPrefab: {fileID: 7658806981352565101, guid: 0db6567f97ba8e94d8d8711c24c99838, type: 3}
   animalName: DogOx
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -565,8 +565,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab9548a9fde4642e1afc1ed988c4a65d, type: 2}
-  m_sharedMaterial: {fileID: 9147007812410590563, guid: ab9548a9fde4642e1afc1ed988c4a65d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.45
+  m_fontSize: 45.9
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 1250
+  animalCost: 2592
   animalPrefab: {fileID: 669666493744383388, guid: 82138a8c8d20b3d46b31bc4b99a40ad1, type: 3}
   animalName: Dog
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 156250
+  animalCost: 559872
   animalPrefab: {fileID: 7176927210000311754, guid: 505d3de0384dfb0478f2b70c2893e6d2, type: 3}
   animalName: OxManster
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 50
+  animalCost: 72
   animalPrefab: {fileID: 8009800804365043236, guid: f7b842ccd830d5742bddc40c4dd33827, type: 3}
   animalName: Cat
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 31250
+  animalCost: 93312
   animalPrefab: {fileID: 217604745206295886, guid: d8b4ff730dd59e2438e143152be1aae5, type: 3}
   animalName: Ox
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -2139,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 10
+  animalCost: 12
   animalPrefab: {fileID: 3692009782177488797, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
   animalName: GoatCat
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -2257,8 +2257,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ab9548a9fde4642e1afc1ed988c4a65d, type: 2}
-  m_sharedMaterial: {fileID: 9147007812410590563, guid: ab9548a9fde4642e1afc1ed988c4a65d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
+  m_fontSize: 35.95
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
