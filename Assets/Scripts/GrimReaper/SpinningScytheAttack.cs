@@ -82,7 +82,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     private void OnStopAllEnemies()
     {
         StopAllCoroutines();
-        AudioManager.Instance.StopSound(movementClipName);
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
         _rb.linearVelocity = Vector2.zero;
         _animator.speed = 0;
     }
@@ -106,7 +106,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     private void HandleDestruction()
     {
         StopAllCoroutines();
-        AudioManager.Instance.StopSound(movementClipName);
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
         var position = transform.position;
         AudioManager.Instance.PlaySound(position, deathClipName);
         Destroy(gameObject);
@@ -142,7 +142,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         // Set the knockback flag and start coroutine to restore velocity
         _isKnockbackActive = true;
         _animator.SetBool("Hit", true);
-        AudioManager.Instance.StopSound(movementClipName);
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
         StartCoroutine(RestoreOriginalDirection());
     }
 

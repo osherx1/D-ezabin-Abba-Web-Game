@@ -23,6 +23,7 @@ public class MinionSettings
 {
     public float speed;
     public int minionStartingHealth = 5;
+    public string movementClipName = "MinionMovement";
 }
 
 [System.Serializable]
