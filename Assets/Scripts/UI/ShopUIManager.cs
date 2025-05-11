@@ -35,6 +35,7 @@ namespace UI
         private void OnEnable()
         {
             GameEvents.OnCreatureMerged += HandleCreatureMerged;
+            GameEvents.OnCreaturePurchased += StartCooldown;
         }
 
         private void OnDisable()
@@ -51,6 +52,19 @@ namespace UI
         private void HandleCreatureMerged(CreatureStage newStage)
         {
             UnlockChain(newStage);
+        }
+
+        /* ---------- Public: Cooldown Control ---------- */
+
+        /// <summary>
+        /// Starts cooldown on every button except the one pressed.
+        /// </summary>
+        private void StartCooldown()
+        {
+            foreach (var btn in _lookup.Values)
+            {
+                btn.StartCooldown();
+            }
         }
 
         /* ------------------------- Core Logic ----------------------------- */
