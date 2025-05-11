@@ -50,5 +50,6 @@ public class UIWinManager : MonoBehaviour
 
         // 5) now spawn the new creature at world‐zero
         Instantiate(oxidButcherPrefab, Vector3.zero, Quaternion.identity);
+        GameEvents.OnFinalCreatureAnimationEnded?.Invoke();
     }
 }

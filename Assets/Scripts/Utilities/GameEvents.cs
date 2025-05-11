@@ -15,5 +15,6 @@ namespace Utilities
         public static Action PauseUnpauseBackgroundMusic;
         public static Action FreezeEnemies;
         public static Action OnOxButcherMerged;
+        public static Action OnFinalCreatureAnimationEnded;
     }
 }
