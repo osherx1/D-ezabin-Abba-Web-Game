@@ -63,7 +63,8 @@ namespace UI
         {
             foreach (var btn in _lookup.Values)
             {
-                btn.StartCooldown();
+                if (btn.IsUnlocked)
+                    btn.StartCooldown();
             }
         }
 
