@@ -49,6 +49,7 @@ MonoBehaviour:
   timeBetweenAttacks: 45
   timeBeforeFirstAttack: 20
   timeDiviation: 3
+  timeToStartAudioBeforeAttack: 4
   swipingAttackPrefab: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
   swipingAttackSettings:
     swipingAttackSpeed: 1
@@ -68,6 +69,8 @@ MonoBehaviour:
   spinningScytheAttackSettings:
     spinningScytheSpeed: 3
     spinningScytheHealth: 3
+  spinningScytheAttackAudioName: 
+  spinningScytheSummoningAudioName: SpinningScytheSummoning
   spawnerPrefab: {fileID: 835675431695768437, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
   minionSpawnerSettings:
     minionCount: 4
@@ -80,3 +83,5 @@ MonoBehaviour:
     knockbackForce: 2
     knockbackDurationSeconds: 0.3
     damageAgainstMinion: 1
+  minionAttackAudioName: 
+  minionSummoningAudioName: MinionSummoning
