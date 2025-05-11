@@ -19,16 +19,24 @@ public class MinionSpawner : MonoBehaviour
     
     private void OnEnable()
     {
-        GameEvents.FreezeEnemies += OnFreezeEnemies;
+        GameEvents.StopAllEnemies += OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies += OnDestroyAllEnemies;
         _animator = GetComponent<Animator>();
     }
-    
+
     private void OnDisable()
     {
-        GameEvents.FreezeEnemies -= OnFreezeEnemies;
+        GameEvents.StopAllEnemies -= OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies -= OnDestroyAllEnemies;
     }
 
-    private void OnFreezeEnemies()
+    private void OnDestroyAllEnemies()
+    {
+        OnStopAllEnemies();
+        HandleDestruction();
+    }
+
+    private void OnStopAllEnemies()
     {
         // Stop Sounds
         // Stop summoning minions

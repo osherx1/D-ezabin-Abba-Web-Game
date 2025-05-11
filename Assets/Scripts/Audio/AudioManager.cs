@@ -109,13 +109,13 @@ namespace Audio
             _backgroundMusicSource.volume = volume;
         }
 
-        public void PlaySound(Vector3 position, string soundName, float volume = 1f, float pitch = 1f, bool loop = false,
+        public PooledAudioSource PlaySound(Vector3 position, string soundName, float volume = 1f, float pitch = 1f, bool loop = false,
             float spatialBlend = 0f)
         {
             var audioSource = AudioSourcePool.Instance.Get();
             if (audioSource != null)
             {
-                if(!GetAudioClip(soundName)) return;
+                if(!GetAudioClip(soundName)) return null;
                 audioSource.transform.position = position;
                 audioSource.SetAudioClip(GetAudioClip(soundName));
                 audioSource.SetVolume(volume);
@@ -123,12 +123,15 @@ namespace Audio
                 audioSource.SetLoop(loop);
                 audioSource.SetSpatialBlend(spatialBlend);
                 audioSource.Play();
+                // return audioSource;
             }
+
+            return audioSource;
         }
 
-        public void StopSound(string soundName)
+        public void StopAllSoundWithName(string soundName)
         {
-            GameEvents.StopSound?.Invoke(soundName);
+            GameEvents.StopSoundByName?.Invoke(soundName);
         }
         
         

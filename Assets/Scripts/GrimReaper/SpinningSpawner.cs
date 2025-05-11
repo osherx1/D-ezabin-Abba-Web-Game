@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Utilities;
 
 public class SpinningSpawner : MonoBehaviour
 {
@@ -7,12 +8,34 @@ public class SpinningSpawner : MonoBehaviour
     [SerializeField] private float endingSpawnTime = 8.75f;
     [SerializeField] private int spinningScytheAmount = 3;
     private float _spawnInterval;
-    [SerializeField] private float spinningScytheSpeed = 3f;
-    [SerializeField] private int spinningScytheHealth = 3;
     private SpinningScytheAttackSettings _spinningScytheAttackSettings;
     
     [SerializeField] private GameObject spinningScythePrefab;
+    private Animator _animator;
 
+    private void OnEnable()
+    {
+        _animator = GetComponent<Animator>();
+        GameEvents.StopAllEnemies += OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies += OnDestroyAllEnemies;
+    }
+
+    private void OnStopAllEnemies()
+    {
+        StopAllCoroutines();
+        _animator.speed = 0;
+    }
+    private void OnDestroyAllEnemies()
+    {
+        OnStopAllEnemies();
+        HandleDestruction();
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.StopAllEnemies -= OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies -= OnDestroyAllEnemies;
+    }
     public void SetupSpawnerSettings(SpinningScytheSpawnerSettings spinningScytheSpawnerSettings, GameObject spinningScythePrefab, SpinningScytheAttackSettings spinningScytheAttackSettings)
     {
         startingSpawnTime = spinningScytheSpawnerSettings.startingSpawnTime;
@@ -52,9 +75,7 @@ public class SpinningSpawner : MonoBehaviour
         GameObject spinningScythe = Instantiate(spinningScythePrefab, spawnPosition, Quaternion.identity);
         var spinningScytheAttack = spinningScythe.GetComponent<SpinningScytheAttack>();
         if (spinningScytheAttack == null) return;
-        spinningScytheAttack.SetHealth(_spinningScytheAttackSettings.spinningScytheHealth);
-        spinningScytheAttack.SetSpeed(_spinningScytheAttackSettings.spinningScytheSpeed);
-        spinningScytheAttack.SetKnockbackDuration(_spinningScytheAttackSettings.knockbackDurationSeconds);
+        spinningScytheAttack.SetSpinningScytheAttackSettings(_spinningScytheAttackSettings);
         spinningScytheAttack.StartAttack();
     }
     

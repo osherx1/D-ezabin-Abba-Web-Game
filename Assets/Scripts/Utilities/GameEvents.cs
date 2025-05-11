@@ -12,10 +12,12 @@ namespace Utilities
         public static Action<float> OnIncomeChanged;
         public static Action<CreatureStage> OnCreatureMerged;
         public static Action MuteSounds;
-        public static Action<string> StopSound;
+        public static Action<string> StopSoundByName;
         public static Action PauseUnpauseBackgroundMusic;
         public static Action FreezeEnemies;
         public static Action OnOxButcherMerged;
         public static Action OnFinalCreatureAnimationEnded;
+        public static Action StopAllEnemies;
+        public static Action DestroyAllEnemies;
     }
 }
