@@ -88,7 +88,7 @@ public class GrimManager : MonoBehaviour
                     StartCoroutine(StartMinionAttack());
                     break;
             }
-            yield return new WaitForSeconds(timeBetweenAttacks + Random.Range(-timeBetweenAttacks, timeBetweenAttacks));
+            yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }
     

@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7241588b77f5748961592b5f122089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardMinBounds: {x: -6, y: -2}
-  boardMaxBounds: {x: 6, y: 2}
+  boardMinBounds: {x: -4, y: 0.5}
+  boardMaxBounds: {x: 4.5, y: 4}
   timeBetweenAttacks: 45
   timeBeforeFirstAttack: 20
   timeDiviation: 3
