@@ -51,8 +51,19 @@ public class CreatureCore : MonoBehaviour,
     private Rigidbody2D _rb;
     private const float SAFE_MARGIN_X = 3f;
     private const float SAFE_MARGIN_Y = 2f;
+    private bool _incomeRegistered = false;
 
     /* ---------- MonoBehaviour ---------- */
+    
+    private void Awake()
+    {
+        if (!_incomeRegistered)
+        {
+            MoneyManager.Instance?.RegisterIncome(zuzPerSecond);
+            _incomeRegistered = true;
+        }
+    }
+    
     private void Start()
     {
         cam = Camera.main;
@@ -61,15 +72,14 @@ public class CreatureCore : MonoBehaviour,
         lastPosition = transform.position;
         PickIdleTarget();
     }
-
-    private void OnEnable()
-    {
-        MoneyManager.Instance?.RegisterIncome(zuzPerSecond);
-    }
     
     private void OnDestroy()
     {
-        MoneyManager.Instance?.UnregisterIncome(zuzPerSecond); 
+        if (_incomeRegistered)
+        {
+            MoneyManager.Instance?.UnregisterIncome(zuzPerSecond);
+            _incomeRegistered = false;
+        }
     }
 
     private void Update()
@@ -404,6 +414,7 @@ public class CreatureCore : MonoBehaviour,
         if (anim != null)
             StartCoroutine(PlayHitAndDie());
         else
+        
             Destroy(gameObject, 0.05f);  // fallback
     }
 
