@@ -374,6 +374,7 @@ public class CreatureCore : MonoBehaviour,
     {
         _oxButcherMergeFired = true;
         GameEvents.OnOxButcherMerged?.Invoke();
+        GameEvents.OnCreatureMerged?.Invoke(merged.stage);
         Destroy(gameObject);    // this original goes away
         yield break;            // skip the normal spawn activation
     }
