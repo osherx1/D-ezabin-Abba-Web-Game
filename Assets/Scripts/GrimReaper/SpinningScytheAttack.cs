@@ -105,6 +105,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
 
         // Set the knockback flag and start coroutine to restore velocity
         _isKnockbackActive = true;
+        _animator.SetBool("Hit", true);
         StartCoroutine(RestoreOriginalDirection());
     }
 
@@ -117,6 +118,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         // Restore the original velocity and reset the flag
         _rb.linearVelocity = _originalVelocity;
         _isKnockbackActive = false;
+        _animator.SetBool("Hit", false);
     }
 
     public void SetHealth(int newHealth)
