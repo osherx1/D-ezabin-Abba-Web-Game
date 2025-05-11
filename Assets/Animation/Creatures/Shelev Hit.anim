@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Kalul Idle
+  m_Name: Shelev Hit
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 6069619948121348725, guid: 24ed0c00253bdbe4190ae4f65a735df9, type: 3}
+      value: {fileID: 21300000, guid: cd08e5c39beb58e4b918554401c8e30f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 6069619948121348725, guid: 24ed0c00253bdbe4190ae4f65a735df9, type: 3}
+    - {fileID: 21300000, guid: cd08e5c39beb58e4b918554401c8e30f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
