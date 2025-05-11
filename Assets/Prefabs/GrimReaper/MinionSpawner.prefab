@@ -106,8 +106,10 @@ MonoBehaviour:
     spawnRadius: 5
     spawnDelay: 2
   minionSettings:
-    speed: 0
-    minionStartingHealth: 5
+    speed: 2
+    minionStartingHealth: 1
+    movementClipName: MinionMovement
+    distructionClipName: MinionHit
   minionCounterAttackSettings:
     knockbackForce: 0
     knockbackDurationSeconds: 0.5

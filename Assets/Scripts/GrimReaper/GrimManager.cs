@@ -36,7 +36,7 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
     [SerializeField] private MinionSettings minionSettings;
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
-    [SerializeField] private string minionAttackAudioName;
+    // [SerializeField] private string minionAttackAudioName;
     [SerializeField] private string minionSummoningAudioName;
 
     private CreatureStage _bestCreatureStage = CreatureStage.Goat;
