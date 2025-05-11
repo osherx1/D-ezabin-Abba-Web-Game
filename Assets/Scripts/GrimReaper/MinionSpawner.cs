@@ -22,6 +22,7 @@ public class MinionSpawner : MonoBehaviour
         GameEvents.StopAllEnemies += OnStopAllEnemies;
         GameEvents.DestroyAllEnemies += OnDestroyAllEnemies;
         _animator = GetComponent<Animator>();
+        StartSpawning();
     }
 
     private void OnDisable()

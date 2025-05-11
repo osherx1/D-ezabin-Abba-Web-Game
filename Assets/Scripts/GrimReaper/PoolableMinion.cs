@@ -3,6 +3,7 @@ using Audio;
 using Pool;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using Utilities;
 
 public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
@@ -14,6 +15,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     // [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private int minionStartingHealth = 5;
     [SerializeField] private string movementClipName = "MinionMovement";
+    [SerializeField] private string distructionClipName = "MinionHit";
     private Rigidbody2D _rb;
     private Animator _animator;
     private PooledAudioSource _audioSource;
@@ -83,7 +85,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         FindCosestCreature();
         SetShouldMove(true);
         // MoveMinion();
-        _audioSource = AudioManager.Instance.PlaySound(transform.position, movementClipName);
+        _audioSource = AudioManager.Instance.PlaySound(transform.position, movementClipName , 1f, 1f, true);
     }
 
     private void MoveMinion()
@@ -97,6 +99,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         if (_target == null)
         {
             SetIsInvincible(true);
+            
             _rb.linearVelocity = Vector2.zero;
             return;
         }
@@ -134,6 +137,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         _isInvincible = false;
         _isDead = false;
         _isFrozen = false;
+        _minionHealth = minionStartingHealth;
     }
 
     private void SetTarget(Transform target)
@@ -142,38 +146,6 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         _target = target;
     }
     
-    private float Speed
-    {
-        get => speed;
-        set => speed = value;
-    }
-
-    private float KnockbackForce
-    {
-        get => knockbackForce;
-        set => knockbackForce = value;
-    }
-
-    private float KnockbackDurationSeconds
-    {
-        get => knockbackDurationSeconds;
-        set => knockbackDurationSeconds = value;
-    }
-
-    private int DamageAgainstMinion
-    {
-        get => damageAgainstMinion;
-        set => damageAgainstMinion = value;
-    }
-
-    private int MinionHealth
-    {
-        get => _minionHealth;
-        set => _minionHealth = value;
-    }
-    
-    
-
     private void FindCosestCreature()
     {
         CreatureCore closestCreature = null;
@@ -226,7 +198,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
 
     private void TakeDamage(int damage)
     {
-        if(_isInvincible) return;
+        // if(_isInvincible) return;
         _minionHealth -= damage;
         // Debug.Log("Minion took damage, health remaining: " + _minionHealth);
         // apply knockback to the minion
@@ -270,16 +242,21 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     private void HandleMinionDestruction()
     {
         StopAllCoroutines();
-        _audioSource.Stop();
+        // if(_audioSource != null)
+        //     _audioSource.StopAudio();
+        // _audioSource.StopAudio();
+        AudioManager.Instance.StopAllSoundWithName(movementClipName);
+        AudioManager.Instance.PlaySound(transform.position, distructionClipName);
         MinionPool.Instance.Return(this);
     }
     public void SetMinionSettings(MinionSettings minionSettings, MinionCounterAttackSettings minionCounterAttackSettings)
     {
-        Speed = minionSettings.speed;
-        MinionHealth = minionSettings.minionStartingHealth;
-        KnockbackForce = minionCounterAttackSettings.knockbackForce;
-        KnockbackDurationSeconds = minionCounterAttackSettings.knockbackDurationSeconds;
-        DamageAgainstMinion = minionCounterAttackSettings.damageAgainstMinion;
+        speed = minionSettings.speed;
+        _minionHealth = minionSettings.minionStartingHealth;
+        knockbackForce = minionCounterAttackSettings.knockbackForce;
+        knockbackDurationSeconds = minionCounterAttackSettings.knockbackDurationSeconds;
+        damageAgainstMinion = minionCounterAttackSettings.damageAgainstMinion;
         movementClipName = minionSettings.movementClipName;
+        distructionClipName = minionSettings.distructionClipName;
     }
 }

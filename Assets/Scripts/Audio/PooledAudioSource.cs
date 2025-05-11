@@ -31,7 +31,7 @@ namespace Audio
         {
             if (_audioSource.clip.name == soundName)
             {
-                Stop();
+                StopAudio();
             }
         }
 
@@ -81,7 +81,7 @@ namespace Audio
             StartCoroutine(ReturnToPoolWhenFinished());
         }
 
-        public void Stop()
+        public void StopAudio()
         {
             _audioSource.Stop();
             AudioSourcePool.Instance.Return(this);
