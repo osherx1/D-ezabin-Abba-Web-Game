@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 
 namespace Utilities
@@ -7,23 +8,23 @@ namespace Utilities
     public class MoneyManager : MonoSingleton<MoneyManager>
     {
         [SerializeField] private int startingMoney = 100;
-        [SerializeField]private int _badEndSceneIndex = 2;
+        [SerializeField] private int badEndSceneIndex = 2;
+        [SerializeField] private float incomePerSecond;
+        public float IncomePerSecond => incomePerSecond;
 
         public float CurrentMoney { get; private set; }
-        public float IncomePerSecond { get; private set; }
 
         /* ---------- Public API ---------- */
         public void RegisterIncome(float amount)
         {
-            IncomePerSecond += amount;
-            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
+            incomePerSecond += amount;
+            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
         }
 
         public void UnregisterIncome(float amount)
         {
-            IncomePerSecond -= amount;
-            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
-            
+            incomePerSecond -= amount;
+            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
         }
 
         public bool SpendMoney(float amount)
@@ -45,22 +46,24 @@ namespace Utilities
         {
             CurrentMoney = startingMoney;
             GameEvents.OnMoneyChanged?.Invoke(CurrentMoney);
-            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
+            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
         }
 
         private float _timer;
 
         private void Update()
         {
-            if (IncomePerSecond <= 0)
+            if (incomePerSecond <= 0)
             {
-                SceneManager.LoadScene(_badEndSceneIndex);
+                SceneManager.LoadScene(badEndSceneIndex);
                 return;
-            };
+            }
+
+            ;
 
             _timer += Time.deltaTime;
             if (!(_timer >= 1f)) return;
-            AddMoney(IncomePerSecond);
+            AddMoney(incomePerSecond);
             _timer = 0f;
         }
     }
