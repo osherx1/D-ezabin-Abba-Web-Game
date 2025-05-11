@@ -23,6 +23,7 @@ namespace UI
         private Color activeColor = new(1f, 0.85f, 0f, 0.65f); // gold-ish
 
         [SerializeField] private Color cooldownColor = new(0f, 0f, 0f, 0.55f); // dark
+        [SerializeField] private GameObject coinRainObject; 
 
         /* ──────────────── Internal ──────────────── */
         private enum Phase
@@ -76,6 +77,7 @@ namespace UI
             if (_phase != Phase.Ready) return;
 
             // global event: start boost
+            coinRainObject.SetActive(true); // show coin rain
             GameEvents.OnDoubleUpCoinsActivated?.Invoke();
 
             _phase = Phase.Active;
