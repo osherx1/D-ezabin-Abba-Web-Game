@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 6d93d6860d12a3a4db21b9ac6add3ef6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7644630825686891802
+    second: animation frames Kelev_0
+  - first:
+      213: 859737610378294283
+    second: animation frames Kelev_1
+  - first:
+      213: -3744754623203499472
+    second: animation frames Kelev_2
+  - first:
+      213: -1021521834359481467
+    second: animation frames Kelev_3
+  - first:
+      213: -5951112018410421474
+    second: animation frames Kelev_4
+  - first:
+      213: 4086316099708580955
+    second: animation frames Kelev_5
+  - first:
+      213: -3539075415200763227
+    second: animation frames Kelev_6
+  - first:
+      213: 7761618602897733160
+    second: animation frames Kelev_7
+  - first:
+      213: 406102548724100874
+    second: animation frames Kelev_8
+  - first:
+      213: 891933637843339172
+    second: animation frames Kelev_9
+  - first:
+      213: -6707434487277600978
+    second: animation frames Kelev_10
+  - first:
+      213: 1845394705918276409
+    second: animation frames Kelev_11
+  - first:
+      213: 1399621783201504419
+    second: animation frames Kelev_12
+  - first:
+      213: -3874466628664910451
+    second: animation frames Kelev_13
+  - first:
+      213: -1467656433004158058
+    second: animation frames Kelev_14
+  - first:
+      213: -7767834169644127929
+    second: animation frames Kelev_15
+  - first:
+      213: 8395643616369739683
+    second: animation frames Kelev_16
+  - first:
+      213: -183414267512616606
+    second: animation frames Kelev_17
+  - first:
+      213: -6868442175009649526
+    second: animation frames Kelev_18
+  - first:
+      213: 8178376262582474654
+    second: animation frames Kelev_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Kelev_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1733
+        width: 533
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d7114ab3f271a60800000000000000
+      internalID: 7644630825686891802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_1
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1733
+        width: 533
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0434a23dc66eeb00800000000000000
+      internalID: 859737610378294283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_2
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1733
+        width: 568
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03224f0c285f70cc0800000000000000
+      internalID: -3744754623203499472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_3
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1733
+        width: 532
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b92bccd43d2d1f0800000000000000
+      internalID: -1021521834359481467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_4
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 1733
+        width: 533
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13c61c4627696da0800000000000000
+      internalID: -5951112018410421474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1199
+        width: 533
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b54f61ba7d285b830800000000000000
+      internalID: 4086316099708580955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_6
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 1199
+        width: 568
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2f3a329ada2eec0800000000000000
+      internalID: -3539075415200763227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_7
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 1199
+        width: 533
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82678cb1ffec6bb60800000000000000
+      internalID: 7761618602897733160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_8
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 1199
+        width: 568
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0fa41fcd14c2a500800000000000000
+      internalID: 406102548724100874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_9
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 1199
+        width: 559
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7cfdefae8c06c00800000000000000
+      internalID: 891933637843339172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 663
+        width: 559
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f3d9f0fd76ae2a0800000000000000
+      internalID: -6707434487277600978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_11
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 663
+        width: 559
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93335ac25b82c9910800000000000000
+      internalID: 1845394705918276409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_12
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 663
+        width: 559
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3acdf97a8947c6310800000000000000
+      internalID: 1399621783201504419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_13
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 663
+        width: 559
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d925801212b3ac0800000000000000
+      internalID: -3874466628664910451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_14
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 663
+        width: 559
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693687a0046d1abe0800000000000000
+      internalID: -1467656433004158058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 98
+        width: 559
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 749683c7afb133490800000000000000
+      internalID: -7767834169644127929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_16
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 98
+        width: 559
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a78e761361538470800000000000000
+      internalID: 8395643616369739683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_17
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 98
+        width: 559
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2690c2a02b1647df0800000000000000
+      internalID: -183414267512616606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_18
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 98
+        width: 558
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c0d3e7b346ea0a0800000000000000
+      internalID: -6868442175009649526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kelev_19
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 98
+        width: 533
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9717b241ed6f7170800000000000000
+      internalID: 8178376262582474654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation frames Kelev_0: 7644630825686891802
+      animation frames Kelev_1: 859737610378294283
+      animation frames Kelev_10: -6707434487277600978
+      animation frames Kelev_11: 1845394705918276409
+      animation frames Kelev_12: 1399621783201504419
+      animation frames Kelev_13: -3874466628664910451
+      animation frames Kelev_14: -1467656433004158058
+      animation frames Kelev_15: -7767834169644127929
+      animation frames Kelev_16: 8395643616369739683
+      animation frames Kelev_17: -183414267512616606
+      animation frames Kelev_18: -6868442175009649526
+      animation frames Kelev_19: 8178376262582474654
+      animation frames Kelev_2: -3744754623203499472
+      animation frames Kelev_3: -1021521834359481467
+      animation frames Kelev_4: -5951112018410421474
+      animation frames Kelev_5: 4086316099708580955
+      animation frames Kelev_6: -3539075415200763227
+      animation frames Kelev_7: 7761618602897733160
+      animation frames Kelev_8: 406102548724100874
+      animation frames Kelev_9: 891933637843339172
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

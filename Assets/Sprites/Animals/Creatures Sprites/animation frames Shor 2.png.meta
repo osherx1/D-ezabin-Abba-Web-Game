@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 1a2952e1f81dd4496b45c6e5c95a66d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6381466879486491870
+    second: animation frames Shor 2_0
+  - first:
+      213: -4483296145850527517
+    second: animation frames Shor 2_1
+  - first:
+      213: 3248759803664272918
+    second: animation frames Shor 2_2
+  - first:
+      213: -5723634041005591642
+    second: animation frames Shor 2_3
+  - first:
+      213: 5741239090291287468
+    second: animation frames Shor 2_4
+  - first:
+      213: 1957676377551111023
+    second: animation frames Shor 2_5
+  - first:
+      213: 3255475623035558962
+    second: animation frames Shor 2_6
+  - first:
+      213: 2657698332345825996
+    second: animation frames Shor 2_7
+  - first:
+      213: -1821171048860610235
+    second: animation frames Shor 2_8
+  - first:
+      213: 3511627064001614351
+    second: animation frames Shor 2_9
+  - first:
+      213: -5875433331933070182
+    second: animation frames Shor 2_10
+  - first:
+      213: 4960334644242011268
+    second: animation frames Shor 2_11
+  - first:
+      213: 39971911204665249
+    second: animation frames Shor 2_12
+  - first:
+      213: 6149996993012575611
+    second: animation frames Shor 2_13
+  - first:
+      213: 671398599473852195
+    second: animation frames Shor 2_14
+  - first:
+      213: -6697090271589376563
+    second: animation frames Shor 2_15
+  - first:
+      213: 8149187207262775112
+    second: animation frames Shor 2_16
+  - first:
+      213: 8022183775824226881
+    second: animation frames Shor 2_17
+  - first:
+      213: -2491531801550310062
+    second: animation frames Shor 2_18
+  - first:
+      213: -7521906009656187873
+    second: animation frames Shor 2_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Shor 2_0
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 2271
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223894efea97077a0800000000000000
+      internalID: -6381466879486491870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_1
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 2271
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e093bba8e128c1c0800000000000000
+      internalID: -4483296145850527517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_2
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2271
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e0af924d9e51d20800000000000000
+      internalID: 3248759803664272918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_3
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 2271
+        width: 649
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a337813a219190b0800000000000000
+      internalID: -5723634041005591642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_4
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1752
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca52663c88afcaf40800000000000000
+      internalID: 5741239090291287468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_5
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1752
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f638b1d0b401b2b10800000000000000
+      internalID: 1957676377551111023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_6
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1752
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c5af5b4d5cd2d20800000000000000
+      internalID: 3255475623035558962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_7
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 1752
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccafe9b5d8a02e420800000000000000
+      internalID: 2657698332345825996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_8
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1182
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541107d7496e9b6e0800000000000000
+      internalID: -1821171048860610235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_9
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1182
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02d675953ecbb030800000000000000
+      internalID: 3511627064001614351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_10
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1182
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9cb3a49384467ea0800000000000000
+      internalID: -5875433331933070182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_11
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 1182
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484db15f316a6d440800000000000000
+      internalID: 4960334644242011268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_12
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 639
+        width: 650
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7f850dd320e8000800000000000000
+      internalID: 39971911204665249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_13
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 639
+        width: 649
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d2c3a5ead295550800000000000000
+      internalID: 6149996993012575611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_14
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 639
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f65501879415900800000000000000
+      internalID: 671398599473852195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_15
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 639
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcdd03571e72f03a0800000000000000
+      internalID: -6697090271589376563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_16
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 96
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8472e09b69ab71170800000000000000
+      internalID: 8149187207262775112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_17
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 96
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14aa7e804a5845f60800000000000000
+      internalID: 8022183775824226881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_18
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 96
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2553106f60d4c6dd0800000000000000
+      internalID: -2491531801550310062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Shor 2_19
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 96
+        width: 648
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1421944652dc9790800000000000000
+      internalID: -7521906009656187873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation frames Shor 2_0: -6381466879486491870
+      animation frames Shor 2_1: -4483296145850527517
+      animation frames Shor 2_10: -5875433331933070182
+      animation frames Shor 2_11: 4960334644242011268
+      animation frames Shor 2_12: 39971911204665249
+      animation frames Shor 2_13: 6149996993012575611
+      animation frames Shor 2_14: 671398599473852195
+      animation frames Shor 2_15: -6697090271589376563
+      animation frames Shor 2_16: 8149187207262775112
+      animation frames Shor 2_17: 8022183775824226881
+      animation frames Shor 2_18: -2491531801550310062
+      animation frames Shor 2_19: -7521906009656187873
+      animation frames Shor 2_2: 3248759803664272918
+      animation frames Shor 2_3: -5723634041005591642
+      animation frames Shor 2_4: 5741239090291287468
+      animation frames Shor 2_5: 1957676377551111023
+      animation frames Shor 2_6: 3255475623035558962
+      animation frames Shor 2_7: 2657698332345825996
+      animation frames Shor 2_8: -1821171048860610235
+      animation frames Shor 2_9: 3511627064001614351
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: f5870072e0015da4f9224641c8a16386
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4516183258670460294
+    second: animation frames Kalul_0
+  - first:
+      213: 7000115127205311134
+    second: animation frames Kalul_1
+  - first:
+      213: 7228927694183182539
+    second: animation frames Kalul_2
+  - first:
+      213: -4747742413391344241
+    second: animation frames Kalul_3
+  - first:
+      213: 8559497617562407207
+    second: animation frames Kalul_4
+  - first:
+      213: 3350052725444641929
+    second: animation frames Kalul_5
+  - first:
+      213: -7246077102897023006
+    second: animation frames Kalul_6
+  - first:
+      213: -767439134881176148
+    second: animation frames Kalul_7
+  - first:
+      213: -2416174373664447037
+    second: animation frames Kalul_8
+  - first:
+      213: -948262996916451012
+    second: animation frames Kalul_9
+  - first:
+      213: -6586204018970880990
+    second: animation frames Kalul_10
+  - first:
+      213: 4311349640280661804
+    second: animation frames Kalul_11
+  - first:
+      213: -2358729434840457054
+    second: animation frames Kalul_12
+  - first:
+      213: -5738645251708772002
+    second: animation frames Kalul_13
+  - first:
+      213: -493177772716542638
+    second: animation frames Kalul_14
+  - first:
+      213: -8759396053278549947
+    second: animation frames Kalul_15
+  - first:
+      213: 4229629995117601913
+    second: animation frames Kalul_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Kalul_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1760
+        width: 601
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d6e99feb4bcae30800000000000000
+      internalID: 4516183258670460294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_1
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 1760
+        width: 647
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9239e7be97652160800000000000000
+      internalID: 7000115127205311134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_2
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 1760
+        width: 563
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc0b5c6ff6f425460800000000000000
+      internalID: 7228927694183182539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_3
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 1760
+        width: 610
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dc0ccfd61ac1eb0800000000000000
+      internalID: -4747742413391344241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_4
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 1760
+        width: 563
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7211c96abb179c670800000000000000
+      internalID: 8559497617562407207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_5
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1203
+        width: 601
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98405f65437cd7e20800000000000000
+      internalID: 3350052725444641929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_6
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1203
+        width: 563
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e73bba2443c07b90800000000000000
+      internalID: -7246077102897023006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_7
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 1203
+        width: 600
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5aca24c228955f0800000000000000
+      internalID: -767439134881176148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_8
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 1203
+        width: 601
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c524566536087ed0800000000000000
+      internalID: -2416174373664447037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_9
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 1203
+        width: 647
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39c52314d717d2f0800000000000000
+      internalID: -948262996916451012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 600
+        width: 563
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2249df6075a1994a0800000000000000
+      internalID: -6586204018970880990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_11
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 600
+        width: 610
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fdf63c7adf4db30800000000000000
+      internalID: 4311349640280661804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_12
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 600
+        width: 551
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0a31b731c144fd0800000000000000
+      internalID: -2358729434840457054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_13
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 600
+        width: 595
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51aae75c8c3c50b0800000000000000
+      internalID: -5738645251708772002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_14
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 600
+        width: 557
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255bc1ebd61e729f0800000000000000
+      internalID: -493177772716542638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_15
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 57
+        width: 588
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5489f55e2bf507680800000000000000
+      internalID: -8759396053278549947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Kalul_16
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 57
+        width: 589
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974625e221aa2ba30800000000000000
+      internalID: 4229629995117601913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation frames Kalul_0: 4516183258670460294
+      animation frames Kalul_1: 7000115127205311134
+      animation frames Kalul_10: -6586204018970880990
+      animation frames Kalul_11: 4311349640280661804
+      animation frames Kalul_12: -2358729434840457054
+      animation frames Kalul_13: -5738645251708772002
+      animation frames Kalul_14: -493177772716542638
+      animation frames Kalul_15: -8759396053278549947
+      animation frames Kalul_16: 4229629995117601913
+      animation frames Kalul_2: 7228927694183182539
+      animation frames Kalul_3: -4747742413391344241
+      animation frames Kalul_4: 8559497617562407207
+      animation frames Kalul_5: 3350052725444641929
+      animation frames Kalul_6: -7246077102897023006
+      animation frames Kalul_7: -767439134881176148
+      animation frames Kalul_8: -2416174373664447037
+      animation frames Kalul_9: -948262996916451012
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
