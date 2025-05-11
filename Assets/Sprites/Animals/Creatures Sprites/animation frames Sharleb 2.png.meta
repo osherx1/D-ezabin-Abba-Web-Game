@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: c93f3a6abc422413a844bab469fc3b52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8700578743422901092
+    second: animation frames Sharleb 2_0
+  - first:
+      213: 4269270517365181864
+    second: animation frames Sharleb 2_1
+  - first:
+      213: 8912690545082292032
+    second: animation frames Sharleb 2_2
+  - first:
+      213: 2992910121782712323
+    second: animation frames Sharleb 2_3
+  - first:
+      213: -9133055580064318651
+    second: animation frames Sharleb 2_4
+  - first:
+      213: -1589368000365338455
+    second: animation frames Sharleb 2_5
+  - first:
+      213: -8665459301607383970
+    second: animation frames Sharleb 2_6
+  - first:
+      213: -6526466880822534719
+    second: animation frames Sharleb 2_7
+  - first:
+      213: 7988554366759202327
+    second: animation frames Sharleb 2_8
+  - first:
+      213: -4872681070657300688
+    second: animation frames Sharleb 2_9
+  - first:
+      213: -941027730216228918
+    second: animation frames Sharleb 2_10
+  - first:
+      213: 7451695082533701073
+    second: animation frames Sharleb 2_11
+  - first:
+      213: 5825180030448639159
+    second: animation frames Sharleb 2_12
+  - first:
+      213: -6943209725072060569
+    second: animation frames Sharleb 2_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_0
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 2027
+        width: 656
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b590ef44aaeb870800000000000000
+      internalID: 8700578743422901092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_1
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 2027
+        width: 653
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad899d7aee7f3b30800000000000000
+      internalID: 4269270517365181864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_2
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 2027
+        width: 646
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047dc9c44dc30bb70800000000000000
+      internalID: 8912690545082292032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_3
+      rect:
+        serializedVersion: 2
+        x: 2451
+        y: 2027
+        width: 626
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308978d06e3f88920800000000000000
+      internalID: 2992910121782712323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_4
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1446
+        width: 686
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54bfd54c65ed04180800000000000000
+      internalID: -9133055580064318651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_5
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1445
+        width: 652
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0e9d8793e61f9e0800000000000000
+      internalID: -1589368000365338455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_6
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 1446
+        width: 690
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c56104daa1eb780800000000000000
+      internalID: -8665459301607383970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_7
+      rect:
+        serializedVersion: 2
+        x: 2451
+        y: 1446
+        width: 626
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd983a53f45d65a0800000000000000
+      internalID: -6526466880822534719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_8
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 865
+        width: 686
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ee3931fdb0dde60800000000000000
+      internalID: 7988554366759202327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_9
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 864
+        width: 652
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03793bff162c06cb0800000000000000
+      internalID: -4872681070657300688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_10
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 865
+        width: 690
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac76ba0e34cc0f2f0800000000000000
+      internalID: -941027730216228918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_11
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 865
+        width: 664
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d542f0623db96760800000000000000
+      internalID: 7451695082533701073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_12
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 283
+        width: 646
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc1793ef5237d050800000000000000
+      internalID: 5825180030448639159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation frames Sharleb 2_13
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 283
+        width: 653
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fca00ba83c4af90800000000000000
+      internalID: -6943209725072060569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation frames Sharleb 2_0: 8700578743422901092
+      animation frames Sharleb 2_1: 4269270517365181864
+      animation frames Sharleb 2_10: -941027730216228918
+      animation frames Sharleb 2_11: 7451695082533701073
+      animation frames Sharleb 2_12: 5825180030448639159
+      animation frames Sharleb 2_13: -6943209725072060569
+      animation frames Sharleb 2_2: 8912690545082292032
+      animation frames Sharleb 2_3: 2992910121782712323
+      animation frames Sharleb 2_4: -9133055580064318651
+      animation frames Sharleb 2_5: -1589368000365338455
+      animation frames Sharleb 2_6: -8665459301607383970
+      animation frames Sharleb 2_7: -6526466880822534719
+      animation frames Sharleb 2_8: 7988554366759202327
+      animation frames Sharleb 2_9: -4872681070657300688
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
