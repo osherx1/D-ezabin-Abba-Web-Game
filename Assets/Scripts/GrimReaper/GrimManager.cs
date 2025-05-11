@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
+using Audio;
 using GrimReaper;
 using UnityEngine;
 using Utilities;
+using Random = UnityEngine.Random;
 
 public class GrimManager : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private float timeBetweenAttacks = 45f;
     [SerializeField] private float timeBeforeFirstAttack = 25f;
     [SerializeField] private float timeDiviation = 3f;
+    [SerializeField] private float timeToStartAudioBeforeAttack = 4f;
     private float _timeBetweenAttacks;
     
     [Header("Swiping Attack Settings")]
@@ -25,12 +29,16 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private SpinningScytheSpawnerSettings spinningScytheSpawnerSettings;
     [SerializeField] private GameObject spinningAttackPrefab;
     [SerializeField] private SpinningScytheAttackSettings spinningScytheAttackSettings;
+    [SerializeField] private string spinningScytheAttackAudioName;
+    [SerializeField] private string spinningScytheSummoningAudioName;
     
     [Header("Minions Attack Settings")] 
     [SerializeField] private GameObject spawnerPrefab;
     [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
     [SerializeField] private MinionSettings minionSettings;
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
+    [SerializeField] private string minionAttackAudioName;
+    [SerializeField] private string minionSummoningAudioName;
 
     private CreatureStage _bestCreatureStage = CreatureStage.Goat;
 
@@ -70,9 +78,13 @@ public class GrimManager : MonoBehaviour
             switch (attackType)
             {
                 case 0:
+                    AudioManager.Instance.PlaySound(transform.position, spinningScytheSummoningAudioName);
+                    yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
                     StartCoroutine(StartSpinningAttack());
                     break;
                 case 1:
+                    AudioManager.Instance.PlaySound(transform.position, minionSummoningAudioName);
+                    yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
                     StartCoroutine(StartMinionAttack());
                     break;
             }
