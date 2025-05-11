@@ -119,8 +119,12 @@ namespace UI
         public void StartCooldown()
         {
             if (!IsUnlocked) return;
+
             _isCoolingDown = true;
             _cooldownTimer = cooldownDuration;
+
+            // _state = State.Disabled; 
+            // RefreshVisual(); //
 
             if (cooldownOverlay)
             {
@@ -134,6 +138,8 @@ namespace UI
         /* ---------- Event Handlers ---------- */
         private void HandleMoneyChanged(float _)
         {
+            if (_isCoolingDown) return; 
+
             if (_state != State.Disabled && _state != State.Enabled) return;
 
             _state = CanAfford() ? State.Enabled : State.Disabled;

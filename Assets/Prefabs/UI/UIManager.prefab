@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1583373716624721787}
   - component: {fileID: 215181907953868191}
   - component: {fileID: 9131293322622828246}
-  - component: {fileID: 5989585503501853969}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -59,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -76,20 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5989585503501853969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293310301330445912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &726410344971596535
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +229,6 @@ GameObject:
   - component: {fileID: 976025221002239391}
   - component: {fileID: 1569527951499129193}
   - component: {fileID: 9201584940596213580}
-  - component: {fileID: 1109455063712110268}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -292,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -309,20 +293,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1109455063712110268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098584661565432616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &1374748427302777803
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +304,6 @@ GameObject:
   - component: {fileID: 1421956821141715689}
   - component: {fileID: 6416677966982351004}
   - component: {fileID: 7028009511993372800}
-  - component: {fileID: 8479142741479283367}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -382,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -399,20 +368,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8479142741479283367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374748427302777803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &1523603759054205597
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +379,6 @@ GameObject:
   - component: {fileID: 6879766283063531561}
   - component: {fileID: 7875950092981460239}
   - component: {fileID: 1802157703026096312}
-  - component: {fileID: 8983532733476955347}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -472,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -489,20 +443,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8983532733476955347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523603759054205597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &1645118579016018957
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +797,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7238433516372396045, guid: 97a2c9d3c19034ddab3ec506e6b8b51c, type: 3}
+  m_Sprite: {fileID: 7390749574565303874, guid: 550372f63cf024fe8b2242d25a239f4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -878,7 +818,6 @@ GameObject:
   - component: {fileID: 1527216571621752894}
   - component: {fileID: 4069621249642426648}
   - component: {fileID: 6980737584208226506}
-  - component: {fileID: 105652763565629991}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -926,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -943,20 +882,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &105652763565629991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2952637201966355677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &4069314538209212180
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +893,6 @@ GameObject:
   - component: {fileID: 53664405013773398}
   - component: {fileID: 397512952024439327}
   - component: {fileID: 1078716893301267913}
-  - component: {fileID: 3616508936881424268}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -1016,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1033,20 +957,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3616508936881424268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4069314538209212180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &4565607837071343804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1104,6 @@ GameObject:
   - component: {fileID: 2029114008676631518}
   - component: {fileID: 2395095479856299164}
   - component: {fileID: 8497147148761984351}
-  - component: {fileID: 1688805995419883767}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -1242,7 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1259,20 +1168,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1688805995419883767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691039171378444218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &4737305633887851426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1179,6 @@ GameObject:
   - component: {fileID: 401147170970571679}
   - component: {fileID: 3964801520186135096}
   - component: {fileID: 7731465635202146197}
-  - component: {fileID: 2499065696826900285}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -1332,7 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1349,20 +1243,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2499065696826900285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4737305633887851426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1 &5053366092717829897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,7 +2964,6 @@ GameObject:
   - component: {fileID: 1564759261685822526}
   - component: {fileID: 128531130587395052}
   - component: {fileID: 8143644184715897831}
-  - component: {fileID: 8337813042119549824}
   m_Layer: 5
   m_Name: Cooldown Image
   m_TagString: Untagged
@@ -3132,7 +3011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.65882355}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3149,20 +3028,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8337813042119549824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9029268921490692236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041add2a6a6d4d359d6588bd3ada780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  maxAlpha: 0.65
 --- !u!1001 &114478401284489227
 PrefabInstance:
   m_ObjectHideFlags: 0
