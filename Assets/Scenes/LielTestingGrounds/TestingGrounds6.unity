@@ -315,22 +315,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMaxBounds.x
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMaxBounds.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMinBounds.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
-      propertyPath: boardMinBounds.y
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
