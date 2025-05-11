@@ -46,7 +46,7 @@ public class CreatureCore : MonoBehaviour,
     private Vector3 lastPosition;
     private float lastXDirection = 1f;
     private static bool _oxButcherMergeFired = false;
-
+    private bool _hasFlippedOnBorder = false;
 
     /* ---------- MonoBehaviour ---------- */
     private void Start()
@@ -109,6 +109,60 @@ public class CreatureCore : MonoBehaviour,
 
         idleTarget = candidate;
     }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!_hasFlippedOnBorder && collision.collider.CompareTag("Border"))
+        {
+            _hasFlippedOnBorder = true;
+
+            // 1) Flip the sprite and direction
+            FlipDirection();
+
+            // 2) Pick a fresh idleTarget away from the wall
+            PickIdleTargetInDirection(lastXDirection);
+
+            // 3) Reset the idle timer so it moves immediately
+            idleTimer = 0f;
+
+            // 4) Reset lastPosition to avoid a bogus delta in AnimateWalking
+            lastPosition = transform.position;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Border"))
+            _hasFlippedOnBorder = false;
+    }
+    
+    private void PickIdleTargetInDirection(float direction)
+    {
+        // random point in a circle
+        Vector2 r = Random.insideUnitCircle * idleRadius;
+        // force it to lie in the new horizontal direction
+        r.x = Mathf.Abs(r.x) * direction;
+
+        Vector3 candidate = transform.position + new Vector3(r.x, r.y, 0f);
+        // clamp to your play‐area
+        candidate.x = Mathf.Clamp(candidate.x,
+            allowedBottomLeft.x,
+            allowedTopRight.x);
+        candidate.y = Mathf.Clamp(candidate.y,
+            allowedBottomLeft.y,
+            allowedTopRight.y);
+
+        idleTarget = candidate;
+    }
+    
+    private void FlipDirection()
+    {
+        lastXDirection *= -1f;
+        Vector3 s = transform.localScale;
+        s.x = lastXDirection * Mathf.Abs(s.x);
+        transform.localScale = s;
+    }
+
 
 
     /* ---------- Animation ---------- */
@@ -116,17 +170,14 @@ public class CreatureCore : MonoBehaviour,
     private void AnimateWalking()
     {
         Vector3 currentPosition = transform.position;
-        Vector3 delta = currentPosition - lastPosition;
+        Vector3 delta           = currentPosition - lastPosition;
 
-        bool isMoving = delta != Vector3.zero;
+        bool isMoving = delta.sqrMagnitude > Mathf.Epsilon;
+        if (anim) anim.SetBool("IsWalking", isMoving);
 
-        if (anim)
-            anim.SetBool("IsWalking", isMoving);
-
-        if (isMoving && Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
-        {
-            lastXDirection = Mathf.Sign(delta.x); // update direction only on horizontal move
-        }
+        // only flip on horizontal movement
+        if (delta.x != 0f)
+            lastXDirection = Mathf.Sign(delta.x);
 
         Vector3 scale = transform.localScale;
         scale.x = lastXDirection * Mathf.Abs(scale.x);
@@ -134,7 +185,6 @@ public class CreatureCore : MonoBehaviour,
 
         lastPosition = currentPosition;
     }
-
 
     /* ---------- Passive Income ---------- */
     // private void ProduceMoney()
