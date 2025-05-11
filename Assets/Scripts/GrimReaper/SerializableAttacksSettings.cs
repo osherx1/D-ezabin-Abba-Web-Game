@@ -47,6 +47,9 @@ public class SpinningScytheAttackSettings
     public float spinningScytheSpeed = 1f;
     public int spinningScytheHealth = 10;
     public float knockbackDurationSeconds = 0.5f;
+    public string movementClipName = "SpinningScytheMovement";
+    public string hitClipName = "SpinningScytheHit";
+    public string deathClipName = "SpinningScytheDeath";
 }
 
 [System.Serializable]

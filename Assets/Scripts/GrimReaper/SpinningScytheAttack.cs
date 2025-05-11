@@ -8,6 +8,9 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     [SerializeField] private int health = 3;
     [SerializeField] private float speed = 3f;
     [SerializeField] private float knockbackDurationSeconds = 0.5f;
+    public string movementClipName = "SpinningScytheMovement";
+    public string hitClipName = "SpinningScytheHit";
+    public string deathClipName = "SpinningScytheDeath";
     private Rigidbody2D _rb;
     private Animator _animator;
     private Vector2 _originalVelocity;
@@ -134,5 +137,15 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     public void SetKnockbackDuration(float newKnockbackDuration)
     {
         knockbackDurationSeconds = newKnockbackDuration;
+    }
+
+    public void SetSpinningScytheAttackSettings(SpinningScytheAttackSettings newSettings)
+    {
+        SetHealth(newSettings.spinningScytheHealth);
+        SetSpeed(newSettings.spinningScytheSpeed);
+        SetKnockbackDuration(newSettings.knockbackDurationSeconds);
+        movementClipName = newSettings.movementClipName;
+        hitClipName = newSettings.hitClipName;
+        deathClipName = newSettings.deathClipName;
     }
 }
