@@ -259,84 +259,100 @@ public class CreatureCore : MonoBehaviour,
     [Header("Layers")] [SerializeField] private LayerMask creatureMask; // set to "Creature" in the Inspector
 
     private IEnumerator TryMerge()
+{
+    // (1) Abort if missing references
+    if (nextPrefab == null || evolveEffectPrefab == null)
+        yield break;
+
+    // (2) Find all CreatureCore colliders in range
+    Collider2D[] hits = Physics2D.OverlapCircleAll(
+        transform.position, mergeRadius, creatureMask);
+
+    // (3) Filter valid partners
+    var others = new List<CreatureCore>();
+    foreach (var h in hits)
+        if (h.TryGetComponent(out CreatureCore c) &&
+            c != this &&
+            !c.isDragging &&
+            c.stage == stage)
+            others.Add(c);
+
+    // If more than one match, keep only the closest
+    if (others.Count > 1)
     {
-        // (1) Abort if missing references
-        if (nextPrefab == null || evolveEffectPrefab == null)
-            yield break;
-
-        // (2) Find all CreatureCore colliders in range
-        Collider2D[] hits = Physics2D.OverlapCircleAll(
-            transform.position, mergeRadius, creatureMask);
-
-        // (3) Filter valid partners
-        var others = new List<CreatureCore>();
-        foreach (var h in hits)
-            if (h.TryGetComponent(out CreatureCore c) &&
-                c != this &&
-                !c.isDragging &&
-                c.stage == stage)
-                others.Add(c);
-        if (others.Count > 1)
-        {
-            CreatureCore closest = null;
-            float minDist = float.MaxValue;
-            foreach (var c in others)
-            {
-                float d = (c.transform.position - transform.position).sqrMagnitude;
-                if (d < minDist)
-                {
-                    minDist = d;
-                    closest = c;
-                }
-            }
-            others.Clear();
-            if (closest != null)
-                others.Add(closest);
-        }
-        
-        // (4) Need at least mergeNeeded total (this + others)
-        if (others.Count + 1 < mergeNeeded)
-            yield break;
-
-        // (5) Compute average spawn position
-        Vector3 avg = transform.position;
-        foreach (var c in others) avg += c.transform.position;
-        avg /= (others.Count + 1);
-
-        // (6) Play this creature’s evolve animation
-        if (anim != null)
-           anim.CrossFade("Evolve", 0f, 0);
-
-        // (7) Spawn the visual‐only effect at avg
-        Instantiate(evolveEffectPrefab, avg, Quaternion.identity);
-        
-        // (8) Immediately destroy the other creatures
+        CreatureCore closest = null;
+        float minDist = float.MaxValue;
         foreach (var c in others)
-            Destroy(c.gameObject);
-
-        // (9) Wait until this creature’s Evolve state is done
-        yield return new WaitUntil(() => {
-            var st = anim.GetCurrentAnimatorStateInfo(0);
-            return st.IsName("Evolve") && st.normalizedTime >= 0.3f;
-        });
-
-        // (10) Instantiate the merged creature prefab
-        if (stage == CreatureStage.OxButcher && !_oxButcherMergeFired)
         {
-            _oxButcherMergeFired = true;
-            // invoke our one‐time UI event
-            GameEvents.OnOxButcherMerged?.Invoke();
-            // destroy this original so it “goes away” now
-            Destroy(gameObject);
-            yield break;    // skip the normal spawn
+            float d = (c.transform.position - transform.position).sqrMagnitude;
+            if (d < minDist)
+            {
+                minDist = d;
+                closest = c;
+            }
         }
-
-        // fallback for all other merges (or second+ time):
-        var newCreature = Instantiate(nextPrefab, avg, Quaternion.identity);
-        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
-        Destroy(gameObject);
+        others.Clear();
+        if (closest != null) others.Add(closest);
     }
+
+    // (4) Need at least mergeNeeded total (this + others)
+    if (others.Count + 1 < mergeNeeded)
+        yield break;
+
+    // (5) Compute average spawn position
+    Vector3 avg = transform.position;
+    foreach (var c in others) avg += c.transform.position;
+    avg /= (others.Count + 1);
+
+    // (6) Play this creature’s evolve animation
+    if (anim != null)
+        anim.CrossFade("Evolve", 0f, 0);
+
+// (7) Spawn the visual‐only effect at avg
+    Instantiate(evolveEffectPrefab, avg, Quaternion.identity);
+
+// ─── Hide/destroy the merge partners right away ───
+    foreach (var c in others)
+    {
+        // Option A: instantly destroy them
+        Destroy(c.gameObject);
+
+        // — or Option B: just deactivate them so you can still
+        //   reference them later if needed:
+        // c.gameObject.SetActive(false);
+    }
+
+// (8) Wait until this creature’s Evolve state is done
+    yield return new WaitUntil(() => {
+        var st = anim.GetCurrentAnimatorStateInfo(0);
+        return st.IsName("Evolve") && st.normalizedTime >= 0.3f;
+    });
+
+// (9) Pre-instantiate the merged creature inactive
+    var merged = Instantiate(nextPrefab, avg, Quaternion.identity);
+    merged.gameObject.SetActive(false);
+    // (10) Handle one-time OxButcher UI event case
+    if (stage == CreatureStage.OxButcher && !_oxButcherMergeFired)
+    {
+        _oxButcherMergeFired = true;
+        GameEvents.OnOxButcherMerged?.Invoke();
+        Destroy(gameObject);    // this original goes away
+        yield break;            // skip the normal spawn activation
+    }
+
+    // ───────────────────────────────────────────────────────────────
+    // (11) Activate the merged creature in place
     
+
+    // (12) Fire the generic merge event
+    merged.transform.position = avg;
+    merged.gameObject.SetActive(true);
+    GameEvents.OnCreatureMerged?.Invoke(merged.stage);
+
+    // (13) Finally destroy this original
+    Destroy(gameObject);
+}
+
     private IEnumerator FallFromCursor()
     {
         // play fall animation
