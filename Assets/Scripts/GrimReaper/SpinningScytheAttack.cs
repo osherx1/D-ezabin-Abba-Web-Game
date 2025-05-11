@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -28,6 +29,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        StartAttack();
     }
 
     public void StartAttack()
@@ -41,17 +43,14 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         yield return new WaitForEndOfFrame();
         Vector2 direction = _directions[Random.Range(0, _directions.Length)];
         _rb.linearVelocity = direction * speed;
+        AudioManager.Instance.PlaySound(transform.position, movementClipName, 1f, 1f, true);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Wall"))
         {
-            health--;
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            TakeDamage(1);
         }
         else if (other.gameObject.CompareTag("Creatures"))
         {
@@ -68,6 +67,7 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
     private void TakeDamage(int damage)
     {
         health -= damage;
+        AudioManager.Instance.PlaySound(transform.position, hitClipName);
         if (health <= 0)
         {
             HandleDestruction();
@@ -76,6 +76,10 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
 
     private void HandleDestruction()
     {
+        StopAllCoroutines();
+        AudioManager.Instance.StopSound(movementClipName);
+        var position = transform.position;
+        AudioManager.Instance.PlaySound(position, deathClipName);
         Destroy(gameObject);
     }
 
@@ -109,19 +113,22 @@ public class SpinningScytheAttack : MonoBehaviour, IPointerDownHandler
         // Set the knockback flag and start coroutine to restore velocity
         _isKnockbackActive = true;
         _animator.SetBool("Hit", true);
+        AudioManager.Instance.StopSound(movementClipName);
         StartCoroutine(RestoreOriginalDirection());
     }
 
     private IEnumerator RestoreOriginalDirection()
     {
         // Wait for a short duration
-        float knockbackDuration = 0.5f; // Adjust the duration as needed
-        yield return new WaitForSeconds(knockbackDuration);
+        // float knockbackDuration = 0.5f; // Adjust the duration as needed
+        
+        yield return new WaitForSeconds(knockbackDurationSeconds);
 
         // Restore the original velocity and reset the flag
         _rb.linearVelocity = _originalVelocity;
         _isKnockbackActive = false;
         _animator.SetBool("Hit", false);
+        AudioManager.Instance.PlaySound(transform.position, movementClipName, 1f, 1f, true);
     }
 
     public void SetHealth(int newHealth)
