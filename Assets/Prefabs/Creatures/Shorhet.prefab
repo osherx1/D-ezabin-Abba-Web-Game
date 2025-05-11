@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9907c01791914b448ade9119a0d84d5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 7
   nextPrefab: {fileID: -8173162711225070234, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
-  evolveEffectPrefab: {fileID: 0}
-  zuzPerSecond: 0.5
+  evolveEffectPrefab: {fileID: 7161804843239902468, guid: a3197fb232b94e441a6a1d6abefccf90, type: 3}
+  zuzPerSecond: 100
   idleRadius: 0.4
   idleStepTime: 2
   mergeNeeded: 2
@@ -196,7 +196,7 @@ MonoBehaviour:
   allowedTopRight: {x: 9, y: 5}
   fallStateName: Fall
   fallAnimTime: 0.6
-  anim: {fileID: 0}
+  anim: {fileID: 3567313810450328445}
   creatureMask:
     serializedVersion: 2
     m_Bits: 64

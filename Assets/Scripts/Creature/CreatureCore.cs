@@ -45,6 +45,7 @@ public class CreatureCore : MonoBehaviour,
     [SerializeField] private Animator anim;
     private Vector3 lastPosition;
     private float lastXDirection = 1f;
+    private static bool _oxButcherMergeFired = false;
 
 
     /* ---------- MonoBehaviour ---------- */
@@ -258,7 +259,7 @@ public class CreatureCore : MonoBehaviour,
 
         // (7) Spawn the visual‐only effect at avg
         Instantiate(evolveEffectPrefab, avg, Quaternion.identity);
-
+        
         // (8) Immediately destroy the other creatures
         foreach (var c in others)
             Destroy(c.gameObject);
@@ -270,11 +271,19 @@ public class CreatureCore : MonoBehaviour,
         });
 
         // (10) Instantiate the merged creature prefab
-        var newCreature =
-            Instantiate(nextPrefab, avg, Quaternion.identity);
-        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
+        if (stage == CreatureStage.OxButcher && !_oxButcherMergeFired)
+        {
+            _oxButcherMergeFired = true;
+            // invoke our one‐time UI event
+            GameEvents.OnOxButcherMerged?.Invoke();
+            // destroy this original so it “goes away” now
+            Destroy(gameObject);
+            yield break;    // skip the normal spawn
+        }
 
-        // (11) Destroy this original creature
+        // fallback for all other merges (or second+ time):
+        var newCreature = Instantiate(nextPrefab, avg, Quaternion.identity);
+        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
         Destroy(gameObject);
     }
     
@@ -295,16 +304,28 @@ public class CreatureCore : MonoBehaviour,
 
     public void Death()
     {
-        if (_isDead) return; // avoid double-kill
+        if (_isDead) return;
         _isDead = true;
 
-        // 1) optional: play death animation / SFX here
-        // if (anim) anim.CrossFade("Death", 0f, 0);
+        if (anim != null)
+            StartCoroutine(PlayHitAndDie());
+        else
+            Destroy(gameObject, 0.05f);  // fallback
+    }
 
-        // 2) optional: tell game manager, drop coins, etc.
-        // GameManager.Zuzim += bonusOnDeath;
-        // MoneyManager.Instance.UnregisterIncome(zuzPerSecond); 
-        Destroy(gameObject, 0.05f); // destroy after one frame
+    private IEnumerator PlayHitAndDie()
+    {
+        // 1) crossfade into the “Hit” state (layer 0, no transition time)
+        anim.CrossFade("Hit", 0f, 0);
+
+        // 2) wait until “Hit” has played through once
+        yield return new WaitUntil(() => {
+            var st = anim.GetCurrentAnimatorStateInfo(0);
+            return st.IsName("Hit") && st.normalizedTime >= 1f;
+        });
+
+        // 3) now destroy the GameObject
+        Destroy(gameObject);
     }
 
 #if UNITY_EDITOR
