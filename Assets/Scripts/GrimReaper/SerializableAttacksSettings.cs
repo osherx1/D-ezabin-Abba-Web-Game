@@ -46,6 +46,7 @@ public class SpinningScytheAttackSettings
 {
     public float spinningScytheSpeed = 1f;
     public int spinningScytheHealth = 10;
+    public float knockbackDurationSeconds = 0.5f;
 }
 
 [System.Serializable]

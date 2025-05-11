@@ -9,14 +9,16 @@ public class SpinningSpawner : MonoBehaviour
     private float _spawnInterval;
     [SerializeField] private float spinningScytheSpeed = 3f;
     [SerializeField] private int spinningScytheHealth = 3;
+    private SpinningScytheAttackSettings _spinningScytheAttackSettings;
     
     [SerializeField] private GameObject spinningScythePrefab;
 
-    public void SetupSpawnerSettings(SpinningScytheSpawnerSettings spinningScytheSpawnerSettings, GameObject spinningScythePrefab)
+    public void SetupSpawnerSettings(SpinningScytheSpawnerSettings spinningScytheSpawnerSettings, GameObject spinningScythePrefab, SpinningScytheAttackSettings spinningScytheAttackSettings)
     {
         startingSpawnTime = spinningScytheSpawnerSettings.startingSpawnTime;
         endingSpawnTime = spinningScytheSpawnerSettings.endingSpawnTime;
         spinningScytheAmount = spinningScytheSpawnerSettings.spinningScytheAmount;
+        _spinningScytheAttackSettings = spinningScytheAttackSettings;
         this.spinningScythePrefab = spinningScythePrefab;
     }
     
@@ -48,9 +50,12 @@ public class SpinningSpawner : MonoBehaviour
         var spawnPosition = (Vector2)transform.position;
 
         GameObject spinningScythe = Instantiate(spinningScythePrefab, spawnPosition, Quaternion.identity);
-        spinningScythe.GetComponent<SpinningScytheAttack>().SetHealth(spinningScytheHealth);
-        spinningScythe.GetComponent<SpinningScytheAttack>().SetSpeed(spinningScytheSpeed);
-        spinningScythe.GetComponent<SpinningScytheAttack>().StartAttack();
+        var spinningScytheAttack = spinningScythe.GetComponent<SpinningScytheAttack>();
+        if (spinningScytheAttack == null) return;
+        spinningScytheAttack.SetHealth(_spinningScytheAttackSettings.spinningScytheHealth);
+        spinningScytheAttack.SetSpeed(_spinningScytheAttackSettings.spinningScytheSpeed);
+        spinningScytheAttack.SetKnockbackDuration(_spinningScytheAttackSettings.knockbackDurationSeconds);
+        spinningScytheAttack.StartAttack();
     }
     
     private void HandleDestruction()

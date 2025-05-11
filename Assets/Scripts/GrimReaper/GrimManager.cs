@@ -142,7 +142,7 @@ public class GrimManager : MonoBehaviour
         var spawnPosition = new Vector2(Random.Range(boardMinBounds.x, boardMaxBounds.x), Random.Range(boardMinBounds.y, boardMaxBounds.y));
         var spinningScytheSpawner = Instantiate(spinningAttackSpawnerPrefab, spawnPosition, Quaternion.identity);
         var spinningScytheSpawnerComponent = spinningScytheSpawner.GetComponent<SpinningSpawner>();
-        spinningScytheSpawnerComponent.SetupSpawnerSettings(spinningScytheSpawnerSettings, spinningAttackPrefab);
+        spinningScytheSpawnerComponent.SetupSpawnerSettings(spinningScytheSpawnerSettings, spinningAttackPrefab, spinningScytheAttackSettings);
         spinningScytheSpawnerComponent.StartSpawning();
         // var spinningAttackGameObject = Instantiate(spinningAttackPrefab, spawnPosition, Quaternion.identity);
         // var spinningAttack = spinningAttackGameObject.GetComponent<SpinningScytheAttack>();
