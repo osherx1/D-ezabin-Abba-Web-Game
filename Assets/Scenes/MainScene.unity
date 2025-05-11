@@ -2588,6 +2588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Try Poof
       objectReference: {fileID: 0}
+    - target: {fileID: 7161804843239902468, guid: a3197fb232b94e441a6a1d6abefccf90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
