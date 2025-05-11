@@ -305,7 +305,7 @@ public class CreatureCore : MonoBehaviour,
 
         // (6) Play this creature’s evolve animation
         if (anim != null)
-            anim.CrossFade("Evolve", 0f, 0);
+           anim.CrossFade("Evolve", 0f, 0);
 
         // (7) Spawn the visual‐only effect at avg
         Instantiate(evolveEffectPrefab, avg, Quaternion.identity);

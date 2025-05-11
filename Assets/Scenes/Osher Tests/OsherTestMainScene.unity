@@ -1396,117 +1396,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: specialSpawnPoint
+      propertyPath: handSpawnPoint
       value: 
       objectReference: {fileID: 2138706278}
     - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[1].stage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[2].stage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[3].stage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[4].stage
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[5].stage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[6].stage
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[7].stage
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[8].stage
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[0].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[1].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[2].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[3].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[4].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[5].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[6].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[7].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[8].spawnDelay
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[0].effectPrefab
+      propertyPath: specialSpawnPoint
       value: 
-      objectReference: {fileID: 7486890608111271335, guid: 468f635416ea2e045be6ec4d55a600a6, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[1].effectPrefab
-      value: 
-      objectReference: {fileID: 7438630425326526200, guid: 7356d0012b865c94aa6530f2f59ea473, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[2].effectPrefab
-      value: 
-      objectReference: {fileID: 8566124705628978972, guid: ab9a440b833d4784a9457618fe4e3acc, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[3].effectPrefab
-      value: 
-      objectReference: {fileID: 5454107833985954851, guid: aa4d9629da8ffc34eb70c47db65094b0, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[4].effectPrefab
-      value: 
-      objectReference: {fileID: 9003660883306027910, guid: 62c73ad090aecd24793993bf690cda6c, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[5].effectPrefab
-      value: 
-      objectReference: {fileID: 3891764401060865069, guid: 2d32f664483ddde42894ec4ea8519c67, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[6].effectPrefab
-      value: 
-      objectReference: {fileID: 7482396146854925026, guid: 68ce1b1caa33e6a48adc80ab95f56e23, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[7].effectPrefab
-      value: 
-      objectReference: {fileID: 2671498750443015765, guid: 15bdc85ab48ca014aa731242ba2423bf, type: 3}
-    - target: {fileID: 934495055633027515, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
-      propertyPath: spawnEffects.Array.data[8].effectPrefab
-      value: 
-      objectReference: {fileID: 3729723347125102542, guid: ad539651cbd882543aab8d450112297c, type: 3}
+      objectReference: {fileID: 1405433781}
+    - target: {fileID: 4759123066033496229, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759123066033496229, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2567
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759123066033496229, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759123066033496229, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.84
+      objectReference: {fileID: 0}
     - target: {fileID: 7194907163122485157, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.57426554
@@ -1554,8 +1466,76 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6556767764409807316, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1405433783}
   m_SourcePrefab: {fileID: 100100000, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+--- !u!4 &1405433781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4759123066033496229, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+  m_PrefabInstance: {fileID: 1405433780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1405433782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6556767764409807316, guid: 4c1747e53785f1c46808aa093aba158c, type: 3}
+  m_PrefabInstance: {fileID: 1405433780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1405433783
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405433782}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.8148148, y: 4.064815}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1438477713
 PrefabInstance:
   m_ObjectHideFlags: 0
