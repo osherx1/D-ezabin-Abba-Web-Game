@@ -7,6 +7,6 @@ public enum CreatureStage
     Dog,         // 4
     DogOx,       // 5  – intermediate
     Ox,          // 6
-    OxButcher,   // 7  – intermediate
-    Butcher      // 8  (final)
+    OxMonster,   // 7  – intermediate
+    Monster      // 8  (final)
 }

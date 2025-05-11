@@ -321,7 +321,7 @@ public class CreatureCore : MonoBehaviour,
         });
 
         // (10) Instantiate the merged creature prefab
-        if (stage == CreatureStage.OxButcher && !_oxButcherMergeFired)
+        if (stage == CreatureStage.OxMonster && !_oxButcherMergeFired)
         {
             _oxButcherMergeFired = true;
             // invoke our one‐time UI event
