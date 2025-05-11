@@ -360,7 +360,7 @@ public class CreatureCore : MonoBehaviour,
     var merged = Instantiate(nextPrefab, avg, Quaternion.identity);
     merged.gameObject.SetActive(false);
     // (10) Handle one-time OxButcher UI event case
-    if (stage == CreatureStage.OxButcher && !_oxButcherMergeFired)
+    if (stage == CreatureStage.OxMonster && !_oxButcherMergeFired)
     {
         _oxButcherMergeFired = true;
         GameEvents.OnOxButcherMerged?.Invoke();
