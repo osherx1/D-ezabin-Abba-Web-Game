@@ -5,6 +5,13 @@ using Utilities;
 public class CoinRainTrigger : MonoBehaviour
 {
     [SerializeField] private float autoDisableAfter = 12f;  // seconds
+    private Animator animator;
+    
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
+    }
 
     private void OnEnable()
     {
@@ -19,6 +26,7 @@ public class CoinRainTrigger : MonoBehaviour
     private void PlayOnce()
     {
         // run only if not already playing
+        animator.enabled = true;
         // if (gameObject.activeInHierarchy) return;
 
         // gameObject.SetActive(true);              // show → animation begins
@@ -28,6 +36,7 @@ public class CoinRainTrigger : MonoBehaviour
     private IEnumerator AutoDisable()
     {
         yield return new WaitForSeconds(autoDisableAfter);
-        gameObject.SetActive(false);             // hide until next boost
+        animator.enabled = false;                // stop animation
+        // gameObject.SetActive(false);             // hide until next boost
     }
 }
