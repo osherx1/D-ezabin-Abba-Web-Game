@@ -47,12 +47,17 @@ public class CreatureCore : MonoBehaviour,
     private float lastXDirection = 1f;
     private static bool _oxButcherMergeFired = false;
     private bool _hasFlippedOnBorder = false;
+    private bool _isClamping = false;
+    private Rigidbody2D _rb;
+    private const float SAFE_MARGIN_X = 3f;
+    private const float SAFE_MARGIN_Y = 2f;
 
     /* ---------- MonoBehaviour ---------- */
     private void Start()
     {
         cam = Camera.main;
         anim = GetComponent<Animator>();
+        _rb  = GetComponent<Rigidbody2D>();
         lastPosition = transform.position;
         PickIdleTarget();
     }
@@ -95,64 +100,69 @@ public class CreatureCore : MonoBehaviour,
 
     private void PickIdleTarget()
     {
-        // pick a random point within idleRadius
-        Vector2 r = Random.insideUnitCircle * idleRadius;
-        Vector3 candidate = transform.position + new Vector3(r.x, r.y, 0);
+        // compute “safe” rectangle
+        float minX = allowedBottomLeft.x + SAFE_MARGIN_X;
+        float maxX = allowedTopRight.x   - SAFE_MARGIN_X;
+        float minY = allowedBottomLeft.y + SAFE_MARGIN_Y;
+        float maxY = allowedTopRight.y   - SAFE_MARGIN_Y;
 
-        // clamp it to the allowed square
-        candidate.x = Mathf.Clamp(candidate.x,
-            allowedBottomLeft.x,
-            allowedTopRight.x);
-        candidate.y = Mathf.Clamp(candidate.y,
-            allowedBottomLeft.y,
-            allowedTopRight.y);
+        Vector3 candidate;
+        int attempts = 0;
+
+        // keep sampling until we land in the safe zone (or bail after 10 tries)
+        do
+        {
+            Vector2 r = Random.insideUnitCircle * idleRadius;
+            candidate = transform.position + new Vector3(r.x, r.y, 0f);
+
+            // clamp into the safe rectangle
+            candidate.x = Mathf.Clamp(candidate.x, minX, maxX);
+            candidate.y = Mathf.Clamp(candidate.y, minY, maxY);
+            attempts++;
+        }
+        while ((candidate.x <= minX || candidate.x >= maxX ||
+                candidate.y <= minY || candidate.y >= maxY)
+               && attempts < 10);
 
         idleTarget = candidate;
     }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!_hasFlippedOnBorder && collision.collider.CompareTag("Border"))
-        {
-            _hasFlippedOnBorder = true;
 
-            // 1) Flip the sprite and direction
-            FlipDirection();
-
-            // 2) Pick a fresh idleTarget away from the wall
-            PickIdleTargetInDirection(lastXDirection);
-
-            // 3) Reset the idle timer so it moves immediately
-            idleTimer = 0f;
-
-            // 4) Reset lastPosition to avoid a bogus delta in AnimateWalking
-            lastPosition = transform.position;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Border"))
-            _hasFlippedOnBorder = false;
-    }
-    
     private void PickIdleTargetInDirection(float direction)
     {
-        // random point in a circle
-        Vector2 r = Random.insideUnitCircle * idleRadius;
-        // force it to lie in the new horizontal direction
-        r.x = Mathf.Abs(r.x) * direction;
+        // compute “safe” rectangle
+        float minX = allowedBottomLeft.x + SAFE_MARGIN_X;
+        float maxX = allowedTopRight.x   - SAFE_MARGIN_X;
+        float minY = allowedBottomLeft.y + SAFE_MARGIN_Y;
+        float maxY = allowedTopRight.y   - SAFE_MARGIN_Y;
 
-        Vector3 candidate = transform.position + new Vector3(r.x, r.y, 0f);
-        // clamp to your play‐area
-        candidate.x = Mathf.Clamp(candidate.x,
-            allowedBottomLeft.x,
-            allowedTopRight.x);
-        candidate.y = Mathf.Clamp(candidate.y,
-            allowedBottomLeft.y,
-            allowedTopRight.y);
+        Vector3 candidate;
+        int attempts = 0;
+
+        do
+        {
+            Vector2 r = Random.insideUnitCircle * idleRadius;
+            // force x to be in the “direction” (±)
+            r.x = Mathf.Abs(r.x) * direction;
+            candidate = transform.position + new Vector3(r.x, r.y, 0f);
+
+            // clamp into the safe rectangle
+            candidate.x = Mathf.Clamp(candidate.x, minX, maxX);
+            candidate.y = Mathf.Clamp(candidate.y, minY, maxY);
+            attempts++;
+        }
+        while ((candidate.x <= minX || candidate.x >= maxX ||
+                candidate.y <= minY || candidate.y >= maxY)
+               && attempts < 10);
 
         idleTarget = candidate;
+    }
+    
+    private bool IsWithinAllowedBounds()
+    {
+        return transform.position.x >= allowedBottomLeft.x -1  &&
+               transform.position.x <= allowedTopRight.x -1  &&
+               transform.position.y >= allowedBottomLeft.y -1 &&
+               transform.position.y <= allowedTopRight.y -1;
     }
     
     private void FlipDirection()
@@ -161,6 +171,17 @@ public class CreatureCore : MonoBehaviour,
         Vector3 s = transform.localScale;
         s.x = lastXDirection * Mathf.Abs(s.x);
         transform.localScale = s;
+    }
+    
+    private Vector3 GetNearestPointInsideBounds(Vector3 worldPos)
+    {
+        float x = Mathf.Clamp(worldPos.x,
+            allowedBottomLeft.x,
+            allowedTopRight.x);
+        float y = Mathf.Clamp(worldPos.y,
+            allowedBottomLeft.y,
+            allowedTopRight.y);
+        return new Vector3(x, y, worldPos.z);
     }
 
 
@@ -202,11 +223,13 @@ public class CreatureCore : MonoBehaviour,
        ===================================================================== */
     public void OnPointerDown(PointerEventData data)
     {
+        
         isDragging = true;
         Vector3 world = cam.ScreenToWorldPoint(data.position);
         world.z = 0;
         dragOffset = transform.position - world;
 
+        
         // — NEW: play lift animation
         if (anim != null)
             anim.CrossFade("Lifted", 0f, 0);
@@ -248,6 +271,11 @@ public class CreatureCore : MonoBehaviour,
         if (anim != null)
             anim.CrossFade("Idle", 0f, 0);
 
+        if (!IsWithinAllowedBounds())
+        {
+            transform.position = GetNearestPointInsideBounds(transform.position);
+        }
+        
         // then attempt merge as before
         StartCoroutine(TryMerge());
     }
@@ -393,7 +421,119 @@ public class CreatureCore : MonoBehaviour,
         // 3) now destroy the GameObject
         Destroy(gameObject);
     }
+    
+    
+    private void LateUpdate()
+    {
+        if (!_isClamping)
+            CheckAndClampBounds();
+    }
 
+    private void CheckAndClampBounds()
+    {
+        Vector3 pos = transform.position;
+        bool   hitX = false;
+
+        // detect horizontal overflow
+        if (pos.x < allowedBottomLeft.x)
+        {
+            pos.x = allowedBottomLeft.x;
+            hitX  = true;
+        }
+        else if (pos.x > allowedTopRight.x)
+        {
+            pos.x = allowedTopRight.x;
+            hitX  = true;
+        }
+
+        // always clamp Y too
+        pos.y = Mathf.Clamp(pos.y,
+            allowedBottomLeft.y,
+            allowedTopRight.y);
+
+        if (hitX)
+        {
+            // snap into bounds and start the clamp-flip coroutine
+            transform.position = pos;
+            StartCoroutine(ClampFlipAndBounce(pos));
+        }
+        else
+        {
+            // just apply the Y‐clamp
+            transform.position = pos;
+        }
+    }
+
+    private IEnumerator ClampFlipAndBounce(Vector3 clampedPos)
+    {
+        _isClamping = true;
+
+        // 1) Turn off physics so it won't immediately re‐hit the wall
+        if (_rb != null) _rb.simulated = false;
+
+        // 2) Flip your facing direction (180°)
+        lastXDirection *= -1f;
+        var s = transform.localScale;
+        s.x = lastXDirection * Mathf.Abs(s.x);
+        transform.localScale = s;
+
+        // 3) Immediately pick a new idle target in that flipped direction
+        //    and reset the timer so HandleIdle() moves right away.
+        PickIdleTargetInDirection(lastXDirection);
+        idleTimer = idleStepTime;     // force immediate PickIdleTarget in next HandleIdle
+        lastPosition = clampedPos;    // avoid any delta‐flip back
+
+        // 4) Wait two physics frames to clear any overlap
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+
+        // 5) Turn physics back on and zero out velocity
+        if (_rb != null)
+        {
+            _rb.simulated = true;
+            _rb.linearVelocity  = Vector2.zero;
+        }
+
+        _isClamping = false;
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag("Border"))
+            return;
+
+        // 1) Kill any physics velocity so we don’t keep sliding into the wall
+        if (_rb != null)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            _rb.angularVelocity = 0f;
+        }
+
+        // 2) Flip facing direction 180°
+        lastXDirection = -lastXDirection;
+        Vector3 s = transform.localScale;
+        s.x = Mathf.Abs(s.x) * lastXDirection;
+        transform.localScale = s;
+
+        // 3) Pick a *fixed* bounce‐away target directly horizontal
+        Vector3 bounceTarget = transform.position 
+                               + new Vector3(idleRadius * lastXDirection, 0f, 0f);
+
+        // clamp it just inside your bounds
+        bounceTarget.x = Mathf.Clamp(bounceTarget.x, 
+            allowedBottomLeft.x, 
+            allowedTopRight.x);
+        bounceTarget.y = Mathf.Clamp(bounceTarget.y, 
+            allowedBottomLeft.y, 
+            allowedTopRight.y);
+
+        // 4) Immediately move toward that bounce point
+        idleTarget = bounceTarget;
+        idleTimer  = idleStepTime;      // force instant recalc in HandleIdle
+        lastPosition = transform.position;
+    }
+
+    
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
