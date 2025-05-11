@@ -604,7 +604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6870465251079207123
 Transform:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1f92821f4b4ac394add12b62a0e017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoDisableAfter: 8
+  autoDisableAfter: 8.5
 --- !u!1 &1744751440922577547
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +929,81 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1896926608294980800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3094352218269863783}
+  - component: {fileID: 2909263845706465130}
+  - component: {fileID: 7002703207462003650}
+  m_Layer: 5
+  m_Name: Cooldown Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3094352218269863783
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896926608294980800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6709727941365868120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 130, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2909263845706465130
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896926608294980800}
+  m_CullTransparentMesh: 1
+--- !u!114 &7002703207462003650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896926608294980800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2890409509781067523, guid: d01f4612b171743518cb8e9e02de933c, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -1747,8 +1822,9 @@ GameObject:
   - component: {fileID: 6852708259379343430}
   - component: {fileID: 4463717431136954518}
   - component: {fileID: 5839091421494851619}
+  - component: {fileID: 5335463630513814243}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Shield Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1765,7 +1841,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5046646736081776119}
   m_Father: {fileID: 7772706490083454876}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1836,7 +1913,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1882,6 +1959,26 @@ MonoBehaviour:
   creatureLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &5335463630513814243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5891324893556739379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a72692f48f04739919f1a799f949f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerType: 0
+  readySprite: {fileID: -8502264967555677361, guid: c4b9e7c4c05d2714d827746b8efa4de0, type: 3}
+  disabledSprite: {fileID: -8502264967555677361, guid: c4b9e7c4c05d2714d827746b8efa4de0, type: 3}
+  overlayImage: {fileID: 7033002042862342537}
+  activeSeconds: 10
+  cooldownSeconds: 60
+  activeColor: {r: 1, g: 0.9, b: 0, a: 0.65}
+  cooldownColor: {r: 0, g: 0, b: 0, a: 0.55}
 --- !u!1 &5978915804172385294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,7 +1991,7 @@ GameObject:
   - component: {fileID: 8017359383485528459}
   - component: {fileID: 109990777001510314}
   - component: {fileID: 1370973169007648735}
-  - component: {fileID: 4021898265774596721}
+  - component: {fileID: 7455582702016443959}
   m_Layer: 5
   m_Name: Increses Income Button
   m_TagString: Untagged
@@ -2005,7 +2102,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4021898265774596721
+--- !u!114 &7455582702016443959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2014,17 +2111,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5978915804172385294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b245d7fab7461ba960d43ffc6e9b21, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a72692f48f04739919f1a799f949f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerType: 0
   readySprite: {fileID: -8632370997183531496, guid: 810b798b1ebd961479bb0e271773af16, type: 3}
   disabledSprite: {fileID: -8632370997183531496, guid: 810b798b1ebd961479bb0e271773af16, type: 3}
-  overlay: {fileID: 9220006723584264355}
+  overlayImage: {fileID: 9220006723584264355}
   activeSeconds: 10
   cooldownSeconds: 60
-  activeColor: {r: 1, g: 0.85, b: 0, a: 0.65}
+  activeColor: {r: 1, g: 0.9, b: 0, a: 0.65}
   cooldownColor: {r: 0, g: 0, b: 0, a: 0.55}
-  coinRainObject: {fileID: 1711412687320167932}
 --- !u!1 &6390594423679201777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2572,81 @@ MonoBehaviour:
   canvasRoot: {fileID: 0}
   childAnimator: {fileID: 0}
   oxidButcherPrefab: {fileID: 3182862794603731761, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
+--- !u!1 &6753842175419466538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5046646736081776119}
+  - component: {fileID: 6125148576005528372}
+  - component: {fileID: 7033002042862342537}
+  m_Layer: 5
+  m_Name: Cooldown Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5046646736081776119
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753842175419466538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1497316784411719066}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 130, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6125148576005528372
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753842175419466538}
+  m_CullTransparentMesh: 1
+--- !u!114 &7033002042862342537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753842175419466538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.65882355}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2890409509781067523, guid: d01f4612b171743518cb8e9e02de933c, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 0
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7068089995548735322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,8 +2945,9 @@ GameObject:
   - component: {fileID: 6969716143479718100}
   - component: {fileID: 8446311831067175364}
   - component: {fileID: 819079411656833405}
+  - component: {fileID: 7867056625404084307}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Sword Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2791,7 +2964,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3094352218269863783}
   m_Father: {fileID: 7772706490083454876}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2862,7 +3036,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2881,6 +3055,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7867056625404084307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555789815189063081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a72692f48f04739919f1a799f949f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerType: 2
+  readySprite: {fileID: 150787886527688411, guid: 3185a137c02403a4aa55ae43a72499b2, type: 3}
+  disabledSprite: {fileID: 150787886527688411, guid: 3185a137c02403a4aa55ae43a72499b2, type: 3}
+  overlayImage: {fileID: 7002703207462003650}
+  activeSeconds: 10
+  cooldownSeconds: 60
+  activeColor: {r: 1, g: 0.9, b: 0, a: 0.65}
+  cooldownColor: {r: 0, g: 0, b: 0, a: 0.55}
 --- !u!1 &7856582683801592719
 GameObject:
   m_ObjectHideFlags: 0
