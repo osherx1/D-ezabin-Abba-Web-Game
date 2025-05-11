@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7520069912662787569}
   - component: {fileID: 2105805346052080640}
   m_Layer: 5
-  m_Name: Manster
+  m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   enabledSprite: {fileID: -6689015890456219937, guid: 85992cd7c303e4a4d9ce8d2090725ca9, type: 3}
   cooldownOverlay: {fileID: 8143644184715897831}
   cooldownDuration: 3
+  purchaseAudioName: MonsterBuying
 --- !u!1 &1098584661565432616
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +587,7 @@ MonoBehaviour:
   enabledSprite: {fileID: 446611082405080865, guid: 58128c2c6fc864bc5887ed4908767281, type: 3}
   cooldownOverlay: {fileID: 9131293322622828246}
   cooldownDuration: 3
+  purchaseAudioName: CatDogBuying
 --- !u!1 &1711412687320167932
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +856,7 @@ MonoBehaviour:
   enabledSprite: {fileID: -1514958734636487171, guid: c13e5f5219a964554bdbad5e11a2022f, type: 3}
   cooldownOverlay: {fileID: 8497147148761984351}
   cooldownDuration: 3
+  purchaseAudioName: DogOxBuying
 --- !u!1 &1784853717980178043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1664,7 @@ MonoBehaviour:
   enabledSprite: {fileID: -491303751086705135, guid: 9f4cabd90a2ce447da64e9bc116df211, type: 3}
   cooldownOverlay: {fileID: 1078716893301267913}
   cooldownDuration: 3
+  purchaseAudioName: DogBuying
 --- !u!1 &5369306801124935155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2140,7 @@ GameObject:
   - component: {fileID: 8919467856463408036}
   - component: {fileID: 720647699274531150}
   m_Layer: 5
-  m_Name: OxManster
+  m_Name: OxMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2258,13 +2262,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalCost: 559872
   animalPrefab: {fileID: 7176927210000311754, guid: 505d3de0384dfb0478f2b70c2893e6d2, type: 3}
-  animalName: OxManster
+  animalName: OxMonster
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
   silhouetteSprite: {fileID: 7455151649462339219, guid: 920689aa37744442a933cfdc9933c90f, type: 3}
   disabledSprite: {fileID: 2553633587572273810, guid: 6f67eb158e1ce46379f91a771cf0e621, type: 3}
   enabledSprite: {fileID: -3591590786284532292, guid: 65c4d40eb96524f3d9981d73dce30b29, type: 3}
   cooldownOverlay: {fileID: 9201584940596213580}
   cooldownDuration: 3
+  purchaseAudioName: OxMonsterBuying
 --- !u!1 &6524024476784469101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2413,7 @@ MonoBehaviour:
   enabledSprite: {fileID: -5694650121447499987, guid: 850d40fe89cf1496b85b9d3577b4570a, type: 3}
   cooldownOverlay: {fileID: 7028009511993372800}
   cooldownDuration: 3
+  purchaseAudioName: CatBuying
 --- !u!1 &6683487716641138831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2796,7 @@ MonoBehaviour:
   enabledSprite: {fileID: 7680521220765567691, guid: 0522e3996387a4b239231b4058d265a0, type: 3}
   cooldownOverlay: {fileID: 7731465635202146197}
   cooldownDuration: 3
+  purchaseAudioName: OxBuying
 --- !u!1 &7113511710798143064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,6 +2940,7 @@ MonoBehaviour:
   enabledSprite: {fileID: 7503993635288965333, guid: 07bf8520aae9c4eeeb0bf3c0072270b6, type: 3}
   cooldownOverlay: {fileID: 6980737584208226506}
   cooldownDuration: 3
+  purchaseAudioName: GoatBuying
 --- !u!1 &7555789815189063081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3226,7 @@ MonoBehaviour:
   enabledSprite: {fileID: 6354754563396105786, guid: 1365f4866a0d349648f529bcf5568419, type: 3}
   cooldownOverlay: {fileID: 1802157703026096312}
   cooldownDuration: 3
+  purchaseAudioName: GoatCatBuying
 --- !u!1 &8210305432342311571
 GameObject:
   m_ObjectHideFlags: 0

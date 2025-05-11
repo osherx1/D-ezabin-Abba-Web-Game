@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -33,6 +34,9 @@ namespace UI
         private Image cooldownOverlay; // Child image with Fill Method = Radial / Vertical
 
         [SerializeField] private float cooldownDuration = 3f;
+
+        [Header("Audio Clips")] [SerializeField]
+        private string purchaseAudioName;
 
 
         /* ---------- Internal ---------- */
@@ -152,6 +156,8 @@ namespace UI
 
             if (MoneyManager.Instance.SpendMoney(animalCost))
             {
+                // Play purchase sound
+                AudioManager.Instance.PlaySound(transform.position, purchaseAudioName);
                 CreatureSpawner.Instance.Spawn(animalPrefab);
                 GameEvents.OnCreaturePurchased?.Invoke();
             }
