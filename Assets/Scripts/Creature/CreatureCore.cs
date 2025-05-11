@@ -45,6 +45,7 @@ public class CreatureCore : MonoBehaviour,
     [SerializeField] private Animator anim;
     private Vector3 lastPosition;
     private float lastXDirection = 1f;
+    private static bool _oxButcherMergeFired = false;
 
 
     /* ---------- MonoBehaviour ---------- */
@@ -258,7 +259,7 @@ public class CreatureCore : MonoBehaviour,
 
         // (7) Spawn the visual‐only effect at avg
         Instantiate(evolveEffectPrefab, avg, Quaternion.identity);
-
+        
         // (8) Immediately destroy the other creatures
         foreach (var c in others)
             Destroy(c.gameObject);
@@ -270,11 +271,19 @@ public class CreatureCore : MonoBehaviour,
         });
 
         // (10) Instantiate the merged creature prefab
-        var newCreature =
-            Instantiate(nextPrefab, avg, Quaternion.identity);
-        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
+        if (stage == CreatureStage.OxButcher && !_oxButcherMergeFired)
+        {
+            _oxButcherMergeFired = true;
+            // invoke our one‐time UI event
+            GameEvents.OnOxButcherMerged?.Invoke();
+            // destroy this original so it “goes away” now
+            Destroy(gameObject);
+            yield break;    // skip the normal spawn
+        }
 
-        // (11) Destroy this original creature
+        // fallback for all other merges (or second+ time):
+        var newCreature = Instantiate(nextPrefab, avg, Quaternion.identity);
+        GameEvents.OnCreatureMerged?.Invoke(newCreature.stage);
         Destroy(gameObject);
     }
     

@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 815843507}
   - component: {fileID: 815843506}
   m_Layer: 5
-  m_Name: Image
+  m_Name: WinScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1362,8 +1362,31 @@ PrefabInstance:
     - {fileID: 625653992647512141, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
     - {fileID: 130086094397238138, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6683487716641138831, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1039673720}
   m_SourcePrefab: {fileID: 100100000, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+--- !u!1 &1039673713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6683487716641138831, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+  m_PrefabInstance: {fileID: 1039673712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1039673720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039673713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e42b3d051a7b8348a0763ca6f25d61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasRoot: {fileID: 114846205}
+  childAnimator: {fileID: 815843506}
+  oxidButcherPrefab: {fileID: 3182862794603731761, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
 --- !u!1001 &1405433780
 PrefabInstance:
   m_ObjectHideFlags: 0
