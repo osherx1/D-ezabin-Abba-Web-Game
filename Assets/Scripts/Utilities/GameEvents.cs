@@ -16,5 +16,7 @@ namespace Utilities
         public static Action FreezeEnemies;
         public static Action OnOxButcherMerged;
         public static Action OnFinalCreatureAnimationEnded;
+        public static Action StopAllEnemies;
+        public static Action DestroyAllEnemies;
     }
 }

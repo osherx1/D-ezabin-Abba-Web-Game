@@ -13,6 +13,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     // [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private int minionStartingHealth = 5;
     private Rigidbody2D _rb;
+    private Animator _animator;
 
     [Header("Counter attack parameters")] 
     [SerializeField] private float knockbackForce;
@@ -31,12 +32,15 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _isDead = false;
     }
 
     private void OnEnable()
     {
         GameEvents.StartMinionsAttack += OnStartMinionsAttack;
+        GameEvents.StopAllEnemies += OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies += OnDestroyAllEnemies;
         _minionHealth = minionStartingHealth;
         OnStartMinionsAttack();
     }
@@ -44,7 +48,24 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
     private void OnDisable()
     {
         GameEvents.StartMinionsAttack -= OnStartMinionsAttack;
+        GameEvents.StopAllEnemies -= OnStopAllEnemies;
+        GameEvents.DestroyAllEnemies -= OnDestroyAllEnemies;
         // Reset();
+    }
+
+    private void OnStopAllEnemies()
+    {
+        _isFrozen = true;
+        StopAllCoroutines();
+        _rb.linearVelocity = Vector2.zero;
+        _animator.speed = 0;
+        // StopSounds();
+    }
+    
+    private void OnDestroyAllEnemies()
+    {
+        OnStopAllEnemies();
+        HandleMinionDestruction();
     }
 
     // Update is called once per frame
