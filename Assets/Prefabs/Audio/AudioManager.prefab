@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundVolume: 0.5
-  backgroundMusic: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: a5ab46d7a3b67d34cabd2e6b7a9e928b, type: 3}
   audioClips:
   - {fileID: 8300000, guid: 5620686e8947559438ace4d2f405a530, type: 3}
   - {fileID: 8300000, guid: 3362bfc9daee06e4d8034e5acebaff0a, type: 3}
