@@ -84,7 +84,7 @@ public class MinionSpawner : MonoBehaviour
             }
             minion.transform.position = spawnPosition;
             minion.SetMinionSettings(minionSettings, minionCounterAttackSettings);
-            minion.gameObject.SetActive(true);
+            // minion.gameObject.SetActive(true);
         }
         GameEvents.StartMinionsAttack?.Invoke();
         // if there is a destrucion animation, then wait for it to finish

@@ -23,8 +23,9 @@ public class MinionSettings
 {
     public float speed;
     public int minionStartingHealth = 5;
-    public string movementClipName = "MinionMovement";
+    public string[] movementClipNames;
     public string distructionClipName = "MinionHit";
+    public float timeBetweenClips = 0.5f;
 }
 
 [System.Serializable]

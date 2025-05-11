@@ -73,7 +73,6 @@ MonoBehaviour:
     movementClipName: SpinningScytheMovement
     hitClipName: SpinningScytheHit
     deathClipName: SpinningScytheDeath
-  spinningScytheAttackAudioName: 
   spinningScytheSummoningAudioName: SpinningScytheSummoning
   spawnerPrefab: {fileID: 835675431695768437, guid: 9872237bd905e31438559ea7b86d705b, type: 3}
   minionSpawnerSettings:
@@ -83,9 +82,20 @@ MonoBehaviour:
   minionSettings:
     speed: 2
     minionStartingHealth: 1
+    movementClipNames:
+    - MinionMovement1
+    - MinionMovement2
+    - MinionMovement3
+    - MinionMovement4
+    - MinionMovement5
+    - MinionMovement6
+    - MinionMovement7
+    - MinionMovement8
+    - MinionMovement9
+    distructionClipName: MinionHit
+    timeBetweenClips: 1.3
   minionCounterAttackSettings:
     knockbackForce: 2
     knockbackDurationSeconds: 0.3
     damageAgainstMinion: 1
-  minionAttackAudioName: 
   minionSummoningAudioName: MinionSummoning
