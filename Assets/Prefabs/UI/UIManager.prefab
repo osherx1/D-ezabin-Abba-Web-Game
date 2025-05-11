@@ -1975,7 +1975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a72692f48f04739919f1a799f949f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerType: 0
+  powerType: 1
   readySprite: {fileID: -8502264967555677361, guid: c4b9e7c4c05d2714d827746b8efa4de0, type: 3}
   disabledSprite: {fileID: -8502264967555677361, guid: c4b9e7c4c05d2714d827746b8efa4de0, type: 3}
   overlayImage: {fileID: 7033002042862342537}
