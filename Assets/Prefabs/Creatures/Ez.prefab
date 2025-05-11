@@ -106,7 +106,7 @@ MonoBehaviour:
   stage: 0
   nextPrefab: {fileID: 9132801432261907422, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
   evolveEffectPrefab: {fileID: 7161804843239902468, guid: a3197fb232b94e441a6a1d6abefccf90, type: 3}
-  zuzPerSecond: 0.2
+  zuzPerSecond: 1
   idleRadius: 1
   idleStepTime: 3
   mergeNeeded: 2

@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 20000000
+  animalCost: 781250
   animalPrefab: {fileID: 3182862794603731761, guid: 70885e745fb34de4fad2aeb28dffd95a, type: 3}
   animalName: Goat
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 2000
+  animalCost: 250
   animalPrefab: {fileID: 3478933172451152204, guid: 51f9477e6d5c8404a91979394e409c23, type: 3}
   animalName: CatDog
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 200000
+  animalCost: 6250
   animalPrefab: {fileID: 7658806981352565101, guid: 0db6567f97ba8e94d8d8711c24c99838, type: 3}
   animalName: DogOx
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 20000
+  animalCost: 1250
   animalPrefab: {fileID: 669666493744383388, guid: 82138a8c8d20b3d46b31bc4b99a40ad1, type: 3}
   animalName: Dog
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 20000000
+  animalCost: 156250
   animalPrefab: {fileID: 7176927210000311754, guid: 505d3de0384dfb0478f2b70c2893e6d2, type: 3}
   animalName: OxManster
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 200
+  animalCost: 50
   animalPrefab: {fileID: 8009800804365043236, guid: f7b842ccd830d5742bddc40c4dd33827, type: 3}
   animalName: Cat
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 2000000
+  animalCost: 31250
   animalPrefab: {fileID: 217604745206295886, guid: d8b4ff730dd59e2438e143152be1aae5, type: 3}
   animalName: Ox
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalCost: 20
+  animalCost: 10
   animalPrefab: {fileID: 3692009782177488797, guid: 790213a8b22869346bd3430c85fd4f98, type: 3}
   animalName: GoatCat
   questionSprite: {fileID: 7438941574717200578, guid: 3607db92e66714b6c9b11dd6659fda11, type: 3}
