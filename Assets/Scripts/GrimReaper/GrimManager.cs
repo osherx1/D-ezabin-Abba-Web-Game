@@ -17,7 +17,7 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private float timeBeforeFirstAttack = 25f;
     [SerializeField] private float timeDiviation = 3f;
     [SerializeField] private float timeToStartAudioBeforeAttack = 4f;
-    private float _timeBetweenAttacks;
+    // private float _timeBetweenAttacks;
     
     [Header("Swiping Attack Settings")]
     [SerializeField] private GameObject swipingAttackPrefab;
@@ -44,12 +44,8 @@ public class GrimManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _timeBetweenAttacks = timeBetweenAttacks;
-        StartCoroutine(AttacksRoutine());
-        // StartCoroutine(StartMinionAttack());
-        // StartCoroutine(SetupSwipingAttack()); 
-        // StartCoroutine(StartSwipingAttackRoutine());
-        // StartCoroutine(StartSpinningAttack());
+        // _timeBetweenAttacks = timeBetweenAttacks;
+        // StartCoroutine(AttacksRoutine());
         GameEvents.OnCreatureMerged += HandleCreatureMerged;
     }
     
@@ -60,6 +56,10 @@ public class GrimManager : MonoBehaviour
 
     private void HandleCreatureMerged(CreatureStage stage)
     {
+        if (_bestCreatureStage == CreatureStage.Goat)
+        {
+            StartCoroutine(AttacksRoutine());
+        }
         if(_bestCreatureStage < stage)
         {
             _bestCreatureStage = stage;
