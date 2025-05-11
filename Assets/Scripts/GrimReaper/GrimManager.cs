@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class GrimManager : MonoBehaviour
 {
+    [SerializeField] private GameObject cloudAttack;
     [Header("Board Settings")]
     [SerializeField] private Vector2 boardMinBounds;
     [SerializeField] private Vector2 boardMaxBounds;
@@ -19,10 +20,10 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private float timeToStartAudioBeforeAttack = 4f;
     // private float _timeBetweenAttacks;
     
-    [Header("Swiping Attack Settings")]
-    [SerializeField] private GameObject swipingAttackPrefab;
-    [SerializeField] private SwipingAttackSettings swipingAttackSettings;
-    [SerializeField] private SwipingCounterAttackSettings swipingAttackCounterAttackSettings;
+    // [Header("Swiping Attack Settings")]
+    // [SerializeField] private GameObject swipingAttackPrefab;
+    // [SerializeField] private SwipingAttackSettings swipingAttackSettings;
+    // [SerializeField] private SwipingCounterAttackSettings swipingAttackCounterAttackSettings;
 
     [Header("Spinning Attack Settings")] 
     [SerializeField] private GameObject spinningAttackSpawnerPrefab;
@@ -46,11 +47,18 @@ public class GrimManager : MonoBehaviour
         // _timeBetweenAttacks = timeBetweenAttacks;
         // StartCoroutine(AttacksRoutine());
         GameEvents.OnCreatureMerged += HandleCreatureMerged;
+        GameEvents.OnSwordActivated += HandleSwordActivated;
     }
     
     private void OnDisable()
     {
         GameEvents.OnCreatureMerged -= HandleCreatureMerged;
+        GameEvents.OnSwordActivated -= HandleSwordActivated;
+    }
+
+    private void HandleSwordActivated()
+    {
+        Instantiate(cloudAttack);
     }
 
     private void HandleCreatureMerged(CreatureStage stage)
@@ -162,19 +170,19 @@ public class GrimManager : MonoBehaviour
         CallMinionsAttack();
     }
 
-    private IEnumerator SetupSwipingAttack()
-    {
-        yield return new WaitForEndOfFrame();
-        var swipingAttackGameObject = Instantiate(swipingAttackPrefab, swipingAttackSettings.swipingAttackRightPosition, Quaternion.identity);
-        var swipingAttack = swipingAttackGameObject.GetComponent<SwipingAttack>();
-        swipingAttack.SetSwipingAttackSpeed(swipingAttackSettings.swipingAttackSpeed);
-        swipingAttack.SetSwipingAttackHealth(swipingAttackSettings.swipingAttackHealth);
-        swipingAttack.SetSwipingAttackRightPosition(swipingAttackSettings.swipingAttackRightPosition);
-        swipingAttack.SetSwipingAttackLeftPosition(swipingAttackSettings.swipingAttackLeftPosition);
-        swipingAttack.SetKnockbackForce(swipingAttackCounterAttackSettings.knockbackForce);
-        swipingAttack.SetKnockbackDurationSeconds(swipingAttackCounterAttackSettings.knockbackDurationSeconds);
-        swipingAttack.SetDamageAgainstSwipingAttack(swipingAttackCounterAttackSettings.damageAgainstSwipingAttack);
-    }
+    // private IEnumerator SetupSwipingAttack()
+    // {
+    //     yield return new WaitForEndOfFrame();
+    //     var swipingAttackGameObject = Instantiate(swipingAttackPrefab, swipingAttackSettings.swipingAttackRightPosition, Quaternion.identity);
+    //     var swipingAttack = swipingAttackGameObject.GetComponent<SwipingAttack>();
+    //     swipingAttack.SetSwipingAttackSpeed(swipingAttackSettings.swipingAttackSpeed);
+    //     swipingAttack.SetSwipingAttackHealth(swipingAttackSettings.swipingAttackHealth);
+    //     swipingAttack.SetSwipingAttackRightPosition(swipingAttackSettings.swipingAttackRightPosition);
+    //     swipingAttack.SetSwipingAttackLeftPosition(swipingAttackSettings.swipingAttackLeftPosition);
+    //     swipingAttack.SetKnockbackForce(swipingAttackCounterAttackSettings.knockbackForce);
+    //     swipingAttack.SetKnockbackDurationSeconds(swipingAttackCounterAttackSettings.knockbackDurationSeconds);
+    //     swipingAttack.SetDamageAgainstSwipingAttack(swipingAttackCounterAttackSettings.damageAgainstSwipingAttack);
+    // }
     
     private void CallSwipingAttack()
     {
