@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6556767764409807316}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4869187, y: 1.2540275, z: -9.316369}
+  m_LocalPosition: {x: -5.88, y: -1.29, z: -9.316369}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,5 +106,5 @@ MonoBehaviour:
   - stage: 8
     effectPrefab: {fileID: 3729723347125102542, guid: ad539651cbd882543aab8d450112297c, type: 3}
     spawnDelay: 1.2
-  specialSpawnPoint: {fileID: 0}
+  specialSpawnPoint: {fileID: 4759123066033496229}
   handSpawnPoint: {fileID: 0}
