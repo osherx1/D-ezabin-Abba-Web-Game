@@ -17,6 +17,6 @@ public class VideoEndLoadScene : MonoBehaviour
     void OnVideoFinished(VideoPlayer vp)
     {
         // load the scene at index 1
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
