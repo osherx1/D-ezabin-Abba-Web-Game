@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: childAnimator
       value: 
       objectReference: {fileID: 815843506}
+    - target: {fileID: 1110147776792205819, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: autoDisableAfter
+      value: 5.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3492432144763889530, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -904,9 +908,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5335463630513814243, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: activeSeconds
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335463630513814243, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: cooldownSeconds
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6683487716641138831, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Name
       value: UI Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867056625404084307, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: activeSeconds
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867056625404084307, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
+      propertyPath: cooldownSeconds
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8535328297174654220, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Camera
