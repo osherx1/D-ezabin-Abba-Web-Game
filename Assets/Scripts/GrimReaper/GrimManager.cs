@@ -53,6 +53,7 @@ public class GrimManager : MonoBehaviour
         // StartCoroutine(AttacksRoutine());
         GameEvents.OnCreatureMerged += HandleCreatureMerged;
         GameEvents.OnSwordActivated += HandleSwordActivated;
+        GameEvents.OnOxButcherMerged += HandleShcoyechSound;
         _currentDifficultySettings = difficultySettings[0];
     }
     
@@ -60,6 +61,22 @@ public class GrimManager : MonoBehaviour
     {
         GameEvents.OnCreatureMerged -= HandleCreatureMerged;
         GameEvents.OnSwordActivated -= HandleSwordActivated;
+        GameEvents.OnOxButcherMerged -= HandleShcoyechSound;
+    }
+
+    private void HandleShcoyechSound()
+    {
+        GameEvents.DestroyAllEnemies?.Invoke();
+        AudioManager.Instance.PauseUnpauseBackgroundMusic();
+        AudioManager.Instance.PlaySound(transform.position, "Shcoyech");
+        StartCoroutine(ResumeBackgroundMusic());
+        _timer = 0;
+    }
+
+    private IEnumerator ResumeBackgroundMusic()
+    {
+        yield return new WaitForSeconds(10.5f);
+        AudioManager.Instance.PauseUnpauseBackgroundMusic();
     }
 
     private void HandleSwordActivated()
