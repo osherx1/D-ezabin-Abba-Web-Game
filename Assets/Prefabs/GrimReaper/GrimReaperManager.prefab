@@ -50,7 +50,6 @@ MonoBehaviour:
   boardMaxBounds: {x: 4.5, y: 4}
   timeBetweenAttacks: 45
   timeBeforeFirstAttack: 20
-  timeDiviation: 3
   timeToStartAudioBeforeAttack: 4
   spinningAttackSpawnerPrefab: {fileID: 917138685201689039, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
   spinningScytheSpawnerSettings:
@@ -84,10 +83,83 @@ MonoBehaviour:
     - MinionMovement7
     - MinionMovement8
     - MinionMovement9
-    distructionClipName: MinionHit
+    destructionClipName: MinionHit
     timeBetweenClips: 1.3
   minionCounterAttackSettings:
     knockbackForce: 2
     knockbackDurationSeconds: 0.3
     damageAgainstMinion: 1
   minionSummoningAudioName: MinionSummoning
+  difficultySettings:
+  - name: Goat
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: GoatCat
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: Cat
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: CatDog
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: Dog
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: DogOx
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: Ox
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: OxMonster
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0
+  - name: Monster
+    creatureStage: 0
+    timeBetweenAttacks: 0
+    minionCount: 0
+    minionSpeed: 0
+    spinningScytheAmount: 0
+    spinningScytheSpeed: 0
+    spinningScytheHealth: 0

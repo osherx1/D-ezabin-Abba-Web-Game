@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundVolume: 0.5
-  backgroundMusic: {fileID: 8300000, guid: a5ab46d7a3b67d34cabd2e6b7a9e928b, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: f33fc94146304af43a2dc70cdb41d523, type: 3}
   audioClips:
   - {fileID: 8300000, guid: 5620686e8947559438ace4d2f405a530, type: 3}
   - {fileID: 8300000, guid: 3362bfc9daee06e4d8034e5acebaff0a, type: 3}
@@ -73,3 +73,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 44eb74e5b037e00499985156730c2bf9, type: 3}
   - {fileID: 8300000, guid: 84a83c846de492b418dd52b6196c9b91, type: 3}
   - {fileID: 8300000, guid: 2d59aef249bfd214f9ff9a1b59964b84, type: 3}
+  - {fileID: 8300000, guid: f3cc5431a38e05a4f81c1140217c03d2, type: 3}
