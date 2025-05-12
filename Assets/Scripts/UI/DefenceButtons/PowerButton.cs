@@ -133,7 +133,7 @@ namespace UI.DefenceButtons
         public void OnPointerExit(PointerEventData _)
         {
             _hover = false;
-            TooltipUI.Instance?.Hide();
+            PowerTooltip.Instance?.Hide();
         }
 
         private void UpdateTooltip()
