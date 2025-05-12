@@ -162,7 +162,7 @@ namespace Audio
             }
         }
 
-        private void PauseUnpauseBackgroundMusic()
+        public void PauseUnpauseBackgroundMusic()
         {
                 if (_backgroundMusicSource.isPlaying)
                 {
