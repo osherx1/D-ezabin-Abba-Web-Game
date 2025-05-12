@@ -17,7 +17,7 @@ public class GrimManager : MonoBehaviour
     [Header("Grim Reaper Settings")]
     [SerializeField] private float timeBetweenAttacks = 45f;
     [SerializeField] private float timeBeforeFirstAttack = 25f;
-    [SerializeField] private float timeDiviation = 3f;
+    // [SerializeField] private float timeDiviation = 3f;
     [SerializeField] private float timeToStartAudioBeforeAttack = 4f;
     // private float _timeBetweenAttacks;
     
@@ -38,8 +38,12 @@ public class GrimManager : MonoBehaviour
     [SerializeField] private MinionSpawnerSettings minionSpawnerSettings;
     [SerializeField] private MinionSettings minionSettings;
     [SerializeField] private MinionCounterAttackSettings minionCounterAttackSettings;
-    // [SerializeField] private string minionAttackAudioName;
-    [SerializeField] private string minionSummoningAudioName;
+   [SerializeField] private string minionSummoningAudioName;
+    
+    [Header("Difficulty Settings")]
+    [SerializeField] private DifficultySettings[] difficultySettings;
+    private DifficultySettings _currentDifficultySettings;
+    private float _timer;
 
     private CreatureStage _bestCreatureStage = CreatureStage.Goat;
 
@@ -49,6 +53,7 @@ public class GrimManager : MonoBehaviour
         // StartCoroutine(AttacksRoutine());
         GameEvents.OnCreatureMerged += HandleCreatureMerged;
         GameEvents.OnSwordActivated += HandleSwordActivated;
+        _currentDifficultySettings = difficultySettings[0];
     }
     
     private void OnDisable()
@@ -63,19 +68,25 @@ public class GrimManager : MonoBehaviour
         Instantiate(cloudAttack);
     }
 
+    private void LateUpdate()
+    {
+        _timer += Time.deltaTime;
+        if (_timer < timeBetweenAttacks) return;
+        DoRandomAttack();
+        _timer = 0f;
+    }
+
     private void HandleCreatureMerged(CreatureStage stage)
     {
-        if (_bestCreatureStage == CreatureStage.Goat)
-        {
-            StartCoroutine(AttacksRoutine());
-        }
-        if(_bestCreatureStage < stage)
-        {
-            _bestCreatureStage = stage;
-            IncreaseDifficulty();
-            // Debug.Log("Best creature stage: " + _bestCreatureStage);
-            // CallMinionsAttack();
-        }
+        // if (_bestCreatureStage == CreatureStage.Goat)
+        // {
+        //     StartCoroutine(AttacksRoutine());
+        // }
+        if (_bestCreatureStage >= stage) return;
+        _bestCreatureStage = stage;
+        IncreaseDifficulty();
+        // Debug.Log("Best creature stage: " + _bestCreatureStage);
+        // CallMinionsAttack();
     }
 
     private IEnumerator AttacksRoutine()
@@ -101,48 +112,103 @@ public class GrimManager : MonoBehaviour
         }
     }
     
-    private void IncreaseDifficulty()
+    private void DoRandomAttack()
     {
-        // float randomTimeDeviation = Random.Range(-timeDiviation, timeDiviation);
-        switch (_bestCreatureStage)
+        int attackType = Random.Range(0, 2);
+        switch (attackType)
         {
-            case CreatureStage.Goat:
-                return;
-            case CreatureStage.GoatCat:
-                minionSpawnerSettings.minionCount++;
+            case 0:
+                AudioManager.Instance.PlaySound(transform.position, spinningScytheSummoningAudioName);
+                StartCoroutine(StartSpinningAttack());
                 break;
-            case CreatureStage.Cat:
-                minionSpawnerSettings.minionCount++;
-                spinningScytheSpawnerSettings.spinningScytheAmount++;
-                timeBetweenAttacks -= 5f;
-                break;
-            case CreatureStage.CatDog:
-                minionSpawnerSettings.minionCount++;
-                minionSettings.speed += 0.5f;
-                spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
-                break;
-            case CreatureStage.Dog:
-                timeBetweenAttacks -= 5f;
-                minionSpawnerSettings.minionCount++;
-                spinningScytheSpawnerSettings.spinningScytheAmount++;
-                break;
-            case CreatureStage.DogOx:
-                timeBetweenAttacks -= 5f;
-                minionSpawnerSettings.minionCount++;
-                minionSettings.speed += 0.5f;
-                spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
-                spinningScytheAttackSettings.spinningScytheHealth++;
-                break;
-            case CreatureStage.Ox:
-                timeBetweenAttacks -= 5f;
-                minionSpawnerSettings.minionCount++;
-                spinningScytheSpawnerSettings.spinningScytheAmount++;
-                minionSettings.speed += 0.5f;
-                spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
-                spinningScytheAttackSettings.spinningScytheHealth++;
+            case 1:
+                AudioManager.Instance.PlaySound(transform.position, minionSummoningAudioName);
+                StartCoroutine(StartMinionAttack());
                 break;
         }
-        
+    }
+
+    private void IncreaseDifficulty()
+    {
+        var newDifficultySettings = GetDifficultySettings(_bestCreatureStage);
+        if (newDifficultySettings != _currentDifficultySettings)
+        {
+            SetDifficultySetting(newDifficultySettings);
+            _currentDifficultySettings = newDifficultySettings;
+        }
+    }
+    
+    // private void IncreaseDifficulty()
+    // {
+    //     // float randomTimeDeviation = Random.Range(-timeDiviation, timeDiviation);
+    //     switch (_bestCreatureStage)
+    //     {
+    //         case CreatureStage.Goat:
+    //             return;
+    //         case CreatureStage.GoatCat:
+    //             minionSpawnerSettings.minionCount++;
+    //             break;
+    //         case CreatureStage.Cat:
+    //             minionSpawnerSettings.minionCount++;
+    //             spinningScytheSpawnerSettings.spinningScytheAmount++;
+    //             timeBetweenAttacks -= 5f;
+    //             break;
+    //         case CreatureStage.CatDog:
+    //             minionSpawnerSettings.minionCount++;
+    //             minionSettings.speed += 0.5f;
+    //             spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
+    //             break;
+    //         case CreatureStage.Dog:
+    //             timeBetweenAttacks -= 5f;
+    //             minionSpawnerSettings.minionCount++;
+    //             spinningScytheSpawnerSettings.spinningScytheAmount++;
+    //             break;
+    //         case CreatureStage.DogOx:
+    //             timeBetweenAttacks -= 5f;
+    //             minionSpawnerSettings.minionCount++;
+    //             minionSettings.speed += 0.5f;
+    //             spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
+    //             spinningScytheAttackSettings.spinningScytheHealth++;
+    //             break;
+    //         case CreatureStage.Ox:
+    //             timeBetweenAttacks -= 5f;
+    //             minionSpawnerSettings.minionCount++;
+    //             spinningScytheSpawnerSettings.spinningScytheAmount++;
+    //             minionSettings.speed += 0.5f;
+    //             spinningScytheAttackSettings.spinningScytheSpeed += 0.5f;
+    //             spinningScytheAttackSettings.spinningScytheHealth++;
+    //             break;
+    //     }
+    //     
+    // }
+
+    // private void LateUpdate()
+    // {
+    //     
+    // }
+
+    private DifficultySettings GetDifficultySettings(CreatureStage stage)
+    {
+        foreach (var d in difficultySettings)
+        {
+            if (d.creatureStage == stage)
+            {
+                return d;
+            }
+        }
+
+        return difficultySettings[0];
+    }
+
+    private void SetDifficultySetting(DifficultySettings difficultySettings)
+    {
+        minionSpawnerSettings.minionCount = difficultySettings.minionCount;
+        minionSettings.speed = difficultySettings.minionSpeed;
+        minionSettings.minionStartingHealth = difficultySettings.minionStartingHealth;
+        spinningScytheAttackSettings.spinningScytheSpeed = difficultySettings.spinningScytheSpeed;
+        spinningScytheAttackSettings.spinningScytheHealth = difficultySettings.spinningScytheHealth;
+        spinningScytheSpawnerSettings.spinningScytheAmount = difficultySettings.spinningScytheAmount;
+        timeBetweenAttacks = difficultySettings.timeBetweenAttacks;
     }
 
     private IEnumerator StartSpinningAttack()

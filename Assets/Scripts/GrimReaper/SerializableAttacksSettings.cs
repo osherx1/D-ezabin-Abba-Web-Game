@@ -66,5 +66,13 @@ public class SpinningScytheSpawnerSettings
 [System.Serializable]
 public class DifficultySettings
 {
+    public string name;
+    public CreatureStage creatureStage;
     public float timeBetweenAttacks = 5f;
+    public int minionCount = 5;
+    public float minionSpeed = 1f;
+    public int minionStartingHealth = 1;
+    public int spinningScytheAmount = 3;
+    public float spinningScytheSpeed = 1f;
+    public int spinningScytheHealth = 10;
 }
