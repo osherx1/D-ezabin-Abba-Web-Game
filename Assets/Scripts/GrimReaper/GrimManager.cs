@@ -70,6 +70,7 @@ public class GrimManager : MonoBehaviour
         AudioManager.Instance.PauseUnpauseBackgroundMusic();
         AudioManager.Instance.PlaySound(transform.position, "Shcoyech");
         StartCoroutine(ResumeBackgroundMusic());
+        _timer = 0;
     }
 
     private IEnumerator ResumeBackgroundMusic()
