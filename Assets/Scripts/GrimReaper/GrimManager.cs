@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 public class GrimManager : MonoBehaviour
 {
     [SerializeField] private GameObject cloudAttack;
+    [SerializeField] private string cloudAttackAudioName = "CloudAttack";
     [Header("Board Settings")]
     [SerializeField] private Vector2 boardMinBounds;
     [SerializeField] private Vector2 boardMaxBounds;
@@ -58,6 +59,7 @@ public class GrimManager : MonoBehaviour
 
     private void HandleSwordActivated()
     {
+        AudioManager.Instance.PlaySound(transform.position, cloudAttackAudioName);
         Instantiate(cloudAttack);
     }
 
