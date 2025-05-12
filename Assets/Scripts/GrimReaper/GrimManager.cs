@@ -66,6 +66,7 @@ public class GrimManager : MonoBehaviour
 
     private void HandleShcoyechSound()
     {
+        GameEvents.DestroyAllEnemies?.Invoke();
         AudioManager.Instance.PauseUnpauseBackgroundMusic();
         AudioManager.Instance.PlaySound(transform.position, "Shcoyech");
         StartCoroutine(ResumeBackgroundMusic());
