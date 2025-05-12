@@ -419,28 +419,11 @@ public class CreatureCore : MonoBehaviour,
         if (_isDead) return;
         _isDead = true;
 
-        if (anim != null)
-            StartCoroutine(PlayHitAndDie());
-        else
-        
-            Destroy(gameObject, 0.05f);  // fallback
+        anim.CrossFade("Hit", 0.5f, 0);
+        var st = anim.GetCurrentAnimatorStateInfo(0);
+        st.IsName("Hit");
+        Destroy(gameObject, 0.05f); // fallback
     }
-
-    private IEnumerator PlayHitAndDie()
-    {
-        // 1) crossfade into the “Hit” state (layer 0, no transition time)
-        anim.CrossFade("Hit", 0f, 0);
-
-        // 2) wait until “Hit” has played through once
-        yield return new WaitUntil(() => {
-            var st = anim.GetCurrentAnimatorStateInfo(0);
-            return st.IsName("Hit") && st.normalizedTime >= 1f;
-        });
-
-        // 3) now destroy the GameObject
-        Destroy(gameObject);
-    }
-    
     
     private void LateUpdate()
     {
