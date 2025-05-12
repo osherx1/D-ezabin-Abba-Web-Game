@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utilities;
@@ -346,10 +347,13 @@ public class CreatureCore : MonoBehaviour,
     if (anim != null)
         anim.CrossFade("Evolve", 0f, 0);
 
-// (7) Spawn the visual‐only effect at avg
+    AudioManager.Instance.PlaySound(
+        transform.position,
+        "MergingCreatures");
+    // (7) Spawn the visual‐only effect at avg
     Instantiate(evolveEffectPrefab, avg, Quaternion.identity);
 
-// ─── Hide/destroy the merge partners right away ───
+    // ─── Hide/destroy the merge partners right away ───
     foreach (var c in others)
     {
         // Option A: instantly destroy them
