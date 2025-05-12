@@ -44,22 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7241588b77f5748961592b5f122089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloudAttack: {fileID: 5907902819910783193, guid: 66f0911fc3c62de439ec2f5f3456cffc, type: 3}
+  cloudAttackAudioName: CloudAttack
   boardMinBounds: {x: -4, y: 0.5}
   boardMaxBounds: {x: 4.5, y: 4}
   timeBetweenAttacks: 45
   timeBeforeFirstAttack: 20
   timeDiviation: 3
   timeToStartAudioBeforeAttack: 4
-  swipingAttackPrefab: {fileID: 5294079864498464953, guid: 05dd68be6eb68b2419efc50aedaf8e1a, type: 3}
-  swipingAttackSettings:
-    swipingAttackSpeed: 1
-    swipingAttackHealth: 10
-    swipingAttackRightPosition: {x: 10, y: 0}
-    swipingAttackLeftPosition: {x: -10, y: 0}
-  swipingAttackCounterAttackSettings:
-    knockbackForce: 1
-    knockbackDurationSeconds: 0.5
-    damageAgainstSwipingAttack: 1
   spinningAttackSpawnerPrefab: {fileID: 917138685201689039, guid: 85146c3d862b944499b7c04bc68b1edc, type: 3}
   spinningScytheSpawnerSettings:
     startingSpawnTime: 3
