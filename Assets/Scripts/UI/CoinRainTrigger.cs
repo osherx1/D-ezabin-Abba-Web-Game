@@ -7,28 +7,28 @@ namespace UI
     public class CoinRainTrigger : MonoBehaviour
     {
         [SerializeField] private float autoDisableAfter = 12f;  // seconds
-        private Animator animator;
+        private Animator _animator;
     
         private void Awake()
         {
-            animator = GetComponent<Animator>();
-            animator.enabled = false;
+            _animator = GetComponent<Animator>();
+            _animator.enabled = false;
         }
 
         private void OnEnable()
         {
-            GameEvents.OnDoubleUpCoinsActivated += PlayOnce;
+            GameEvents.OnCoinBoost += PlayOnce;
         }
 
         private void OnDisable()
         {
-            GameEvents.OnDoubleUpCoinsActivated -= PlayOnce;
+            GameEvents.OnCoinBoost -= PlayOnce;
         }
 
-        private void PlayOnce()
+        private void PlayOnce(float duration)
         {
             // run only if not already playing
-            animator.enabled = true;
+            _animator.enabled = true;
             // if (gameObject.activeInHierarchy) return;
 
             // gameObject.SetActive(true);              // show → animation begins
@@ -38,7 +38,7 @@ namespace UI
         private IEnumerator AutoDisable()
         {
             yield return new WaitForSeconds(autoDisableAfter);
-            animator.enabled = false;                // stop animation
+            _animator.enabled = false;                // stop animation
             // gameObject.SetActive(false);             // hide until next boost
         }
     }

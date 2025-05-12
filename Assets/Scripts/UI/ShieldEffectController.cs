@@ -21,21 +21,21 @@ namespace UI
             GameEvents.OnShieldActivated -= HandleShieldActivated;
         }
 
-        private void HandleShieldActivated()
+        private void HandleShieldActivated(float duration)
         {
-            StartCoroutine(ActivateShieldCircles());
+            StartCoroutine(ActivateShieldCircles(duration));
         }
 
-        /// <summary>
-        /// Call this from your UI Button's OnClick.
-        /// </summary>
-        public void TriggerShield()
-        {
-            Debug.Log("Shield triggered");
-            GameEvents.OnShieldActivated?.Invoke();
-        }
+        // /// <summary>
+        // /// Call this from your UI Button's OnClick.
+        // /// </summary>
+        // public void TriggerShield()
+        // {
+        //     Debug.Log("Shield triggered");
+        //     GameEvents.OnShieldActivated?.Invoke();
+        // }
 
-        private IEnumerator ActivateShieldCircles()
+        private IEnumerator ActivateShieldCircles(float duration)
         {
             // 1) Find all CreatureCore components in the scene
             var allCores = FindObjectsOfType<CreatureCore>();
@@ -53,7 +53,7 @@ namespace UI
             }
 
             // 3) Wait 5 seconds
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(duration);
 
             // 4) Disable them again
             foreach (var core in allCores)
