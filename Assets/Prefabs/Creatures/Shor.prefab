@@ -269,6 +269,7 @@ MonoBehaviour:
   allowedTopRight: {x: 9, y: 5}
   fallStateName: Fall
   fallAnimTime: 0.6
+  immuneDuringShield: 1
   anim: {fileID: 473745608270712850}
   creatureMask:
     serializedVersion: 2

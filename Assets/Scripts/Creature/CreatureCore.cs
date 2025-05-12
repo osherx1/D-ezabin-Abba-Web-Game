@@ -35,6 +35,10 @@ public class CreatureCore : MonoBehaviour,
     [Tooltip("Name of your Fall state in the Animator")]
     [SerializeField] private string   fallStateName     = "Fall";
     [SerializeField] private float    fallAnimTime      = 0.6f;
+    
+    [Header("Shield")]
+    [Tooltip("If true, this creature cannot be killed while the shield is active")]
+    [SerializeField] private bool immuneDuringShield = false;
 
 
     /* ---------- Private ---------- */
@@ -53,6 +57,7 @@ public class CreatureCore : MonoBehaviour,
     private const float SAFE_MARGIN_X = 3f;
     private const float SAFE_MARGIN_Y = 2f;
     private bool _incomeRegistered = false;
+    private float _shieldTimer = 0f;
 
     /* ---------- MonoBehaviour ---------- */
     
@@ -74,6 +79,18 @@ public class CreatureCore : MonoBehaviour,
         PickIdleTarget();
     }
     
+    private void OnEnable()
+    {
+        // subscribe to the same event your UI uses:
+        GameEvents.OnShieldActivated += HandleShieldActivated;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnShieldActivated -= HandleShieldActivated;
+    }
+
+    
     private void OnDestroy()
     {
         if (_incomeRegistered)
@@ -90,6 +107,15 @@ public class CreatureCore : MonoBehaviour,
 
         AnimateWalking();
         // ProduceMoney();
+        
+        if (_shieldTimer > 0f)
+            _shieldTimer -= Time.deltaTime;
+    }
+    
+    private void HandleShieldActivated(float duration)
+    {
+        // whenever a shield goes up, start (or reset) our timer
+        _shieldTimer = duration;
     }
 
 
@@ -416,6 +442,11 @@ public class CreatureCore : MonoBehaviour,
 
     public void Death()
     {
+        
+        if (immuneDuringShield && _shieldTimer > 0f)
+            return;
+        
+        
         if (_isDead) return;
         _isDead = true;
 
