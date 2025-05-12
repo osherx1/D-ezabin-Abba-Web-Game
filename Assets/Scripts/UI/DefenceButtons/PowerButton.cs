@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using TMPro;
+using UnityEngine.UI;
 using Utilities;
 
-namespace UI
+namespace UI.DefenceButtons
 {
     public enum PowerType
     {
@@ -139,7 +138,7 @@ namespace UI
 
         private void UpdateTooltip()
         {
-            if (TooltipUI.Instance == null) return;
+            if (PowerTooltip.Instance == null) return;
 
             string msg = _phase switch
             {
@@ -156,7 +155,7 @@ namespace UI
             };
 
             // position above button
-            var canvas = TooltipUI.Instance.GetComponentInParent<Canvas>();
+            var canvas = PowerTooltip.Instance.GetComponentInParent<Canvas>();
             var cam = canvas.renderMode == RenderMode.ScreenSpaceCamera
                 ? canvas.worldCamera
                 : null;
@@ -165,8 +164,8 @@ namespace UI
                 canvas.transform as RectTransform,
                 screenPt, cam, out Vector2 localPt);
 
-            float yOff = _rect.rect.height * 0.7f;
-            TooltipUI.Instance.Show(msg, localPt + new Vector2(0f, yOff));
+            float xOff = _rect.rect.width * 0.7f;
+            PowerTooltip.Instance.Show(msg, localPt + new Vector2(-xOff, 0));
         }
 
         /* ───────── Helper ───────── */

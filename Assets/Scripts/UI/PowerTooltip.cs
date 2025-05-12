@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace UI
 {
-    public class TooltipUI : MonoBehaviour
+    public class PowerTooltip : MonoBehaviour
     {
-        public static TooltipUI Instance;
+        public static PowerTooltip Instance;
 
         [SerializeField] private CanvasGroup cg;
         [SerializeField] private RectTransform rt; // root rect

@@ -1,24 +1,27 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadSceneOnButton : MonoBehaviour
+namespace UI
 {
-    [Tooltip("Build index of the scene to load (must be in Build Settings ▶ Scenes In Build)")]
-    [SerializeField] private int sceneIndex;
-
-    /// <summary>
-    /// Call this from your Button’s OnClick().
-    /// </summary>
-    public void LoadScene()
+    public class LoadSceneOnButton : MonoBehaviour
     {
-        // Validate against the total number of scenes in Build Settings
-        int total = SceneManager.sceneCountInBuildSettings;
-        if (sceneIndex < 0 || sceneIndex >= total)
-        {
-            Debug.LogError($"LoadSceneOnButton: sceneIndex {sceneIndex} is out of range (0–{total - 1})");
-            return;
-        }
+        [Tooltip("Build index of the scene to load (must be in Build Settings ▶ Scenes In Build)")]
+        [SerializeField] private int sceneIndex;
 
-        SceneManager.LoadScene(sceneIndex);
+        /// <summary>
+        /// Call this from your Button’s OnClick().
+        /// </summary>
+        public void LoadScene()
+        {
+            // Validate against the total number of scenes in Build Settings
+            int total = SceneManager.sceneCountInBuildSettings;
+            if (sceneIndex < 0 || sceneIndex >= total)
+            {
+                Debug.LogError($"LoadSceneOnButton: sceneIndex {sceneIndex} is out of range (0–{total - 1})");
+                return;
+            }
+
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }

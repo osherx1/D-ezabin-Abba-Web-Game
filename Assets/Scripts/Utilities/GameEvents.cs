@@ -5,6 +5,7 @@ namespace Utilities
 {
     public class GameEvents
     {
+        public static Action RestartGame;
         public static Action StartSwipingAttack;
         public static Action StartMinionsAttack;
         public static Action OnCreaturePurchased;
