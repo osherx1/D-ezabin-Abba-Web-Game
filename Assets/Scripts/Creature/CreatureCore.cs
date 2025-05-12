@@ -377,8 +377,10 @@ public class CreatureCore : MonoBehaviour,
     if (stage == CreatureStage.OxMonster && !_oxButcherMergeFired)
     {
         _oxButcherMergeFired = true;
-        GameEvents.OnOxButcherMerged?.Invoke();
         GameEvents.OnCreatureMerged?.Invoke(merged.stage);
+        Debug.Log("Merged stage:" + merged.stage);
+        GameEvents.OnOxButcherMerged?.Invoke();
+        
         Destroy(gameObject);    // this original goes away
         yield break;            // skip the normal spawn activation
     }
@@ -391,6 +393,7 @@ public class CreatureCore : MonoBehaviour,
     merged.transform.position = avg;
     merged.gameObject.SetActive(true);
     GameEvents.OnCreatureMerged?.Invoke(merged.stage);
+    Debug.Log("Merged stage:" + merged.stage);
 
     // (13) Finally destroy this original
     Destroy(gameObject);
