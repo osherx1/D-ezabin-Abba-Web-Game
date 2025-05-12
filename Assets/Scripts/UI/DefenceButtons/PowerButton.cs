@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -26,8 +27,6 @@ namespace UI.DefenceButtons
         [Header("Overlay (Filled/Radial)")] [SerializeField]
         private Image overlayImage;
 
-        // [SerializeField] private TMP_Text timerLabel;
-
         [Header("Timing")] [SerializeField] private float activeSeconds = 10f;
         [SerializeField] private float cooldownSeconds = 60f;
 
@@ -35,6 +34,9 @@ namespace UI.DefenceButtons
         private Color activeColor = new(1f, 0.9f, 0f, 0.65f);
 
         [SerializeField] private Color cooldownColor = new(0f, 0f, 0f, 0.55f);
+        
+        [Header("Audio Clips")] [SerializeField]
+        private string activeAudioName;
 
         /* ───────── Runtime ───────── */
         private enum Phase
@@ -60,7 +62,6 @@ namespace UI.DefenceButtons
             _btn.onClick.AddListener(OnPressed);
 
             overlayImage.gameObject.SetActive(false);
-            // timerLabel.gameObject.SetActive(false);
             _img.sprite = readySprite;
         }
 
@@ -71,7 +72,6 @@ namespace UI.DefenceButtons
             _timer -= Time.deltaTime;
             float total = _phase == Phase.Active ? activeSeconds : cooldownSeconds;
             overlayImage.fillAmount = _timer / total;
-            // timerLabel.text = Mathf.CeilToInt(_timer).ToString();
 
             if (_hover) UpdateTooltip();
 
@@ -86,6 +86,7 @@ namespace UI.DefenceButtons
         private void OnPressed()
         {
             if (_phase != Phase.Ready) return;
+            AudioManager.Instance.PlaySound(transform.position, activeAudioName);
 
             FireEvent(true); // start event
 
@@ -98,7 +99,6 @@ namespace UI.DefenceButtons
             overlayImage.color = activeColor;
             overlayImage.fillAmount = 1f;
             overlayImage.gameObject.SetActive(true);
-            // timerLabel.gameObject.SetActive(true);
         }
 
         private void BeginCooldown()
@@ -117,7 +117,6 @@ namespace UI.DefenceButtons
             _phase = Phase.Ready;
 
             overlayImage.gameObject.SetActive(false);
-            // timerLabel.gameObject.SetActive(false);
 
             _img.sprite = readySprite;
             _btn.interactable = true;

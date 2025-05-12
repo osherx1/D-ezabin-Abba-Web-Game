@@ -556,17 +556,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1675204842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &469482350 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 720647699274531150, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-  m_PrefabInstance: {fileID: 1039673712}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,10 +824,6 @@ PrefabInstance:
       propertyPath: childAnimator
       value: 
       objectReference: {fileID: 815843506}
-    - target: {fileID: 1591247491669519969, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3492432144763889530, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -927,26 +912,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 8984144420285444102, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: buttons.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8984144420285444102, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: buttons.Array.data[7].kind
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8984144420285444102, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: buttons.Array.data[8].kind
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8984144420285444102, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: buttons.Array.data[7].button
-      value: 
-      objectReference: {fileID: 469482350}
-    - target: {fileID: 8984144420285444102, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-      propertyPath: buttons.Array.data[8].button
-      value: 
-      objectReference: {fileID: 1583184689}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1131,17 +1096,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645e7b7e335c09f4986355ead3c320f0, type: 3}
---- !u!114 &1583184689 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2105805346052080640, guid: b96f1453c671b468a90f52cf2858ba00, type: 3}
-  m_PrefabInstance: {fileID: 1039673712}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64639bfae5bf42d9ab4e1c4b0c87c53f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1610883792
 GameObject:
   m_ObjectHideFlags: 0
