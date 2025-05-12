@@ -71,7 +71,7 @@ namespace UI
             // Load the main menu scene
             GameEvents.RestartGame.Invoke();
         
-            SceneManager.LoadScene("Start Menu");
+            SceneManager.LoadScene(1);
         }
     
         public void QuitGame()
