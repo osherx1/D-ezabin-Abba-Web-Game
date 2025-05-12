@@ -417,6 +417,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSettings.speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSpawnerSettings.minionCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: minionSettings.minionStartingHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134979112351308498, guid: 60eeb000e7cf55242bd1f31efc2067e1, type: 3}
+      propertyPath: spinningScytheSpawnerSettings.spinningScytheAmount
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
