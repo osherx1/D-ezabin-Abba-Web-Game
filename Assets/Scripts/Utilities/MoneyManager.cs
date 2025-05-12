@@ -5,28 +5,39 @@ namespace Utilities
 {
     public class MoneyManager : MonoSingleton<MoneyManager>
     {
-        [SerializeField] private int   startingMoney   = 100;
-        [SerializeField] private int   badEndSceneIndex = 2;
-        [SerializeField] private float incomePerSecond;
-        [SerializeField] private float boostMultiplier = 2f;
+        [Header("Starting Settings")]
+        [SerializeField] private int startingMoney    = 100;
+        [SerializeField] private int badEndSceneIndex = 2;
 
-        public  float IncomePerSecond => incomePerSecond;
-        public  float CurrentMoney    { get; private set; }
+        [Header("Income Settings")]
+        [Tooltip("This is the *base* income from all creatures; boosted by boostMultiplier when active.")]
+        [SerializeField] private float baseIncomePerSecond = 0f;
+        [SerializeField] private float boostMultiplier     = 2f;
 
-        private float _boostTimer = 0f;         // >0 while boost is active
-        private float _originalIncome;
-        private float _tickTimer = 0f;
+        public float IncomePerSecond => baseIncomePerSecond * _incomeMultiplier;
+        public float CurrentMoney    { get; private set; }
 
-        /* ─────────── MonoBehaviour ─────────── */
+        private float _incomeMultiplier = 1f;
+        private float _boostTimer       = 0f;
+        private float _tickTimer        = 0f;
+
         private void Awake()
         {
             CurrentMoney = startingMoney;
+            // Fire initial events
             GameEvents.OnMoneyChanged?.Invoke(CurrentMoney);
-            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
         }
 
-        private void OnEnable()  => GameEvents.OnCoinBoost += HandleBoost;
-        private void OnDisable() => GameEvents.OnCoinBoost -= HandleBoost;
+        private void OnEnable()
+        {
+            GameEvents.OnCoinBoost += HandleBoost;
+        }
+
+        private void OnDisable()
+        {
+            GameEvents.OnCoinBoost -= HandleBoost;
+        }
 
         private void Update()
         {
@@ -34,17 +45,16 @@ namespace Utilities
             TickIncome();
         }
 
-        /* ─────────── Boost handling ─────────── */
+        // ─────── Boost Handling ───────
         private void HandleBoost(float duration)
         {
-            // ignore if already boosted and multiplier is still applied
+            // if already boosted, ignore
             if (_boostTimer > 0f) return;
 
-            _originalIncome  = incomePerSecond;
-            incomePerSecond *= boostMultiplier;
-            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+            _incomeMultiplier = boostMultiplier;
+            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
 
-            _boostTimer = duration;             // start local timer
+            _boostTimer = duration;
         }
 
         private void UpdateBoostTimer()
@@ -54,15 +64,17 @@ namespace Utilities
             _boostTimer -= Time.deltaTime;
             if (_boostTimer <= 0f)
             {
-                incomePerSecond = _originalIncome;
-                GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+                // boost ended
+                _incomeMultiplier = 1f;
+                GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
             }
         }
 
-        /* ─────────── Passive income tick ─────────── */
+        // ─────── Passive Income Tick ───────
         private void TickIncome()
         {
-            if (incomePerSecond <= 0)
+            // if income is zero or negative, bad end
+            if (IncomePerSecond <= 0f)
             {
                 SceneManager.LoadScene(badEndSceneIndex);
                 return;
@@ -71,23 +83,33 @@ namespace Utilities
             _tickTimer += Time.deltaTime;
             if (_tickTimer < 1f) return;
 
-            AddMoney(incomePerSecond);
+            AddMoney(IncomePerSecond);
             _tickTimer = 0f;
         }
 
-        /* ─────────── Helpers ─────────── */
+        // ─────── Public API ───────
+
+        /// <summary>
+        /// Called by creatures when they spawn or merge in.
+        /// </summary>
         public void RegisterIncome(float amt)
         {
-            incomePerSecond += amt;
-            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+            baseIncomePerSecond += amt;
+            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
         }
 
+        /// <summary>
+        /// Called by creatures when they die or merge out.
+        /// </summary>
         public void UnregisterIncome(float amt)
         {
-            incomePerSecond -= amt;
-            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+            baseIncomePerSecond -= amt;
+            GameEvents.OnIncomeChanged?.Invoke(IncomePerSecond);
         }
 
+        /// <summary>
+        /// Attempt to spend—returns false if not enough.
+        /// </summary>
         public bool SpendMoney(float amt)
         {
             if (CurrentMoney < amt) return false;
