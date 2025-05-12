@@ -204,6 +204,7 @@ public class GrimManager : MonoBehaviour
     {
         minionSpawnerSettings.minionCount = difficultySettings.minionCount;
         minionSettings.speed = difficultySettings.minionSpeed;
+        minionSettings.minionStartingHealth = difficultySettings.minionStartingHealth;
         spinningScytheAttackSettings.spinningScytheSpeed = difficultySettings.spinningScytheSpeed;
         spinningScytheAttackSettings.spinningScytheHealth = difficultySettings.spinningScytheHealth;
         spinningScytheSpawnerSettings.spinningScytheAmount = difficultySettings.spinningScytheAmount;
