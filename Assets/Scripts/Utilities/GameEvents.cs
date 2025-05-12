@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public class GameEvents
+    public class GameEvents : MonoBehaviour
     {
         public static Action RestartGame;
         public static Action StartSwipingAttack;
@@ -20,8 +20,8 @@ namespace Utilities
         public static Action OnFinalCreatureAnimationEnded;
         public static Action StopAllEnemies;
         public static Action DestroyAllEnemies;
-        public static Action OnShieldActivated;
+        public static Action<float> OnShieldActivated;
         public static Action OnSwordActivated;
-        public static Action OnDoubleUpCoinsActivated;
+        public static Action<float> OnCoinBoost;
     }
 }

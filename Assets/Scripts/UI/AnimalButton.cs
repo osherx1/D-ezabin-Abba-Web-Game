@@ -228,7 +228,7 @@ namespace UI
 
             // Show the tooltip
             TooltipUI.Instance.Show(
-                $"{((int)animalCost).ToString("N0")} zuz\n +{creatureCore.zuzPerSecond} zps", tooltipPos);
+                $"{((int)animalCost):N0} zuz\n +{creatureCore.zuzPerSecond} zps", tooltipPos);
             // TooltipUI.Instance.Show($"{animalCost}\n{animal} zuz", tooltipPos);
         }
 

@@ -1,47 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-
 
 namespace Utilities
 {
     public class MoneyManager : MonoSingleton<MoneyManager>
     {
-        [SerializeField] private int startingMoney = 100;
-        [SerializeField] private int badEndSceneIndex = 2;
+        [SerializeField] private int   startingMoney   = 100;
+        [SerializeField] private int   badEndSceneIndex = 2;
         [SerializeField] private float incomePerSecond;
-        public float IncomePerSecond => incomePerSecond;
+        [SerializeField] private float boostMultiplier = 2f;
 
-        public float CurrentMoney { get; private set; }
+        public  float IncomePerSecond => incomePerSecond;
+        public  float CurrentMoney    { get; private set; }
 
-        /* ---------- Public API ---------- */
-        public void RegisterIncome(float amount)
-        {
-            incomePerSecond += amount;
-            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
-        }
+        private float _boostTimer = 0f;         // >0 while boost is active
+        private float _originalIncome;
+        private float _tickTimer = 0f;
 
-        public void UnregisterIncome(float amount)
-        {
-            incomePerSecond -= amount;
-            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
-        }
-
-        public bool SpendMoney(float amount)
-        {
-            if (CurrentMoney < amount) return false;
-            CurrentMoney -= amount;
-            GameEvents.OnMoneyChanged?.Invoke(CurrentMoney);
-            return true;
-        }
-
-        private void AddMoney(float amount)
-        {
-            CurrentMoney += amount;
-            GameEvents.OnMoneyChanged?.Invoke(CurrentMoney);
-        }
-
-        /* ---------- MonoBehaviour ---------- */
+        /* ─────────── MonoBehaviour ─────────── */
         private void Awake()
         {
             CurrentMoney = startingMoney;
@@ -49,9 +25,42 @@ namespace Utilities
             GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
         }
 
-        private float _timer;
+        private void OnEnable()  => GameEvents.OnCoinBoost += HandleBoost;
+        private void OnDisable() => GameEvents.OnCoinBoost -= HandleBoost;
 
         private void Update()
+        {
+            UpdateBoostTimer();
+            TickIncome();
+        }
+
+        /* ─────────── Boost handling ─────────── */
+        private void HandleBoost(float duration)
+        {
+            // ignore if already boosted and multiplier is still applied
+            if (_boostTimer > 0f) return;
+
+            _originalIncome  = incomePerSecond;
+            incomePerSecond *= boostMultiplier;
+            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+
+            _boostTimer = duration;             // start local timer
+        }
+
+        private void UpdateBoostTimer()
+        {
+            if (_boostTimer <= 0f) return;
+
+            _boostTimer -= Time.deltaTime;
+            if (_boostTimer <= 0f)
+            {
+                incomePerSecond = _originalIncome;
+                GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+            }
+        }
+
+        /* ─────────── Passive income tick ─────────── */
+        private void TickIncome()
         {
             if (incomePerSecond <= 0)
             {
@@ -59,12 +68,38 @@ namespace Utilities
                 return;
             }
 
-            ;
+            _tickTimer += Time.deltaTime;
+            if (_tickTimer < 1f) return;
 
-            _timer += Time.deltaTime;
-            if (!(_timer >= 1f)) return;
             AddMoney(incomePerSecond);
-            _timer = 0f;
+            _tickTimer = 0f;
+        }
+
+        /* ─────────── Helpers ─────────── */
+        public void RegisterIncome(float amt)
+        {
+            incomePerSecond += amt;
+            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+        }
+
+        public void UnregisterIncome(float amt)
+        {
+            incomePerSecond -= amt;
+            GameEvents.OnIncomeChanged?.Invoke(incomePerSecond);
+        }
+
+        public bool SpendMoney(float amt)
+        {
+            if (CurrentMoney < amt) return false;
+            CurrentMoney -= amt;
+            GameEvents.OnMoneyChanged?.Invoke(CurrentMoney);
+            return true;
+        }
+
+        private void AddMoney(float amt)
+        {
+            CurrentMoney += amt;
+            GameEvents.OnMoneyChanged?.Invoke(CurrentMoney);
         }
     }
 }

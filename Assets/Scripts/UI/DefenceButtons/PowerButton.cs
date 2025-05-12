@@ -174,10 +174,10 @@ namespace UI.DefenceButtons
             switch (powerType)
             {
                 case PowerType.Coin:
-                    if (isStart) GameEvents.OnDoubleUpCoinsActivated?.Invoke();
+                    if (isStart) GameEvents.OnCoinBoost?.Invoke(activeSeconds);
                     break;
                 case PowerType.Shield:
-                    if (isStart) GameEvents.OnShieldActivated?.Invoke();
+                    if (isStart) GameEvents.OnShieldActivated?.Invoke(activeSeconds);
                     break;
                 case PowerType.Sword:
                     if (isStart) GameEvents.OnSwordActivated?.Invoke();
