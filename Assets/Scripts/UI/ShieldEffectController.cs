@@ -1,65 +1,70 @@
 using System.Collections;
 using UnityEngine;
-using Utilities;  // for GameEvents
+using Utilities;
 
-public class ShieldEffectController : MonoBehaviour
+// for GameEvents
+
+namespace UI
 {
-    [Tooltip("The layer your creatures are on (e.g. “Creatures”)")]
-    [SerializeField] private LayerMask creatureLayer;
-
-    private void OnEnable()
+    public class ShieldEffectController : MonoBehaviour
     {
-        GameEvents.OnShieldActivated += HandleShieldActivated;
-    }
+        [Tooltip("The layer your creatures are on (e.g. “Creatures”)")]
+        [SerializeField] private LayerMask creatureLayer;
 
-    private void OnDisable()
-    {
-        GameEvents.OnShieldActivated -= HandleShieldActivated;
-    }
-
-    private void HandleShieldActivated()
-    {
-        StartCoroutine(ActivateShieldCircles());
-    }
-
-    /// <summary>
-    /// Call this from your UI Button's OnClick.
-    /// </summary>
-    public void TriggerShield()
-    {
-        Debug.Log("Shield triggered");
-        GameEvents.OnShieldActivated?.Invoke();
-    }
-
-    private IEnumerator ActivateShieldCircles()
-    {
-        // 1) Find all CreatureCore components in the scene
-        var allCores = FindObjectsOfType<CreatureCore>();
-
-        // 2) For each one whose GameObject is on the chosen layer, enable its "circle" child
-        foreach (var core in allCores)
+        private void OnEnable()
         {
-            var go = core.gameObject;
-            if (((1 << go.layer) & creatureLayer) != 0)
-            {
-                var circle = go.transform.Find("Circle");
-                if (circle != null)
-                    circle.gameObject.SetActive(true);
-            }
+            GameEvents.OnShieldActivated += HandleShieldActivated;
         }
 
-        // 3) Wait 5 seconds
-        yield return new WaitForSeconds(5f);
-
-        // 4) Disable them again
-        foreach (var core in allCores)
+        private void OnDisable()
         {
-            var go = core.gameObject;
-            if (((1 << go.layer) & creatureLayer) != 0)
+            GameEvents.OnShieldActivated -= HandleShieldActivated;
+        }
+
+        private void HandleShieldActivated()
+        {
+            StartCoroutine(ActivateShieldCircles());
+        }
+
+        /// <summary>
+        /// Call this from your UI Button's OnClick.
+        /// </summary>
+        public void TriggerShield()
+        {
+            Debug.Log("Shield triggered");
+            GameEvents.OnShieldActivated?.Invoke();
+        }
+
+        private IEnumerator ActivateShieldCircles()
+        {
+            // 1) Find all CreatureCore components in the scene
+            var allCores = FindObjectsOfType<CreatureCore>();
+
+            // 2) For each one whose GameObject is on the chosen layer, enable its "circle" child
+            foreach (var core in allCores)
             {
-                var circle = go.transform.Find("Circle");
-                if (circle != null)
-                    circle.gameObject.SetActive(false);
+                var go = core.gameObject;
+                if (((1 << go.layer) & creatureLayer) != 0)
+                {
+                    var circle = go.transform.Find("Circle");
+                    if (circle != null)
+                        circle.gameObject.SetActive(true);
+                }
+            }
+
+            // 3) Wait 5 seconds
+            yield return new WaitForSeconds(5f);
+
+            // 4) Disable them again
+            foreach (var core in allCores)
+            {
+                var go = core.gameObject;
+                if (((1 << go.layer) & creatureLayer) != 0)
+                {
+                    var circle = go.transform.Find("Circle");
+                    if (circle != null)
+                        circle.gameObject.SetActive(false);
+                }
             }
         }
     }

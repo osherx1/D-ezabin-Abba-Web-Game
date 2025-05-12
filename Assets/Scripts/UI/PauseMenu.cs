@@ -3,77 +3,80 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
 
-public class PauseMenu : MonoBehaviour
+namespace UI
 {
-    public static bool GameIsPaused = false;
-    
-    [SerializeField] private GameObject pauseMenuUI;
-    public static event Action OnResumeGame;
-    public static event Action OnPauseGame;
-    public static event Action OnLoadMenu;
-    
-    // add me singelton such that it will work for all scenes
-    private static PauseMenu _instance;
-    public static PauseMenu Instance => _instance;
-    private void Awake()
+    public class PauseMenu : MonoBehaviour
     {
-        if (_instance == null)
+        private static bool _gameIsPaused = false;
+    
+        [SerializeField] private GameObject pauseMenuUI;
+        public static event Action OnResumeGame;
+        public static event Action OnPauseGame;
+        public static event Action OnLoadMenu;
+    
+        // add me singelton such that it will work for all scenes
+        private static PauseMenu _instance;
+        public static PauseMenu Instance => _instance;
+        private void Awake()
         {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
+            if (_instance == null)
+            {
+                _instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+    
+    
+    
+        // Update is called once per frame
+        private void Update()
         {
-            Destroy(gameObject);
+            if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (_gameIsPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
-    }
     
-    
-    
-    // Update is called once per frame
-    private void Update()
-    {
-        if (!Input.GetKeyDown(KeyCode.Escape)) return;
-        if (GameIsPaused)
+        public void ResumeGame()
         {
-            ResumeGame();
+            OnResumeGame?.Invoke();
+            Time.timeScale = 1f;
+            _gameIsPaused = false;
+            pauseMenuUI.SetActive(false);
         }
-        else
+    
+        public void PauseGame()
         {
-            PauseGame();
+            OnPauseGame?.Invoke();
+            Time.timeScale = 0f;
+            _gameIsPaused = true;
+            pauseMenuUI.SetActive(true);
         }
-    }
     
-    public void ResumeGame()
-    {
-        OnResumeGame?.Invoke();
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-        pauseMenuUI.SetActive(false);
-    }
-    
-    public void PauseGame()
-    {
-        OnPauseGame?.Invoke();
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-        pauseMenuUI.SetActive(true);
-    }
-    
-    public void LoadMenu()
-    {
-        OnLoadMenu?.Invoke();
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-        pauseMenuUI.SetActive(false);
-        // Load the main menu scene
-        GameEvents.RestartGame.Invoke();
+        public void LoadMenu()
+        {
+            OnLoadMenu?.Invoke();
+            Time.timeScale = 1f;
+            _gameIsPaused = false;
+            pauseMenuUI.SetActive(false);
+            // Load the main menu scene
+            GameEvents.RestartGame.Invoke();
         
-        SceneManager.LoadScene("Start Menu");
-    }
+            SceneManager.LoadScene("Start Menu");
+        }
     
-    public void QuitGame()
-    {
-        Application.Quit();
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }

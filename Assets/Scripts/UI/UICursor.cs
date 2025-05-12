@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class UICursor : MonoBehaviour
+namespace UI
 {
-    [Tooltip("Drag your UI Image’s RectTransform here")]
-    public RectTransform cursorRect;
-
-    void Awake()
+    public class UICursor : MonoBehaviour
     {
-        // Hide the OS cursor
-        Cursor.visible = false;
-    }
+        [Tooltip("Drag your UI Image’s RectTransform here")]
+        public RectTransform cursorRect;
 
-    void Update()
-    {
-        if (cursorRect == null) return;
-        // For Screen Space – Overlay canvases, setting position = mousePosition is enough
-        cursorRect.position = Input.mousePosition;
+        void Awake()
+        {
+            // Hide the OS cursor
+            Cursor.visible = false;
+        }
+
+        void Update()
+        {
+            if (cursorRect == null) return;
+            // For Screen Space – Overlay canvases, setting position = mousePosition is enough
+            cursorRect.position = Input.mousePosition;
+        }
     }
 }
