@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using Audio;
-using GrimReaper;
 using UnityEngine;
 using Utilities;
 using Random = UnityEngine.Random;
@@ -16,7 +14,7 @@ public class GrimManager : MonoBehaviour
     
     [Header("Grim Reaper Settings")]
     [SerializeField] private float timeBetweenAttacks = 45f;
-    [SerializeField] private float timeBeforeFirstAttack = 25f;
+    // [SerializeField] private float timeBeforeFirstAttack = 25f;
     // [SerializeField] private float timeDiviation = 3f;
     [SerializeField] private float timeToStartAudioBeforeAttack = 4f;
     // private float _timeBetweenAttacks;
@@ -55,6 +53,7 @@ public class GrimManager : MonoBehaviour
         GameEvents.OnSwordActivated += HandleSwordActivated;
         GameEvents.OnOxButcherMerged += HandleShcoyechSound;
         _currentDifficultySettings = difficultySettings[0];
+        
     }
     
     private void OnDisable()
@@ -89,7 +88,7 @@ public class GrimManager : MonoBehaviour
     {
         _timer += Time.deltaTime;
         if (_timer < timeBetweenAttacks) return;
-        DoRandomAttack();
+        StartCoroutine(DoRandomAttack());
         _timer = 0f;
     }
 
@@ -106,40 +105,42 @@ public class GrimManager : MonoBehaviour
         // CallMinionsAttack();
     }
 
-    private IEnumerator AttacksRoutine()
-    {
-        yield return new WaitForSeconds(timeBeforeFirstAttack);
-        while (true)
-        {
-            int attackType = Random.Range(0, 2);
-            switch (attackType)
-            {
-                case 0:
-                    AudioManager.Instance.PlaySound(transform.position, spinningScytheSummoningAudioName);
-                    yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
-                    StartCoroutine(StartSpinningAttack());
-                    break;
-                case 1:
-                    AudioManager.Instance.PlaySound(transform.position, minionSummoningAudioName);
-                    yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
-                    StartCoroutine(StartMinionAttack());
-                    break;
-            }
-            yield return new WaitForSeconds(timeBetweenAttacks);
-        }
-    }
+    // private IEnumerator AttacksRoutine()
+    // {
+    //     yield return new WaitForSeconds(timeBeforeFirstAttack);
+    //     while (true)
+    //     {
+    //         int attackType = Random.Range(0, 2);
+    //         switch (attackType)
+    //         {
+    //             case 0:
+    //                 AudioManager.Instance.PlaySound(transform.position, spinningScytheSummoningAudioName);
+    //                 yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
+    //                 StartCoroutine(StartSpinningAttack());
+    //                 break;
+    //             case 1:
+    //                 AudioManager.Instance.PlaySound(transform.position, minionSummoningAudioName);
+    //                 yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
+    //                 StartCoroutine(StartMinionAttack());
+    //                 break;
+    //         }
+    //         yield return new WaitForSeconds(timeBetweenAttacks);
+    //     }
+    // }
     
-    private void DoRandomAttack()
+    private IEnumerator DoRandomAttack()
     {
         int attackType = Random.Range(0, 2);
         switch (attackType)
         {
             case 0:
                 AudioManager.Instance.PlaySound(transform.position, spinningScytheSummoningAudioName);
+                yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
                 StartCoroutine(StartSpinningAttack());
                 break;
             case 1:
                 AudioManager.Instance.PlaySound(transform.position, minionSummoningAudioName);
+                yield return new WaitForSeconds(timeToStartAudioBeforeAttack);
                 StartCoroutine(StartMinionAttack());
                 break;
         }
@@ -217,15 +218,15 @@ public class GrimManager : MonoBehaviour
         return difficultySettings[0];
     }
 
-    private void SetDifficultySetting(DifficultySettings difficultySettings)
+    private void SetDifficultySetting(DifficultySettings newDifficultySettings)
     {
-        minionSpawnerSettings.minionCount = difficultySettings.minionCount;
-        minionSettings.speed = difficultySettings.minionSpeed;
-        minionSettings.minionStartingHealth = difficultySettings.minionStartingHealth;
-        spinningScytheAttackSettings.spinningScytheSpeed = difficultySettings.spinningScytheSpeed;
-        spinningScytheAttackSettings.spinningScytheHealth = difficultySettings.spinningScytheHealth;
-        spinningScytheSpawnerSettings.spinningScytheAmount = difficultySettings.spinningScytheAmount;
-        timeBetweenAttacks = difficultySettings.timeBetweenAttacks;
+        minionSpawnerSettings.minionCount = newDifficultySettings.minionCount;
+        minionSettings.speed = newDifficultySettings.minionSpeed;
+        minionSettings.minionStartingHealth = newDifficultySettings.minionStartingHealth;
+        spinningScytheAttackSettings.spinningScytheSpeed = newDifficultySettings.spinningScytheSpeed;
+        spinningScytheAttackSettings.spinningScytheHealth = newDifficultySettings.spinningScytheHealth;
+        spinningScytheSpawnerSettings.spinningScytheAmount = newDifficultySettings.spinningScytheAmount;
+        timeBetweenAttacks = newDifficultySettings.timeBetweenAttacks;
     }
 
     private IEnumerator StartSpinningAttack()
