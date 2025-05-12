@@ -65,10 +65,10 @@ public class CheatManager : MonoSingleton<CheatManager>
             GameEvents.MuteSounds?.Invoke();
         }
 
-        if (_isEscapePressed)
-        {
-            Debug.Log("Cheat activated: Quit game");
-            Application.Quit();
-        }
+        // if (_isEscapePressed)
+        // {
+        //     Debug.Log("Cheat activated: Quit game");
+        //     Application.Quit();
+        // }
     }
 }
