@@ -24,7 +24,7 @@ public class MinionSettings
     public float speed;
     public int minionStartingHealth = 5;
     public string[] movementClipNames;
-    public string distructionClipName = "MinionHit";
+    public string destructionClipName = "MinionHit";
     public float timeBetweenClips = 0.5f;
 }
 
@@ -61,4 +61,10 @@ public class SpinningScytheSpawnerSettings
     public float startingSpawnTime = 3f;
     public float endingSpawnTime = 8.75f;
     public int spinningScytheAmount = 3;
+}
+
+[System.Serializable]
+public class DifficultySettings
+{
+    public float timeBetweenAttacks = 5f;
 }

@@ -272,7 +272,7 @@ public class PoolableMinion : MonoBehaviour, IPoolable, IPointerDownHandler
         knockbackDurationSeconds = minionCounterAttackSettings.knockbackDurationSeconds;
         damageAgainstMinion = minionCounterAttackSettings.damageAgainstMinion;
         movementClipNames = minionSettings.movementClipNames;
-        destructionClipName = minionSettings.distructionClipName;
+        destructionClipName = minionSettings.destructionClipName;
         timeBetweenClips = minionSettings.timeBetweenClips;
     }
 }
