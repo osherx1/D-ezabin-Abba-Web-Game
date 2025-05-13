@@ -1,4 +1,4 @@
-# D’ezabin Abba: Chad Gadya – Idle Merge & Evolution  
+🐐 🐑 # D’ezabin Abba: Chad Gadya – Idle Merge & Evolution 💰 
 **Unity 2D (C#)** • MIT License  
 GitHub: [github.com/osherx1/D-ezabin-Abba-Web-Game](https://github.com/osherx1/D-ezabin-Abba-Web-Game)  
 Itch.io: [yarden-shemesh.itch.io/trei-zuzei](https://yarden-shemesh.itch.io/trei-zuzei)
