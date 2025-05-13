@@ -20,7 +20,6 @@ But hurry: the Angel of Death is on your trail. Click his two signature attacks 
 - ⚙️ Installation  
 - 🚀 How to Play  
 - 🖼️ Screenshots  
-- 🔧 Debug Cheats  
 - 📝 Credits & Thanks  
 
 ---
