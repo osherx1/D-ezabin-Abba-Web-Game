@@ -10,15 +10,11 @@ Your dad bought you a baby lamb, and you’re 2 Zuzim down.
 It’s time to merge your animals and climb the chain of creation to build your empire!  
 Starting with Chad Gadya, you’ll combine matching animals to unlock stronger,
 more lucrative forms—each inspired by the song’s characters.  
+
 But hurry: the Angel of Death is on your trail. Click his two signature attacks to fight back before he wipes out your herd.
-<iframe
-  width="560" height="315"
-  src="https://www.youtube.com/embed/x6Dd_AJ6f5w"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
-*Developed as part of the Gaming Lab Jam at Bezalel Academy of Arts & Design by a team of students.*
+
+[![▶️ Watch on YouTube](https://img.youtube.com/vi/x6Dd_AJ6f5w/0.jpg)](https://youtu.be/x6Dd_AJ6f5w)
+
 ---
 
 ## 📋 Table of Contents  
