@@ -12,6 +12,8 @@ Starting with Chad Gadya, you’ll combine matching animals to unlock stronger,
 more lucrative forms—each inspired by the song’s characters.  
 But hurry: the Angel of Death is on your trail. Click his two signature attacks to fight back before he wipes out your herd.
 
+[![▶️ צפה בסרטון](https://img.youtube.com/vi/x6Dd_AJ6f5w/0.jpg)](https://youtu.be/x6Dd_AJ6f5w)
+
 *Developed as part of the Gaming Lab Jam at Bezalel Academy of Arts & Design by a team of students.*
 ---
 
